@@ -1,0 +1,16 @@
+php artisan make:model Post -m (criar model)
+php artisan migrate (criar migrate)
+php artisan migrate:refresh
+php artisan make:livewire PostComponent (criar component)
+php artisan make:model 
+
+$table->integer('parent_id')->unsigned()->nullable()->default(null);
+$table->foreign('parent_id')->references('id')->on('helper.setores')->onUpdate('cascade')->onDelete('set null');
+
+php artisan make:model Admin/Sesau/Semraiva/Paciente -m
+php artisan make:model Admin/Sesau/Semraiva/Ficha -m
+php artisan make:model Admin/Sesau/Semraiva/NotificacaoIndividual -m
+
+php artisan make:model Admin/Sesau/Semraiva/DadoResidencia -m
+
+php artisan make:livewire Admin/Sesau/Semraiva/SemraivaComponent
