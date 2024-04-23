@@ -29,3 +29,7 @@ Route::get('/posts', function () {
 Route::get('/ficha', function () {
     return view('admin.sesau.semraiva.ficha.index');
 });
+
+Route::get('/samu', function () {
+    return view('admin.sesau.samu.samu.index');
+});

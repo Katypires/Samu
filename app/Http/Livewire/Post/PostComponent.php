@@ -93,6 +93,7 @@ class PostComponent extends Component
 
     public function delete($id)
     {
+        
         Post::find($id)->delete();
         session()->flash('message', 'Post deletado com sucesso.');
     }

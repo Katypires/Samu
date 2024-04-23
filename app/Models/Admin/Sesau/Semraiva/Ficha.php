@@ -11,4 +11,8 @@ class Ficha extends Model
     protected $table = 'semraiva.fichas';
 
     protected $fillable = [ 'nome', 'numero', 'tipo', 'status',];
+
+    public function unidades(){
+        return $this->hasOne(Unidade::class);
+    }
 }

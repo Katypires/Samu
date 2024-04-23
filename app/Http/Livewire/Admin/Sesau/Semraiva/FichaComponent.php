@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Sesau\Semraiva;
 
 use App\Models\Admin\Sesau\Semraiva\NotificacaoIndividual;
+use App\Models\Admin\Sesau\Semraiva\Unidade;
 use Livewire\Component;
 
 class FichaComponent extends Component
@@ -44,7 +45,7 @@ class FichaComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.sesau.semraiva.ficha-component');
+        return view('livewire.admin.sesau.semraiva.ficha-component',['unidades'=>Unidade::get()]);
     }
 
     public function storeNotificacao(){
@@ -52,7 +53,7 @@ class FichaComponent extends Component
         $this->validate([
             'data.nome' => 'required',
         ]);
-
+        //dd($this->data);
         try {
             //dd($this->data);
             $notificacaoIndividual = NotificacaoIndividual::create(
@@ -78,10 +79,6 @@ class FichaComponent extends Component
         }
 
 
-
-        $this->closeModal();
-        $this->resetInputFields();
-        $this->render();
     }
 
 

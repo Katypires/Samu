@@ -13,7 +13,7 @@ class CreateNotificacaoIndividualsTable extends Migration
      */
     public function up()
     {
-        Schema::create('semraiva.notificacao_individuals', function (Blueprint $table){
+        Schema::create('semraiva.notificacao_individuais', function (Blueprint $table){
             $table->id();
 
             // $table->unsignedBigInteger('ficha_id')->nullable();
@@ -43,6 +43,6 @@ class CreateNotificacaoIndividualsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('semraiva.notificacao_individuals');
+        Schema::dropIfExists('semraiva.notificacao_individuais');
     }
 }
