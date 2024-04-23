@@ -1,56 +1,71 @@
+<div class="card p-4 m-4">
 <div class="card p-4 mb-4">
-    <div>
-        <h2 class="my-4">Tabela de Atendimento</h2>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Nome Paciente</th>
-                    <th scope="col">Data Atendimento</th>
-                    <th scope="col">Idade</th>
-                    <th scope="col">Sexo</th>
-                    <th scope="col">Tipo Animal</th>
-                    <th scope="col">Tipo Tratamento</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Setor</th>
-                    <th scope="col">CCZ</th>
+    <style>
+        .meu-card {
+          border: 3px solid #1a30ac;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.37);
+          padding: 5px;
+        }
+      </style>
+    <style>
+        .meu-formulario {
+           background-color: #0531f533;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      </style>
 
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Bolinha</td>
-                    <td>2024-04-13</td>
-                    <td>3</td>
-                    <td>Fêmea</td>
-                    <td>Gato</td>
-                    <td>Consulta</td>
-                    <td><button type="button" class="btn btn-success">Aberto</button></td>
-                    <td>Distrito</td>
-                    <td><button type="button" class="btn btn-info">Em andamento</button></td>
-                </tr>
-                <tr>
-                    <td>Rex</td>
-                    <td>2024-04-12</td>
-                    <td>2</td>
-                    <td>Macho</td>
-                    <td>Cachorro</td>
-                    <td>Cirurgia</td>
-                    <td><button type="button" class="btn btn-info">Em andamento</button></td>
-                    <td>Gestor</td>
-                    <td><button type="button" class="btn btn-success">Aberto</button></td>
-                </tr>
-                <tr>
-                    <td>Miau</td>
-                    <td>2024-04-11</td>
-                    <td>1</td>
-                    <td>Fêmea</td>
-                    <td>Gato</td>
-                    <td>Vacinação</td>
-                    <td><button type="button" class="btn btn-danger">Concluído</button></td>
-                    <td>Unidade</td>
-                    <td><button type="button" class="btn btn-info">Em andamento</button></td>
-                </tr>
-            </tbody>
-        </table>
+
+    <div class="card-title card text-center  border: 2px solid #ac1a1a card meu-card">
+        <h5>Atendimento</h5>
     </div>
+
+    <form class="meu-formulario">
+    <form wire:submit.prevent="store">
+        <div class="row">
+
+            <div class="form-floating mb-4 col-2">
+                <input type="date" wire:model.prevent="atendimento.data_atendimento" class="form-control">
+                <label for="nome">1 - Data de Atendimento:</label>
+            </div>
+
+            <div class="form-floating mb-4 col-2">
+                <input type="time" wire:model.prevent="atendimento.horario" class="form-control">
+                <label for="nome">2 - Horário:</label>
+            </div>
+
+            <div class="form-floating mb-4 col-8">
+                <input type="text" wire:model.prevent="atendimento.endereco" class="form-control">
+                <label for="nome">3 - Endereço:</label>
+            </div>
+
+            <div class="form-floating mb-4 col-8">
+                <input type="text" wire:model.prevent="atendimento.fato_acontecido" class="form-control">
+                <label for="nome">4 - Fato Acontecido:</label>
+            </div>
+            
+            <div class="form-floating mb-4 col-4">
+                <input type="text" wire:model.prevent="atendimento.transportado_para" class="form-control">
+                <label for="nome">5 - Transportado Para:</label>
+            </div>
+            <div class="form-floating mb-4 col-12">
+                <input type="text" wire:model.prevent="atendimento.observacao" class="form-control">
+                <label for="nome">6 - Observações:</label>
+            </div>
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul class="list-unstyled">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+        </div>
+    </form>
+</div>
+</div>
 </div>

@@ -2,78 +2,38 @@
     @if (session()->has('message'))
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
+    <style>
+        .meu-card1 {
+          border: 3px solid #498512;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(5, 5, 5, 0.466);
+          padding: 5px;
+        }
+      </style>
 
-        {{-- <div class="card p-4 mb-4">
-            <div>
-                <h2 class="my-4">Tabela de Atendimento</h2>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nome Paciente</th>
-                            <th scope="col">Data Atendimento</th>
-                            <th scope="col">Idade</th>
-                            <th scope="col">Sexo</th>
-                            <th scope="col">Tipo Animal</th>
-                            <th scope="col">Tipo Tratamento</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Setor</th>
-                            <th scope="col">CCZ</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Bolinha</td>
-                            <td>2024-04-13</td>
-                            <td>3</td>
-                            <td>Fêmea</td>
-                            <td>Gato</td>
-                            <td>Consulta</td>
-                            <td><button type="button" class="btn btn-success">Aberto</button></td>
-                            <td>Distrito</td>
-                            <td><button type="button" class="btn btn-info">Em andamento</button></td>
-                        </tr>
-                        <tr>
-                            <td>Rex</td>
-                            <td>2024-04-12</td>
-                            <td>2</td>
-                            <td>Macho</td>
-                            <td>Cachorro</td>
-                            <td>Cirurgia</td>
-                            <td><button type="button" class="btn btn-info">Em andamento</button></td>
-                            <td>Gestor</td>
-                            <td><button type="button" class="btn btn-success">Aberto</button></td>
-                        </tr>
-                        <tr>
-                            <td>Miau</td>
-                            <td>2024-04-11</td>
-                            <td>1</td>
-                            <td>Fêmea</td>
-                            <td>Gato</td>
-                            <td>Vacinação</td>
-                            <td><button type="button" class="btn btn-danger">Concluído</button></td>
-                            <td>Unidade</td>
-                            <td><button type="button" class="btn btn-info">Em andamento</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div> --}}
-
-    
-    {{-- @if ($isOpen) --}}
-
+    <style>
+        .meu-formulario1 {
+           background-color: #02461133;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+      </style>
+  
         <div class="card p-4 mb-4">
-            <div class="card p-2 mb-4 bg-light">
+            <div class="card-title card text-center  border: 2px card meu-card1">
                 <h5>Adicionar Pessoa</h5>
             </div>
+
+            <form class="meu-formulario1">
             <form wire:submit.prevent="store">
                 <div class="row">
-
-                    <div class="form-floating mb-4 col-1" hidden>
-                        <input type="text" wire:model.prevent="pessoa.solicitacao" class="form-control">
-                        <label for="nome">1 - Quem está solicitando?</label>
-                    </div>
+                   
+                        <div class="form-floating mb-4 col-1" hidden>
+                            <input type="text" wire:model.prevent="pessoa.solicitacao" class="form-control">
+                            <label for="nome">1 - Quem está solicitando?</label>
+                        </div>
+                    
                     <div class="form-floating mb-4 col-2">
                         <select wire:model.prevent="pessoa.solicitacao" class="form-select">
                             <option value="">Selecione</option>
@@ -124,7 +84,8 @@
                             <button class="btn btn-primary mb-4" wire:click="create">Adicionar Pessoa</button>
                         </div>
                     </div>
-
+                </form>
+        
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul class="list-unstyled">

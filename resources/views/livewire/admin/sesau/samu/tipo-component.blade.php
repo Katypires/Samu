@@ -1,3 +1,4 @@
+<div class="card p-4 m-4">
 <div class="card p-4 my-4">
     @if (session()->has('message'))
         <div class="alert alert-success">{{ session('message') }}</div>
@@ -10,7 +11,7 @@
     </div>
 
 
-        <div class="card p-4 mb-4">
+        <div class="card-header">
             <form wire:submit.prevent="store">
                 <div class="row">
                     <div class="form-floating my-4 col-6">
@@ -89,5 +90,6 @@
             @endforeach
         </tbody>
     </table> --}}
+</div>
 </div>
 
