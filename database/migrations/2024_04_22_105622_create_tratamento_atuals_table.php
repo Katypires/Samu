@@ -13,7 +13,7 @@ class CreateTratamentoAtualsTable extends Migration
      */
     public function up()
     {
-        Schema::create('semraiva.tratamento_atuals', function (Blueprint $table) {
+        Schema::create('semraiva.tratamento_atuais', function (Blueprint $table) {
             $table->id();
 
             $table->integer('tratamento_indicado')->nullable();
@@ -56,6 +56,6 @@ class CreateTratamentoAtualsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('semraiva.tratamento_atuals');
+        Schema::dropIfExists('semraiva.tratamento_atuais');
     }
 }

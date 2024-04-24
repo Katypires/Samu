@@ -2,7 +2,7 @@
 <div class="card p-4 mb-4">
     <style>
         .meu-card {
-          border: 3px solid #1a30ac;
+          border: 3px solid #0a777c;
           border-radius: 10px;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.37);
           padding: 5px;
@@ -10,7 +10,7 @@
       </style>
     <style>
         .meu-formulario {
-           background-color: #0531f533;
+           background-color: #0a788633;
            padding: 20px;
            border-radius: 10px;
            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

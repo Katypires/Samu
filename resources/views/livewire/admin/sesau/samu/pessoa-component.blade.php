@@ -4,7 +4,7 @@
     @endif
     <style>
         .meu-card1 {
-          border: 3px solid #498512;
+          border: 3px solid #0a777c;
           border-radius: 10px;
           box-shadow: 0 4px 8px rgba(5, 5, 5, 0.466);
           padding: 5px;
@@ -13,7 +13,7 @@
 
     <style>
         .meu-formulario1 {
-           background-color: #02461133;
+           background-color: #0a788633;
            padding: 20px;
            border-radius: 10px;
            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@
                    
                         <div class="form-floating mb-4 col-1" hidden>
                             <input type="text" wire:model.prevent="pessoa.solicitacao" class="form-control">
-                            <label for="nome">1 - Quem está solicitando?</label>
+                            <label for="solicitacao">1 - Quem está solicitando?</label>
                         </div>
                     
                     <div class="form-floating mb-4 col-2">
@@ -40,7 +40,7 @@
                             <option value="S">Solicitante</option>
                             <option value="P">Paciente</option>
                         </select>
-                        <label for="sexo">1 - Quem está solicitando?</label>
+                        <label for="solicitacao">1 - Quem está solicitando?</label>
                     </div>
 
                     <div class="form-floating mb-4 col-12">
@@ -50,34 +50,55 @@
 
                     <div class="form-floating mb-4 col-3">
                         <input type="text" wire:model.prevent="pessoa.rg" class="form-control">
-                        <label for="nome">2 - RG</label>
+                        <label for="rg">2 - RG</label>
                     </div>
                     <div class="form-floating mb-4 col-7">
                         <input type="text" wire:model.prevent="pessoa.cpf" class="form-control">
-                        <label for="nome">3 - CPF</label>
+                        <label for="cpf">3 - CPF</label>
                     </div>
                     <div class="form-floating mb-4 col-2">
                         <input type="date" wire:model.prevent="pessoa.data_nascimento" class="form-control">
-                        <label for="nome">4 - Data de Nascimento</label>
+                        <label for="data_nascimento">4 - Data de Nascimento</label>
                     </div>
 
                     <div class="form-floating mb-4 col-8">
                         <input type="text" wire:model.prevent="pessoa.endereco" class="form-control">
-                        <label for="nome">5 - Endereco</label>
+                        <label for="endereco">5 - Endereço</label>
                     </div>
 
                     <div class="form-floating mb-4 col-4">
                         <input type="text" wire:model.prevent="pessoa.bairro" class="form-control">
-                        <label for="nome">6 - Bairro</label>
+                        <label for="bairro">6 - Bairro</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
                         <input type="text" wire:model.prevent="pessoa.telefone" class="form-control">
-                        <label for="nome">7 - DDD-Telefone</label>
+                        <label for="telefone">7 - DDD-Telefone</label>
                     </div>
-                  <div class="form-floating mb-4 col-8">
+                    <div class="form-floating mb-4 col-8">
                         <input type="text" wire:model.prevent="pessoa.email" class="form-control">
-                        <label for="nome">5 - E-mail</label>
+                        <label for="email">5 - E-mail</label>
                     </div>
+
+                    <div class="form-floating mb-4 col-6">
+                        <input type="text" wire:model.prevent="tipo.parentesco" class="form-control">
+                        <label for="tipo">6 - Grau de Parentesco:</label>
+                    </div>
+
+                    <div class="form-floating mb-4 col-6" hidden>
+                        <input type="text" wire:model.prevent="tipo.fim" class="form-control">
+                        <label for="tipo">7 - Para fins de:</label>
+                    </div>
+                
+                    <div class="form-floating mb-4 col-2">
+                    <select wire:model.prevent="tipo.fim" class="form-select">
+                        <option value="">Selecione</option>
+                        <option value="D">DPVAT</option>
+                        <option value="I">INSS</option>
+                        <option value="J">JUDICIAL</option>
+                        <option value="O">OUTROS</option>
+                    </select>
+                    <label for="tipo">7 - Para fins de:</label>
+                </div>
 
                     <div class="row">
                         <div class="col-auto">

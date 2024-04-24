@@ -1,25 +1,35 @@
+---COMANDOS BASE (EXEMPLOS) ---
 php artisan make:model Post -m (criar model)
 php artisan migrate (criar migrate)
 php artisan migrate:refresh
 php artisan make:livewire PostComponent (criar component)
 php artisan make:model 
 
+---CRIANDO MODEL--- 
 php artisan make:model Admin/Sesau/Semraiva/Paciente -m
 php artisan make:model Admin/Sesau/Semraiva/Ficha -m
 php artisan make:model Admin/Sesau/Semraiva/NotificacaoIndividual -m
 
-
+---SEM RAIVA---
 php artisan make:livewire Admin/Sesau/Semraiva/SemraivaComponent
 
+---DADOS DE RESIDENCIA---
 php artisan make:livewire Admin/Sesau/Semraiva/DadoResidenciaComponent
 php artisan make:model Admin/Sesau/Semraiva/DadoResidencia -m
 
+---TRATAMENTO ATUAL---
 php artisan make:livewire Admin/Sesau/Semraiva/TratamentoAtualComponent
 php artisan make:model Admin/Sesau/Semraiva/TratamentoAtual -m
 
+---INVESTIGADOR---
 php artisan make:livewire Admin/Sesau/Semraiva/InvestigadorComponent
 php artisan make:model Admin/Sesau/Semraiva/Investigador -m
 
+---UNIDADE---
 php artisan make:livewire Admin/Sesau/Semraiva/UnidadeComponent
 php artisan make:model Admin/Sesau/Semraiva/Unidade -m
+
+---CARDS---
+php artisan make:livewire Admin/Sesau/Semraiva/CardComponent
+
 

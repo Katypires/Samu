@@ -13,7 +13,7 @@ class CreateInvestigadorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('semraiva.investigadors', function (Blueprint $table) {
+        Schema::create('semraiva.investigadores', function (Blueprint $table) {
             $table->id();
 
             $table->string('municipio_unidade_saude')->nullable();
@@ -33,6 +33,6 @@ class CreateInvestigadorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('semraiva.investigadors');
+        Schema::dropIfExists('semraiva.investigadores');
     }
 }

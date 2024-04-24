@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Ocorrencia extends Model
 {
     use HasFactory;
+    protected $table = 'samu.ocorrencias';
+    protected $fillable = ['numero', 'data', 'hora', 'natureza', 'motivo', 'equipe_atendimento', 'endereco_ocorrencia', 'bairro', 'cidade', 'declaracao'];
 }

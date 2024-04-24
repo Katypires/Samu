@@ -3,74 +3,14 @@
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
 
-        <div class="card p-4 mb-4">
-            <div>
-                <div class="row">
-                    <div class="col-lg-2 mb-4">
-                        <div class="card bg-primary text-white">
-                            <div class="card-body">
-                                <i class="fas fa-mobile-alt icon"></i>
-                                <h5 class="card-title">App</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <a href="https://semraiva.flutterflow.app/" target="_blank" class="btn btn-custom">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 mb-4">
-                        <div class="card bg-success text-white">
-                            <div class="card-body">
-                                <i class="fas fa-globe icon"></i>
-                                <h5 class="card-title">Site</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <a href="http://semraiva.by.dev.br/" target="_blank" class="btn btn-custom">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 mb-4">
-                        <div class="card bg-danger text-white">
-                            <div class="card-body">
-                                <i class="fas fa-file-alt icon"></i>
-                                <h5 class="card-title">Form</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <a href="#" class="btn btn-custom">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 mb-4">
-                        <div class="card bg-warning text-dark">
-                            <div class="card-body">
-                                <i class="fas fa-cogs icon"></i>
-                                <h5 class="card-title">Getor</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <a href="#" class="btn btn-custom">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 mb-4">
-                        <div class="card bg-info text-white">
-                            <div class="card-body">
-                                <i class="fas fa-map-marker-alt icon"></i>
-                                <h5 class="card-title">Unidade</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <a href="#" class="btn btn-custom">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-2 mb-4">
-                        <div class="card bg-info text-white">
-                            <div class="card-body">
-                                <i class="fas fa-map-marker-alt icon"></i>
-                                <h5 class="card-title">Distrito</h5>
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                <a href="#" class="btn btn-custom">Saiba Mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="card p-4 mb-4">            
+            <div class="row">
+                    <livewire:admin.sesau.semraiva.card-component key="1" title="App" text_color='text-white' text="teste texto" icon="fas fa-mobile-alt icon" cor="bg-primary" link="https://semraiva.flutterflow.app/" /> 
+                    <livewire:admin.sesau.semraiva.card-component key="2" title="Site" text_color='text-white' text="teste texto" icon="fas fa-globe icon" cor="bg-success" link='http://semraiva.by.dev.br/'>
+                    <livewire:admin.sesau.semraiva.card-component key="3" title="Form" text_color='text-white' text="teste texto" icon="fas fa-file-alt icon" cor="bg-danger" link=''>
+                    <livewire:admin.sesau.semraiva.card-component  key="4" title="Gestor" text_color='text-dark' text="teste texto" icon="fas fa-cogs icon" cor="bg-warning" link=''>
+                    <livewire:admin.sesau.semraiva.card-component key="5" title="Unidade" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link=''>
+                    <livewire:admin.sesau.semraiva.card-component key="6" title="Distrito" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link=''>   
             </div>
         </div>
 
@@ -130,12 +70,6 @@
                 </table>
             </div>
         </div>
-
-    <div class="row">
-        <div class="col-auto">
-            <button class="btn btn-primary mb-4" wire:click="create">Adicionar Ficha</button>
-        </div>
-    </div>
 
     {{-- @if ($isOpen) --}}'
         @livewire('admin.sesau.semraiva.unidade-component')

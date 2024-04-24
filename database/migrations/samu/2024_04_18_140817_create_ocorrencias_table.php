@@ -28,7 +28,7 @@ class CreateOcorrenciasTable extends Migration
             $table->string('endereco_ocorrencia')->nullable();
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
-            $table->text('ocorrencia')->nullable();
+            $table->text('declaracao')->nullable();
 
             $table->boolean('autenticado')->default(true);
             $table->unsignedBigInteger('user_autenticado_id')->nullable()->index();

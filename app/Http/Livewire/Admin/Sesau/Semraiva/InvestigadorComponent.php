@@ -9,6 +9,11 @@ class InvestigadorComponent extends Component
 {
     public $data=[];
 
+    public function mount(){
+        $this->data['municipio_unidade_saude'] = "CAMPO GRANDE";
+        $this->data['cod_unidade_saude'] = "003164";
+    }
+
     public function render()
     {
         return view('livewire.admin.sesau.semraiva.investigador-component');

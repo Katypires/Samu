@@ -11,6 +11,7 @@ class UnidadeComponent extends Component
     public $data=[];
     public $unidadeId;
    
+
     public function render()
     {
         return view('livewire.admin.sesau.semraiva.unidade-component', ['unidades'=>Unidade::get()]);
@@ -78,5 +79,6 @@ class UnidadeComponent extends Component
     public function resetInputFields(){
 
         $this->data = [];
+        $this->unidadeId = null;
     }
 }

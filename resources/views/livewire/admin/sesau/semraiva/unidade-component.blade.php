@@ -12,6 +12,16 @@
                     <input type="text" wire:model.prevent="data.codigo" class="form-control" placeholder="Código (CID10)">
                     <label for="nome">6 - Código</label>
                 </div>
+
+                <div class="row form-check form-switch">
+                    <div class="mb-4 px-4">
+                        <label for="status" class="form-check-label">Status</label>
+                        <input type="checkbox" wire:model="data.status" id="status"
+                            class="form-check-input">
+                        @error('status')<span class="error">{{ $mssage }}</span>@enderror
+                    </div>
+                </div>
+
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul class="list-unstyled">
