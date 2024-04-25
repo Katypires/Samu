@@ -22,8 +22,8 @@
 
 <div class="card mb-3" style="max-width: 2000px;">
     <div class="row g-0">
-      <div class="col-md-4">
-        <img src="..." class="img-fluid rounded-start" alt="...">
+      <div class="col-md-4" style="display: flex; justify-content: center; align-items: center; height: 300px;">
+        <img src="{{ asset("imagemSesau.jpg") }}" class="img-fluid rounded-start"  width="500" height="150" alt="...">
       </div>
       <div class="col-md-8 ">
         <div class="card-body">

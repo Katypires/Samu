@@ -14,6 +14,8 @@ class FichaComponent extends Component
     public $status = [];
     public $data = [];
     public $select, $outra, $outro;
+    public $modal;
+    public $title;
 
     public function mount()
     {
