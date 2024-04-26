@@ -65,10 +65,11 @@
                         <label for="rg">2 - RG</label>
                     </div>
 
-                    <div class="form-floating mb-4 col-7">
+                    <div class="form-floating mb-4 col-7" @if($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
                         <input type="text" wire:model.prevent="pessoa.cpf" class="form-control">
                         <label for="cpf">3 - CPF</label>
                     </div>
+                    
                     <div class="form-floating mb-4 col-2">
                         <input type="date" wire:model.prevent="pessoa.data_nascimento" class="form-control" id="campoData_nascimento" @if($pessoa['solicitacao'] == 'S') readonly @endif>
                         <label for="data_nascimento">4 - Data de Nascimento</label>
@@ -89,85 +90,27 @@
                         });
                     </script>
 
-                    <div class="form-floating mb-4 col-8">
-                        <input type="text" wire:model.prevent="pessoa.endereco" class="form-control" id="campoEndereco" @if($pessoa['solicitacao'] == 'P') readonly @endif>
+                    <div class="form-floating mb-4 col-8" @if($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                        <input type="text" wire:model.prevent="pessoa.endereco" class="form-control">
                         <label for="endereco">5 - Endereço</label>
                     </div>
-                    
-                    <script>
-                        document.addEventListener('livewire:load', function () {
-                            var tipoSolicitante = document.getElementById('tipoSolicitante');
-                            var campoEndereco = document.getElementById('campoEndereco');
-                    
-                            tipoSolicitante.addEventListener('change', function () {
-                                if (tipoSolicitante.value === 'P') { 
-                                    campoEndereco.readOnly = true; 
-                                } else { 
-                                    campoEndereco.readOnly = false; 
-                                }
-                            });
-                        });
-                    </script>
 
-                    <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.prevent="pessoa.bairro" class="form-control" id="campoBairro" @if($pessoa['solicitacao'] == 'P') readonly @endif>
+                    <div class="form-floating mb-4 col-4"  @if($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                        <input type="text" wire:model.prevent="pessoa.bairro" class="form-control">
                         <label for="bairro">6 - Bairro</label>
                     </div>
 
-                    <script>
-                        document.addEventListener('livewire:load', function () {
-                            var tipoSolicitante = document.getElementById('tipoSolicitante');
-                            var campoBairro = document.getElementById('campoBairro');
-                    
-                            tipoSolicitante.addEventListener('change', function () {
-                                if (tipoSolicitante.value === 'P') { 
-                                    campoBairro.readOnly = true; 
-                                } else { 
-                                    campoBairro.readOnly = false; 
-                                }
-                            });
-                        });
-                    </script>
-
-                    <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.prevent="pessoa.telefone" class="form-control"  id="campoTelefone" @if($pessoa['solicitacao'] == 'P') readonly @endif>
+                    <div class="form-floating mb-4 col-4" @if($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                        <input type="text" wire:model.prevent="pessoa.telefone" class="form-control">
                         <label for="telefone">7 - DDD-Telefone</label>
                     </div>
 
-                    <script>
-                        document.addEventListener('livewire:load', function () {
-                            var tipoSolicitante = document.getElementById('tipoSolicitante');
-                            var campoTelefone = document.getElementById('campoTelefone');
-                    
-                            tipoSolicitante.addEventListener('change', function () {
-                                if (tipoSolicitante.value === 'P') { 
-                                    campoTelefone.readOnly = true; 
-                                } else { 
-                                    campoTelefone.readOnly = false; 
-                                }
-                            });
-                        });
-                    </script>
 
-                    <div class="form-floating mb-4 col-8">
-                        <input type="text" wire:model.prevent="pessoa.email" class="form-control" id="campoEmail" @if($pessoa['solicitacao'] == 'P') readonly @endif>
+                    <div class="form-floating mb-4 col-8" @if($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                        <input type="text" wire:model.prevent="pessoa.email" class="form-control">
                         <label for="email">5 - E-mail</label>
                     </div>
 
-                    <script>
-                        document.addEventListener('livewire:load', function () {
-                            var tipoSolicitante = document.getElementById('tipoSolicitante');
-                            var campoEmail = document.getElementById('campoEmail');
-                    
-                            tipoSolicitante.addEventListener('change', function () {
-                                if (tipoSolicitante.value === 'P') { 
-                                    campoEmail.readOnly = true; 
-                                } else { 
-                                    campoEmail.readOnly = false; 
-                                }
-                            });
-                        });
-                    </script>
 
                     <div class="form-floating mb-4 col-6">
                         <input type="text" wire:model.prevent="tipo.parentesco" class="form-control" id="campoParentesco" @if($pessoa['solicitacao'] == 'S') readonly @endif>
