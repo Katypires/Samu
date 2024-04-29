@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class CardComponent extends Component
 {
-    public $card, $title, $text, $text_color, $icon, $cor, $link, $modal;
+    public $card, $title, $text, $text_color, $icon, $cor, $link, $modal, $modalId;
 
     // public function mount($title, $text, $text_color, $icon, $cor, $link)
     // {
@@ -22,9 +22,4 @@ class CardComponent extends Component
     {
         return view('livewire.admin.sesau.semraiva.card-component');
     }
-
-    public function iniciaModal(){
-        $this->modal == true;
-    }
-
 }

@@ -1,113 +1,6 @@
-
 <div>
-    <!-- Modal -->
-    <div class="modal fade" id="staticBackdropApp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">TITULO MODAL APP</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            TEXTO MODAL APP
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FECHAR</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="staticBackdropSite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">TITULO MODAL SITE</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            TEXTO MODAL SITE
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FECHAR</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="staticBackdropForm" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">TITULO MODAL FORM</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            TEXTO MODAL FORM
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FECHAR</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="staticBackdropGestor" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">TITULO MODAL GESTOR</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            TEXTO MODAL GESTOR
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FECHAR</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="staticBackdropUnidade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">TITULO MODAL UNIDADE</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            TEXTO MODAL UNIDADE
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FECHAR</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="staticBackdropDistrito" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">TITULO MODAL DISTRITO</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            TEXTO MODAL DISTRITO
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">FECHAR</button>
-            <button type="button" class="btn btn-primary">Understood</button>
-            </div>
-        </div>
-        </div>
-    </div>
+    <livewire:admin.sesau.semraiva.modal-component key="1" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form" modalId="Unidade" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
+    <livewire:admin.sesau.semraiva.modal-component key="1" title="Distrito" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form" modalId="Distrito" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
 
     <div class="card p-4 m-4">
         @if (session()->has('message'))
@@ -120,13 +13,11 @@
                     <livewire:admin.sesau.semraiva.card-component key="2" title="Site" text_color='text-white' text="teste texto" icon="fas fa-globe icon" cor="bg-success" link='http://semraiva.by.dev.br/'>
                     <livewire:admin.sesau.semraiva.card-component key="3" title="Form" text_color='text-white' text="teste texto" icon="fas fa-file-alt icon" cor="bg-danger" link=''>
                     <livewire:admin.sesau.semraiva.card-component key="4" title="Gestor" text_color='text-dark' text="teste texto" icon="fas fa-cogs icon" cor="bg-warning" link=''>
-                    <livewire:admin.sesau.semraiva.card-component key="5" title="Unidade" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link=''>
-                    <livewire:admin.sesau.semraiva.card-component key="6" title="Distrito" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link=''>   
+                    <livewire:admin.sesau.semraiva.card-component key="5" title="Unidade" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link='' modalId="Unidade">
+                    <livewire:admin.sesau.semraiva.card-component key="6" title="Distrito" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link='' modalId="Distrito">   
                 </div>
             </div>
-
             
-
             <div class="card p-4 mb-4">
                 <div>
                     <h2 class="my-4">Tabela de Atendimento</h2>
@@ -185,7 +76,7 @@
             </div>
 
         {{-- @if ($isOpen) --}}'
-            @livewire('admin.sesau.semraiva.unidade-component')
+            {{-- @livewire('admin.sesau.semraiva.unidade-component') --}}
             <div class="card p-4 mb-4">
                 <div class="card p-2 mb-4 bg-light">
                     <h5>Dados Gerais</h5>
@@ -671,8 +562,5 @@
             </div>
             @livewire('admin.sesau.semraiva.investigador-component')
 
-
-
     </div>
-
 </div>

@@ -58,7 +58,7 @@ class UnidadeComponent extends Component
                 'status'=>$this->data['status'] ? true : false,
             ]);
     
-            session()->flash('message', 'Unidade atualizado com sucesso.');
+            session()->flash('message', 'Unidade atualizada com sucesso.');
     
             $this->resetInputFields();
 
@@ -73,7 +73,7 @@ class UnidadeComponent extends Component
     public function delete($id)
     {
         Unidade::find($id)->delete();
-        session()->flash('message', 'Post deletado com sucesso.');
+        session()->flash('message', 'Unidade deletada com sucesso.');
     }
     
     public function resetInputFields(){

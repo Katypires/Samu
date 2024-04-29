@@ -32,4 +32,20 @@ php artisan make:model Admin/Sesau/Semraiva/Unidade -m
 ---CARDS---
 php artisan make:livewire Admin/Sesau/Semraiva/CardComponent
 
+---MODAL---
+Sempre adicionar "wire:ignore.self"
+php artisan make:livewire Admin/Sesau/Semraiva/ModalComponent
 
+---LISTENERS EXEMPLOS---
+Chamar na blade => <button wire:click="$emit('postAdded')">
+No component => $this->emit('postAdded');
+
+Sintaxe no component =>  protected $listeners = ['postAdded' => 'Nome   da funcao que sera disparada'];
+
+Passagem de parametros => $this->emit('postAdded', $post->id);
+
+Emitir evento para outro component => $this->emitTo('counter', 'postAdded');
+                ...                => <button wire:click="$emitTo('counter', 'postAdded')"> 
+
+Emitir evento no proprio component => $this->emitSelf('postAdded');
+               ...                 => <button wire:click="$emitSelf('postAdded')">

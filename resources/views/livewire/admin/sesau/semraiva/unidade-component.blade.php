@@ -2,14 +2,19 @@
     <div class="card p-2 mb-4 bg-light">
         <h5>Unidade</h5>
     </div>
+
+    @if (session()->has('message'))
+        <div class="alert alert-success">{{ session('message') }}</div>
+    @endif
+    
     <form wire:submit.prevent="{{ $unidadeId ? 'update' : 'store' }}">
         <div class="row">
                 <div class="form-floating mb-4 col-6">
-                    <input type="text" wire:model.prevent="data.nome" class="form-control" placeholder="2 - Agravo/doença:">
+                    <input type="text" wire:model.prevent="data.nome" class="form-control">
                     <label for="nome">1 - Unidade de Saúde (ou outra fonte notificadora)</label>
                 </div>
                 <div class="form-floating mb-4 col-6">
-                    <input type="text" wire:model.prevent="data.codigo" class="form-control" placeholder="Código (CID10)">
+                    <input type="text" wire:model.prevent="data.codigo" class="form-control">
                     <label for="nome">2 - Código</label>
                 </div>
 
@@ -18,7 +23,7 @@
                         <label for="status" class="form-check-label">Status</label>
                         <input type="checkbox" wire:model="data.status" id="status"
                             class="form-check-input">
-                        @error('status')<span class="error">{{ $mssage }}</span>@enderror
+                        @error('status')<span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                 </div>
 

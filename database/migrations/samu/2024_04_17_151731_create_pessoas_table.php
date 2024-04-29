@@ -24,8 +24,8 @@ class CreatePessoasTable extends Migration
             $table->string('rg')->nullable();
             $table->string('email')->nullable();
             $table->date('data_nascimento')->nullable();
-            $table->date('parentesco')->nullable();
-            $table->string('fim')->nullable();
+            // $table->string('parentesco')->nullable();
+            // $table->string('fim')->nullable();
             
             $table->unsignedBigInteger('user_id')->nullable()->index();
             $table->boolean('status')->default(true);

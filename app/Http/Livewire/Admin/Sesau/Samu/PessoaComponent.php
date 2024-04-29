@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Sesau\Samu;
 
 use Livewire\Component;
+use App\Models\Admin\Sesau\Samu\Pessoa;
 
 class PessoaComponent extends Component
 {
@@ -20,8 +21,8 @@ class PessoaComponent extends Component
         $this->pessoa['bairro'] = '';
         $this->pessoa['telefone'] = '';
         $this->pessoa['email'] = '';
-        $this->tipo['parentesco'] = '';
-        $this->tipo['fim'] = '';
+        // $this->tipo['parentesco'] = '';
+        // $this->tipo['fim'] = '';
     }
 
     public function store()
@@ -35,9 +36,18 @@ class PessoaComponent extends Component
             'pessoa.bairro' => 'required',
             'pessoa.telefone' => 'required',
             'pessoa.email' => 'required|email',
-            'tipo.parentesco' => 'required',
-            'tipo.fim' => 'required',
+            // 'tipo.parentesco' => 'required',
+            // 'tipo.fim' => 'required',
         ]);
+
+        try {
+            Pessoa::Create($this->pessoa);
+
+       
+        } catch (\Throwable $th) {
+            session()->flash('message',
+            'Não foi possível cadastrar/atualizar informação.');
+        }
 
         
         session()->flash('message', 'Pessoa adicionada com sucesso.');
@@ -45,6 +55,10 @@ class PessoaComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.sesau.samu.pessoa-component');
+        // Busque todas as pessoas e passe para a view
+        $pessoas = Pessoa::all();
+
+        // Retorne a view com a variável $pessoas
+        return view('livewire.admin.sesau.samu.pessoa-component', compact('pessoas'));
     }
 }
