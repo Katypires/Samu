@@ -3,18 +3,17 @@
 namespace App\Http\Livewire\Admin\Sesau\Semraiva;
 
 use Livewire\Component;
-use App\Models\Admin\Sesau\Semraiva\Unidade;
+use App\Models\Admin\Sesau\Semraiva\Distrito;
 
 
-class UnidadeComponent extends Component
+class DistritoComponent extends Component
 {
     public $data=[];
-    public $unidadeId;
-   
+    public $distritoId;
 
     public function render()
     {
-        return view('livewire.admin.sesau.semraiva.unidade-component', ['unidades'=>Unidade::get()]);
+        return view('livewire.admin.sesau.semraiva.distrito-component', ['distritos'=>Distrito::get()]);
     }
 
     public function store(){
@@ -22,25 +21,22 @@ class UnidadeComponent extends Component
             'data.nome' => 'required',
         ]);
 
-        try {
+        try{
+            $distrito = Distrito::create($this->data);
 
-            $unidade = Unidade::create($this->data);
-            
-            session()->flash('message', 'Unidade cadastrada com sucesso.');
+            session()->flash('message', 'Distrito cadastrado com sucesso.');
 
             $this->resetInputFields();
 
-        } catch (\Throwable $th) {
-            dd($th);
+        }catch (\Throwable $th){
             session()->flash('message',
             'Não foi possível cadastrar/atualizar informação.');
         }
     }
-    
-    public function edit($unidade){
 
-        $this->data = $unidade;
-        $this->unidadeId = $unidade['id'];
+    public function edit($distrito){
+        $this->data = $distrito;
+        $this->distritoId = $distrito['id'];
 
     }
 
@@ -49,36 +45,30 @@ class UnidadeComponent extends Component
             'data.nome' => 'required',
         ]);
 
-        try {
-
-            $unidade = Unidade::find($this->unidadeId);
-            $unidade->update([
+        try{
+            $distrito = Distrito::find($this->distritoId);
+            $distrito->update([
                 'nome' => $this->data['nome'],
                 'codigo'=>$this->data['codigo'],
                 'status'=>$this->data['status'] ? true : false,
             ]);
-    
+
             session()->flash('message', 'Unidade atualizada com sucesso.');
-    
             $this->resetInputFields();
 
-        } catch (\Throwable $th) {
-            dd($th);
+        }catch (\Throwable $th){
             session()->flash('message',
             'Não foi possível cadastrar/atualizar informação.');
         }
-       
     }
 
-    public function delete($id)
-    {
-        Unidade::find($id)->delete();
-        session()->flash('message', 'Unidade deletada com sucesso.');
+    public function delete($id){
+        Distrito::find($id)->delete();
+        session()->flash('message', 'Distrito deletado com sucesso.');
     }
-    
+
     public function resetInputFields(){
-
         $this->data = [];
-        $this->unidadeId = null;
+        $this->distritoId = null;
     }
 }

@@ -1,17 +1,17 @@
 <div class="card p-4 mb-4">
     <div class="card p-2 mb-4 bg-light">
-        <h5>Unidade</h5>
+        <h5>Distrito</h5>
     </div>
 
     @if (session()->has('message'))
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
     
-    <form wire:submit.prevent="{{ $unidadeId ? 'update' : 'store' }}">
+    <form wire:submit.prevent="{{ $distritoId ? 'update' : 'store' }}">
         <div class="row">
                 <div class="form-floating mb-4 col-6">
                     <input type="text" wire:model.prevent="data.nome" class="form-control">
-                    <label for="nome">1 - Unidade de Saúde (ou outra fonte notificadora)</label>
+                    <label for="nome">1 - Nome do Distrito</label>
                 </div>
                 <div class="form-floating mb-4 col-6">
                     <input type="text" wire:model.prevent="data.codigo" class="form-control">
@@ -37,28 +37,28 @@
                 </div>
             @endif
         </div>
-        <button type="submit" class="btn btn-primary mb-3">Salvar {{$unidadeId}}</button>
+        <button type="submit" class="btn btn-primary mb-3">Salvar {{$distritoId}}</button>
     </form>
     <div class="card p-4 mb-4">
         <div>
-            <h2 class="my-4">Tabela de Unidade</h2>
+            <h2 class="my-4">Tabela de Distritos</h2>
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th scope="col">Unidade</th>
+                        <th scope="col">Distrito</th>
                         <th scope="col">Codigo </th>
                         <th scope="col">Status</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($unidades as $unidade)
+                    @foreach($distritos as $distrito)
                     <tr>
-                        <td>{{$unidade->nome}}</td>
-                        <td>{{$unidade->codigo}}</td>
-                        <td>{{$unidade->status}}</td>
-                        <td><button wire:click="edit({{$unidade}})" class="btn btn-primary">Editar</button></td>
-                        <td><button wire:click='delete({{$unidade->id}})' class="btn btn-danger">Deletar</button></td>
+                        <td>{{$distrito->nome}}</td>
+                        <td>{{$distrito->codigo}}</td>
+                        <td>{{$distrito->status}}</td>
+                        <td><button wire:click="edit({{$distrito}})" class="btn btn-primary">Editar</button></td>
+                        <td><button wire:click='delete({{$distrito->id}})' class="btn btn-danger">Deletar</button></td>
                     </tr>
                     @endforeach
                 </tbody>

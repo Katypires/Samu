@@ -36,6 +36,11 @@ php artisan make:livewire Admin/Sesau/Semraiva/CardComponent
 Sempre adicionar "wire:ignore.self"
 php artisan make:livewire Admin/Sesau/Semraiva/ModalComponent
 
+---DISTRITO--- 
+php artisan make:livewire Admin/Sesau/Semraiva/DistritoComponent
+php artisan make:model Admin/Sesau/Semraiva/Distrito -m
+
+
 ---LISTENERS EXEMPLOS---
 Chamar na blade => <button wire:click="$emit('postAdded')">
 No component => $this->emit('postAdded');

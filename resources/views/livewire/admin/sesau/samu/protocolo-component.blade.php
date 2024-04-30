@@ -44,9 +44,16 @@
                     </div>
 
                     <div class="form-floating mb-4 col-2">
-                        <input type="text" wire:model.prevent="tipo.prazo" class="form-control">
-                        <label for="prazo">2 - Prazo</label>
+                        <select wire:model.prevent="protocolo.prazo" class="form-select">
+                            <option value="">Selecione</option>
+                            @foreach($prazos as $prazo)
+                            <option value="{{$prazo->nome}}">{{$prazo->nome}}</option>
+                            @endforeach
+                        </select>
+                        <label for="prazo">2 -  Prazo</label>
                     </div>
+
+
                     <div class="form-floating mb-4 col-10">
                         <input type="text" wire:model.prevent="protocolo.solicitacao" class="form-control">
                         <label for="solicitacao">3 - Solicitação</label>

@@ -2,27 +2,13 @@
 
 namespace App\Http\Livewire\Admin\Sesau\Samu;
 
+use App\Models\Admin\Sesau\Samu\TipoPrazo;
 use Livewire\Component;
 
 class ProtocoloComponent extends Component
 {
     public $protocolo = [];
     public $tipo = [];
-
-    public function mount()
-    {
-        $this->protocolo['solicitacao'] = '';
-        $this->protocolo['nome'] = '';
-        $this->protocolo['rg'] = '';
-        $this->protocolo['cpf'] = '';
-        $this->protocolo['data_nascimento'] = '';
-        $this->protocolo['endereco'] = '';
-        $this->protocolo['bairro'] = '';
-        $this->protocolo['telefone'] = '';
-        $this->protocolo['email'] = '';
-        $this->tipo['parentesco'] = '';
-        $this->tipo['fim'] = '';
-    }
 
     public function store()
     {
@@ -44,7 +30,7 @@ class ProtocoloComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.sesau.samu.protocolo-component');
+        return view('livewire.admin.sesau.samu.protocolo-component', ['prazos' => TipoPrazo::all()]);
     }
 }
 

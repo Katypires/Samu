@@ -53,7 +53,7 @@
                     <label for="rg">2 - RG</label>
                 </div>
 
-                <div class="form-floating mb-4 col-7" @if ($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                <div class="form-floating mb-4 col-7">
                     <input type="text" wire:model.prevent="pessoa.cpf" class="form-control">
                     <label for="cpf">3 - CPF</label>
                 </div>
@@ -63,52 +63,35 @@
                     <label for="data_nascimento">4 - Data de Nascimento</label>
                 </div>
 
-                <div class="form-floating mb-4 col-8" @if ($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                <div class="form-floating mb-4 col-8">
                     <input type="text" wire:model.prevent="pessoa.endereco" class="form-control">
                     <label for="endereco">5 - Endereço</label>
                 </div>
 
-                <div class="form-floating mb-4 col-4" @if ($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                <div class="form-floating mb-4 col-4">
                     <input type="text" wire:model.prevent="pessoa.bairro" class="form-control">
                     <label for="bairro">6 - Bairro</label>
                 </div>
 
-                <div class="form-floating mb-4 col-4" @if ($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                <div class="form-floating mb-4 col-4">
                     <input type="text" wire:model.prevent="pessoa.telefone" class="form-control">
                     <label for="telefone">7 - DDD-Telefone</label>
                 </div>
 
 
-                <div class="form-floating mb-4 col-8" @if ($pessoa['solicitacao'] == 'P') style="display: none;" @endif>
+                <div class="form-floating mb-4 col-8">
                     <input type="text" wire:model.prevent="pessoa.email" class="form-control">
                     <label for="email">5 - E-mail</label>
                 </div>
 
 
                 {{-- <div class="form-floating mb-4 col-6">
-                    <input type="text" wire:model.prevent="tipo.parentesco" class="form-control" id="campoParentesco"
-                        @if ($pessoa['solicitacao'] == 'S') readonly @endif>
+                    <input type="text" wire:model.prevent="tipo.parentesco" class="form-control" id="campoParentesco">
                     <label for="tipo">6 - Grau de Parentesco:</label>
-                </div>
-
-                <script>
-                    document.addEventListener('livewire:load', function() {
-                        var tipoPaciente = document.getElementById('tipoPaciente');
-                        var campoParentesco = document.getElementById('campoParentesco');
-
-                        tipoPaciente.addEventListener('change', function() {
-                            if (tipoPaciente.value === 'S') {
-                                campoParentesco.readOnly = true;
-                            } else {
-                                campoParentesco.readOnly = false;
-                            }
-                        });
-                    });
-                </script>
+                </div> --}}
 
                 <div class="form-floating mb-4 col-6" hidden>
-                    <input type="text" wire:model.prevent="tipo.fim" class="form-control" id="campoFim"
-                        @if ($tipo['fim'] == 'S') style="display: none;" @endif>
+                    <input type="text" wire:model.prevent="tipo.fim" class="form-control" id="campoFim">
                     <label for="tipo">7 - Para fins de:</label>
                 </div>
 
@@ -123,23 +106,9 @@
                     <label for="tipo">7 - Para fins de:</label>
                 </div>
 
-                <script>
-                    document.addEventListener('livewire:load', function() {
-                                var tipo = document.getElementById('tipo');
-                                var campoFim = document.getElementById('campoFim');
-
-                                tipo.addEventListener('change', function() {
-                                    if (tipo.value === 'S') {
-                                        campoFim.style.display = 'none'; // Esconde o campoFim
-                                    } else {
-                                        campoFim.style.display = 'block'; // Exibe o campoFim
-                                    }
-                                });
-                </script> --}}
-
 
                 <div class="row">
-                    <div class="col-auto">
+                    <div class="col">
                         <button class="btn btn-primary mb-4">Adicionar Pessoa</button>
                     </div>
                 </div>

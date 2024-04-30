@@ -1,6 +1,6 @@
 <div>
     <livewire:admin.sesau.semraiva.modal-component key="1" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form" modalId="Unidade" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
-    <livewire:admin.sesau.semraiva.modal-component key="1" title="Distrito" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form" modalId="Distrito" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
+    <livewire:admin.sesau.semraiva.modal-component key="1" title="Distrito" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.distrito.distritoform" modalId="Distrito" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
 
     <div class="card p-4 m-4">
         @if (session()->has('message'))
