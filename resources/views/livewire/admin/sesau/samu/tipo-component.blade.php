@@ -1,22 +1,36 @@
-<div class="card p-4 m-4">
-<div class="card p-4 my-4">
-    @if (session()->has('message'))
-        <div class="alert alert-success">{{ session('message') }}</div>
-    @endif
+<div class="col-lg-2 mb-4">
+    <div class="card p-4 my-4">
+        @if (session()->has('message'))
+            <div class="alert alert-success">{{ session('message') }}</div>
+        @endif
+        <button class="btn btn-primary btn-sm mb-1" wire:click="create">Adicionar {{ $title }}</button>
+        @include($form)
 
-    <div class="row">
-        <div class="col-auto">
-            <button class="btn btn-primary mb-4" wire:click="create">Adicionar {{$title}}</button>
+        <div class="card">
+            <div class="form-floating my-4 col-10">
+                <input type="text" wire:model="data.nome" class="form-control">
+                <label for="nome">Nome:</label>
+            </div>
+
+            <div class="row form-check form-switch">
+                <div class="mb-4">
+                    <label for="status" class="form-check-label">Status</label>
+                    <input type="checkbox" wire:model="data.status" id="status" class="form-check-input">
+                    <button type="submit" class="btn btn-primary btn-sm ms-2">Salvar</button>
+                    <button type="button" class="btn btn-secondary btn-sm" wire:click="closeModal">Cancelar</button>
+                </div>
+            </div>
+
+            {{-- <div class="">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="button" class="btn btn-secondary" wire:click="closeModal">Cancelar</button>
+            </div> --}}
         </div>
     </div>
+</div>
 
 
-        <div class="card-header">
-            @include($form)
-        </div>
- 
-
-    {{-- <table class="table rounded-lg text-center">
+{{-- <table class="table rounded-lg text-center">
         <thead>
             <tr>
                 <th>ID</th>
@@ -58,6 +72,3 @@
             @endforeach
         </tbody>
     </table> --}}
-</div>
-</div>
-
