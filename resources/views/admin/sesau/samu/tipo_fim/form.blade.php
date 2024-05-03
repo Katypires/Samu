@@ -1,4 +1,4 @@
-<form wire:submit.prevent="{{ $tipoId ? 'update' : 'store' }}">
+<form wire:submit.prevent="{{ $tipofim ? 'update' : 'store' }}">
 
     @if ($errors->any())
         <div class="alert alert-danger">

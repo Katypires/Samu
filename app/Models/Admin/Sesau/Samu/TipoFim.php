@@ -9,7 +9,5 @@ class TipoFim extends Model
 {
     use HasFactory;
     protected $table = 'samu.tipo_fins';
-    protected $fillable = [
-        'nome', 'status'
-    ];
+    protected $fillable = ['nome', 'status'];
 }

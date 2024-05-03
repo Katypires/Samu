@@ -9,7 +9,5 @@ class TipoPrazo extends Model
 {
     use HasFactory;
     protected $table = 'samu.tipo_prazos';
-    protected $fillable = [
-        'nome', 'status'
-    ];
+    protected $fillable = ['nome', 'status'];
 }
