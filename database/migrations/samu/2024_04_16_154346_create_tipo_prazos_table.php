@@ -18,6 +18,9 @@ class CreateTipoPrazosTable extends Migration
             $table->string('nome')->nullable();
             $table->boolean('status')->default(true);
 
+            $table->unsignedBigInteger('user_id')->nullable()->index();
+            $table->boolean('status')->default(true);
+
             $table->timestamps();
         });
     }

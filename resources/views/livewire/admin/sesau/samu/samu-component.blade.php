@@ -17,11 +17,11 @@
 
     <livewire:admin.sesau.samu.pessoa-component title="Pessoa" model="App\Models\Admin\Sesau\Samu\Pessoa" />
 
-        <div class="card p-4 mb-4">
+        <div class="card p-4 mb-4">                                                                                                 
             <div class="row">
                 <livewire:admin.sesau.samu.tipo-component title="Tipo Fins" model="App\Models\Admin\Sesau\Samu\TipoFim" form="admin.sesau.samu.tipo_fim.form" />
-                <livewire:admin.sesau.samu.tipo-component title="Tipo Parentesco" model="App\Models\Admin\Sesau\Samu\TipoParentesco" form="admin.sesau.samu.tipo_parentesco.form" />
-                <livewire:admin.sesau.samu.tipo-component title="Tipo Prazo" model="App\Models\Admin\Sesau\Samu\TipoPrazo" form="admin.sesau.samu.tipo_prazo.form" />
+                <livewire:admin.sesau.samu.tipo-component title="Tipo Parentesco" model="App\Models\Admin\Sesau\Samu\TipoParentesco" form="admin.sesau.samu.tipo_parentesco.form"/>
+                <livewire:admin.sesau.samu.tipo-component title="Tipo Prazo" model="App\Models\Admin\Sesau\Samu\TipoPrazo" form="admin.sesau.samu.tipo_prazo.form"/>
             </div>
         </div>
 

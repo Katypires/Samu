@@ -1,3 +1,4 @@
+
 <form wire:submit.prevent="{{ $tipoprazo ? 'update' : 'store' }}">
 
     @if ($errors->any())

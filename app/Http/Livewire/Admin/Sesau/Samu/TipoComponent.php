@@ -10,35 +10,53 @@ use App\Models\Admin\Sesau\Samu\TipoParentesco;
 class TipoComponent extends Component
 {
     public $nome, $status = [];
-    public $tipo; // Esta variável armazenará o tipo de registro (Prazo, Fim ou Parentesco)
-    public $form = 'form';
+    public $tipo;
+    public $form, $title, $model;
     public $tipoprazo, $tipofim, $tipoparentesco; // Variáveis para cada tipo de registro
 
-    public function edit($tipo)
+    public function mount($title, $model, $form)
     {
-        $this->tipo = $tipo; // Armazenamos o tipo de registro
+        $this->title = $title;
+        $this->model = $model;
+        $this->form = $form;
+
+    }
+
+    public function render()
+    {
+
+    // Recupera os registros de cada tipo
+        $tipos = $this->model::all();
+   
+    // Retorna a view com o formulário correto incluído
+        return view('livewire.admin.sesau.samu.tipo-component', compact('tipos'));
+    }
+
+
+    public function edit($tipoId)
+    {
+        $this->tipoId = $tipoId; // Armazenamos o tipo de registro
 
         // Dependendo do tipo, carregamos os dados do registro correspondente
-        switch ($tipo) {
-            case 'prazo':
-                $this->tipoprazo = TipoPrazo::first();
-                break;
-            case 'fim':
-                $this->tipofim = TipoFim::first();
-                break;
-            case 'parentesco':
-                $this->tipoparentesco = TipoParentesco::first();
-                break;
-            default:
-                // Limpa as variáveis se o tipo não for reconhecido
-                $this->reset();
-                break;
-        }
+        $this->tipoprazo = $this->model::first();
     }
 
-    public function create(){
-        dd('aqui');
+    public function store(){
+        $this->validate([
+            'nome' => 'required',
+        ]);
+    
+        try{
+            $this->model::create(['nome' => $this->nome]);
+    
+            session()->flash('message', 'Registro cadastrado com sucesso.');
+            $this->resetInputFields();
+    
+        } catch (\Throwable $th) {
+            session()->flash('message', 'Não foi possível cadastrar informação.');
+        }
     }
+    
 
 
     public function update()
@@ -49,64 +67,25 @@ class TipoComponent extends Component
         ]);
 
         // Dependendo do tipo, atualizamos o registro correspondente
-        switch ($this->tipo) {
-            case 'prazo':
-                $this->tipoprazo->update([
-                    'nome' => $this->nome,
-                    'status' => $this->status,
-                ]);
-                break;
-            case 'fim':
-                $this->tipofim->update([
-                    'nome' => $this->nome,
-                    'status' => $this->status,
-                ]);
-                break;
-            case 'parentesco':
-                $this->tipoparentesco->update([
-                    'nome' => $this->nome,
-                    'status' => $this->status,
-                ]);
-                break;
-            default:
-                // Limpa as variáveis se o tipo não for reconhecido
-                $this->reset();
-                break;
-        }
+        
+        $this->model::find($this->tipo_id)->fill([
+            'nome' => $this->nome,
+            'status' => $this->status,
+        ])->save();
 
         session()->flash('message', 'Registro atualizado com sucesso.');
         $this->reset(); // Limpa os campos do formulário após a atualização
     }
 
-    public function delete()
-    {
-        // Dependendo do tipo, excluímos o registro correspondente
-        switch ($this->tipo) {
-            case 'prazo':
-                $this->tipoprazo->delete();
-                break;
-            case 'fim':
-                $this->tipofim->delete();
-                break;
-            case 'parentesco':
-                $this->tipoparentesco->delete();
-                break;
+    public function destroy($id){
+        try{
+            $item = $this->model::find($id);
+            $item ? $item->delete() : null;
+            session()->flash('success',"Category Deleted Successfully!!");
+        }catch(\Exception $e){
+            session()->flash('error',"Something goes wrong while deleting category!!");
         }
-
-        session()->flash('message', 'Registro excluído com sucesso.');
-        $this->reset(); // Limpa as variáveis após a exclusão
     }
 
-    public function render()
-    {
-        // Recupera os registros de cada tipo
-        $tipos_prazo = TipoPrazo::all();
-        $tipos_fim = TipoFim::all();
-        $tipos_parentesco = TipoParentesco::all();
-
-        // Combina os registros dos três tipos em uma única coleção
-        $tipos = $tipos_prazo->merge($tipos_fim)->merge($tipos_parentesco);
-
-        return view('livewire.admin.sesau.samu.tipo-component', compact('tipos'));
-    }
+    
 }
