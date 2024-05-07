@@ -12,23 +12,22 @@ class TipoComponent extends Component
     public $nome, $status = [];
     public $tipo;
     public $form, $title, $model;
-    public $tipoprazo, $tipofim, $tipoparentesco; // Variáveis para cada tipo de registro
+    public $tipoId, $tipoprazo, $tipofim, $tipoparentesco;
 
     public function mount($title, $model, $form)
     {
         $this->title = $title;
         $this->model = $model;
         $this->form = $form;
-
     }
 
     public function render()
     {
 
-    // Recupera os registros de cada tipo
+        // Recupera os registros de cada tipo
         $tipos = $this->model::all();
-   
-    // Retorna a view com o formulário correto incluído
+
+        // Retorna a view com o formulário correto incluído
         return view('livewire.admin.sesau.samu.tipo-component', compact('tipos'));
     }
 
@@ -38,54 +37,53 @@ class TipoComponent extends Component
         $this->tipoId = $tipoId; // Armazenamos o tipo de registro
 
         // Dependendo do tipo, carregamos os dados do registro correspondente
-        $this->tipoprazo = $this->model::first();
+        $this->tipoprazo = $this->model::find($tipoId);
+        $this->tipofim = $this->model::find($tipoId);
+        $this->tipoparentesco = $this->model::find($tipoId);
     }
 
-    public function store(){
+    public function store()
+    {
         $this->validate([
             'nome' => 'required',
         ]);
-    
-        try{
+
+        try {
             $this->model::create(['nome' => $this->nome]);
-    
-            session()->flash('message', 'Registro cadastrado com sucesso.');
+
             $this->resetInputFields();
-    
         } catch (\Throwable $th) {
             session()->flash('message', 'Não foi possível cadastrar informação.');
         }
+
+        session()->flash('message', 'Registro cadastrado com sucesso.');
     }
-    
 
 
     public function update()
     {
         $this->validate([
             'nome' => 'required',
-            // Aqui você pode adicionar mais regras de validação, se necessário
         ]);
 
-        // Dependendo do tipo, atualizamos o registro correspondente
-        
+
         $this->model::find($this->tipo_id)->fill([
             'nome' => $this->nome,
-            'status' => $this->status,
+            // 'status' => $this->status,
         ])->save();
 
         session()->flash('message', 'Registro atualizado com sucesso.');
-        $this->reset(); // Limpa os campos do formulário após a atualização
+        $this->reset();
     }
 
-    public function destroy($id){
-        try{
+    public function destroy($id)
+    {
+        try {
             $item = $this->model::find($id);
             $item ? $item->delete() : null;
-            session()->flash('success',"Category Deleted Successfully!!");
-        }catch(\Exception $e){
-            session()->flash('error',"Something goes wrong while deleting category!!");
+            session()->flash('success', "Category Deleted Successfully!!");
+        } catch (\Exception $e) {
+            session()->flash('error', "Something goes wrong while deleting category!!");
         }
     }
-
-    
 }
