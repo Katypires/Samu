@@ -90,7 +90,7 @@
                     <label for="tipo">6 - Grau de Parentesco:</label>
                 </div> --}}
 
-                <div class="form-floating mb-4 col-6" hidden>
+                {{-- <div class="form-floating mb-4 col-6" hidden>
                     <input type="text" wire:model.prevent="tipo.fim" class="form-control" id="campoFim">
                     <label for="tipo">7 - Para fins de:</label>
                 </div>
@@ -104,7 +104,7 @@
                         <option value="O">OUTROS</option>
                     </select>
                     <label for="tipo">7 - Para fins de:</label>
-                </div>
+                </div> --}}
 
 
                 <div class="row">

@@ -9,7 +9,7 @@ use App\Models\Admin\Sesau\Samu\TipoParentesco;
 
 class TipoComponent extends Component
 {
-    public $nome, $status = [];
+    public $nome, $data = [];
     public $tipo;
     public $form, $title, $model;
     public $tipoId, $tipoprazo, $tipofim, $tipoparentesco;
@@ -32,32 +32,56 @@ class TipoComponent extends Component
     }
 
 
-    public function edit($tipoId)
+    public function edit($id)
     {
-        $this->tipoId = $tipoId; // Armazenamos o tipo de registro
+        $data = app($this->model)::findOrFail($id);
+        dd($data->attributes());
+        $this->data = $data;
 
-        // Dependendo do tipo, carregamos os dados do registro correspondente
-        $this->tipoprazo = $this->model::find($tipoId);
-        $this->tipofim = $this->model::find($tipoId);
-        $this->tipoparentesco = $this->model::find($tipoId);
+        // $this->tipoId = $tipoId; // Armazenamos o tipo de registro
+
+        // // Dependendo do tipo, carregamos os dados do registro correspondente
+        // $this->tipoprazo = $this->model::find($tipoId);
+        // $this->tipofim = $this->model::find($tipoId);
+        // $this->tipoparentesco = $this->model::find($tipoId);
     }
 
     public function store()
     {
-        $this->validate([
-            'nome' => 'required',
-        ]);
-
+        // Lógica de validação condicional baseada no tipo
+        if ($this->title !== 'Tipo Fins') {
+            $this->validate([
+                'nome' => 'required',
+            ]);
+        }
+    
         try {
-            $this->model::create(['nome' => $this->nome]);
-
+            // Lógica de criação do registro
+            if ($this->title === 'Tipo Prazo') {
+                TipoPrazo::create(['nome' => $this->nome]);
+            } elseif ($this->title === 'Tipo Fins') {
+                // Criação do registro para Tipo Fins com base no valor selecionado no <select>
+                TipoFim::create([
+                    'dpvat' => $this->tipo['fim'] === 'D' ? 1 : null,
+                    'inss' => $this->tipo['fim'] === 'I' ? 1 : null,
+                    'judicial' => $this->tipo['fim'] === 'J' ? 1 : null,
+                    'outros' => $this->tipo['fim'] === 'O' ? 1 : null,
+                ]);
+            } elseif ($this->title === 'Tipo Parentesco') {
+                TipoParentesco::create(['nome' => $this->nome]);
+            }
+    
+            // Limpa os campos do formulário
             $this->resetInputFields();
+            session()->flash('message', 'Registro cadastrado com sucesso.');
         } catch (\Throwable $th) {
             session()->flash('message', 'Não foi possível cadastrar informação.');
         }
 
-        session()->flash('message', 'Registro cadastrado com sucesso.');
+        dd($this->nome); 
+        dd($this->tipo['fim']);
     }
+    
 
 
     public function update()

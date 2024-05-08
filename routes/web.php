@@ -33,3 +33,7 @@ Route::get('/ficha', function () {
 Route::get('/samu', function () {
     return view('admin.sesau.samu.samu.index');
 });
+
+Route::get('/voluntario', function () {
+    return view('admin.sesau.voluntario.index');
+});

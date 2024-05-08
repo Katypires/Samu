@@ -54,3 +54,12 @@ Emitir evento para outro component => $this->emitTo('counter', 'postAdded');
 
 Emitir evento no proprio component => $this->emitSelf('postAdded');
                ...                 => <button wire:click="$emitSelf('postAdded')">
+
+---PROJETO VOLUNTARIO---
+php artisan make:model Admin/Sesau/Voluntario/Instituicao -m
+php artisan make:model Admin/Sesau/Voluntario/TipoAtividade -m
+php artisan make:model Admin/Sesau/Voluntario/TipoSeguimento -m
+php artisan make:model Admin/Sesau/Voluntario/TipoRegiaoUrbana -m
+php artisan make:model Admin/Sesau/Voluntario/Colaborador -m
+
+php artisan make:livewire Admin/Sesau/Voluntario/VoluntarioComponent

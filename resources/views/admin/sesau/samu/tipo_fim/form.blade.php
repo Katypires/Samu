@@ -1,13 +1,6 @@
-<form wire:submit.prevent="{{ $tipofim ? 'update' : 'store' }}">
 
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul class="list-unstyled">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <div class="form-floating my-8 col-10 m-3">
+        <input type="text" wire:model="data.nome" class="form-control">
+        <label for="nome">Nome:</label>
+    </div>
 
-</form>
