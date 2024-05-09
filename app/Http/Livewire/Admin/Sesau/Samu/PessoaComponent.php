@@ -21,8 +21,6 @@ class PessoaComponent extends Component
         $this->pessoa['bairro'] = '';
         $this->pessoa['telefone'] = '';
         $this->pessoa['email'] = '';
-        // $this->tipo['parentesco'] = '';
-        // $this->tipo['fim'] = '';
     }
 
     public function store()
@@ -36,8 +34,6 @@ class PessoaComponent extends Component
             'pessoa.bairro' => 'required',
             'pessoa.telefone' => 'required',
             'pessoa.email' => 'required|email',
-            // 'tipo.parentesco' => 'required',
-            // 'tipo.fim' => 'required',
         ]);
 
         try {
