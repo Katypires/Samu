@@ -13,7 +13,7 @@ class CreateInstituicaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('voluntario.instituicaos', function (Blueprint $table) {
+        Schema::create('voluntario.instituicoes', function (Blueprint $table) {
             $table->id();
 
             // $table->unsignedBigInteger('tipo_atividade_id')->nullable();
@@ -54,6 +54,6 @@ class CreateInstituicaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voluntario.instituicaos');
+        Schema::dropIfExists('voluntario.instituicoes');
     }
 }

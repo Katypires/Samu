@@ -13,6 +13,9 @@ use App\Models\Admin\Sesau\Voluntario\TipoSeguimento;
 class VoluntarioComponent extends Component
 {
     public $data=[];
+    public $atividades;
+    public $seguimentos;
+    public $regioes;
     
     public function mount(){
         $this->data['razao_social']="AQUARIO PANTANAL";
@@ -29,6 +32,9 @@ class VoluntarioComponent extends Component
     }
     public function render()
     {
+        $this->atividades = TipoAtividade::where('status', true)->get();
+        $this->seguimentos = TipoSeguimento::where('status', true)->get();
+        $this->regioes = TipoRegiaoUrbana::where('status', true)->get();
         return view('livewire.admin.sesau.voluntario.voluntario-component');
     }
 

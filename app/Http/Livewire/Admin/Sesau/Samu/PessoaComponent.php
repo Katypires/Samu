@@ -55,6 +55,10 @@ class PessoaComponent extends Component
         $pessoas = Pessoa::all();
 
         // Retorne a view com a variável $pessoas
-        return view('livewire.admin.sesau.samu.pessoa-component', compact('pessoas'));
+        return view('livewire.admin.sesau.samu.pessoa-component', [
+            'pessoas' => \app\Models\Admin\Sesau\Samu\Pessoa::query()
+                ->paginate(8),
+
+        ]);
     }
 }

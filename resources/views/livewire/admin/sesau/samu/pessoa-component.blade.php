@@ -84,29 +84,6 @@
                     <label for="email">5 - E-mail</label>
                 </div>
 
-
-                {{-- <div class="form-floating mb-4 col-6">
-                    <input type="text" wire:model.prevent="tipo.parentesco" class="form-control" id="campoParentesco">
-                    <label for="tipo">6 - Grau de Parentesco:</label>
-                </div> --}}
-
-                {{-- <div class="form-floating mb-4 col-6" hidden>
-                    <input type="text" wire:model.prevent="tipo.fim" class="form-control" id="campoFim">
-                    <label for="tipo">7 - Para fins de:</label>
-                </div>
-
-                <div class="form-floating mb-4 col-2">
-                    <select wire:model.prevent="tipo.fim" class="form-select">
-                        <option value="">Selecione</option>
-                        <option value="D">DPVAT</option>
-                        <option value="I">INSS</option>
-                        <option value="J">JUDICIAL</option>
-                        <option value="O">OUTROS</option>
-                    </select>
-                    <label for="tipo">7 - Para fins de:</label>
-                </div> --}}
-
-
                 <div class="row">
                     <div class="col">
                         <button class="btn btn-primary mb-4">Adicionar Pessoa</button>
