@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Sesau\Voluntario;
 
+use Faker\Guesser\Name;
 use Kdion4891\LaravelLivewireTables\Column;
 use Kdion4891\LaravelLivewireTables\TableComponent;
 use Livewire\WithPagination;
@@ -9,7 +10,7 @@ use Livewire\WithPagination;
 
 class TipoTableComponent extends TableComponent
 {
-    public $model, $form;
+    public $modalId, $modal, $model, $form, $title, $namespace;
     public $checkbox = false;
     public $per_page = 5;
     public $data = [];
@@ -23,12 +24,15 @@ class TipoTableComponent extends TableComponent
 
     protected $listeners = [
         'editListener' => 'edit',
-        'deleteListener' => 'delete'
+        'deleteListener' => 'delete',
+        'refreshTipoTableComponent' => '$refresh'
     ];
 
     public function query()
     {
-        return $this->model::query();
+        $this->modalId = $this->modal;
+        $this->namespace = $this->model;
+        return $this->namespace::query();
     }
 
     public function columns()
@@ -41,52 +45,6 @@ class TipoTableComponent extends TableComponent
             ];
         }
     }
+    
 
-    public function store()
-    {
-        // dd($this->model);
-        $this->validate(app($this->model)->rules);
-        try {
-            app($this->model)::create($this->data);
-            $this->resetFields();
-        } catch (\Throwable $th) {
-            dd($th);
-            session()->flash('message', 'Não foi possível cadastrar informação.');
-        }
-
-        session()->flash('message', 'Registro cadastrado com sucesso.');
-    }
-
-    private function resetFields()
-    {
-        $this->resetErrorBag();
-        $this->resetValidation();
-        $this->data = [];
-    }
-
-    public function delete($id)
-    {
-        app($this->model)::find($id)->delete();
-    }
-
-    public function edit($data){
-        try {
-           $this->data = $data;
-        } catch (\Exception $ex) {
-            session()->flash('error','Algo deu errado!!');
-        }
-    }
-
-    public function update()
-    {
-        // dd($this->model);
-        $this->validate(app($this->model)->rules);
-        try {
-            app($this->model)::whereId($this->data['id'])->update($this->data);
-            session()->flash('success','Atualizado com sucesso!!');
-            $this->resetFields();
-        } catch (\Exception $ex) {
-            session()->flash('success','Algo deu errado!!');
-        }
-    }
 }

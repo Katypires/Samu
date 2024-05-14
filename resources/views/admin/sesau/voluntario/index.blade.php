@@ -1,4 +1,4 @@
-@extends('admin.sesau.semraiva.layout.app')
+@extends('admin.sesau.voluntario.layout.app')
 
 @section('content')
     <livewire:admin.sesau.voluntario.voluntario-component />

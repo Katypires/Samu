@@ -8,13 +8,14 @@ class TipoComponent extends Component
 {
     public $data = [];
     public $tipo;
-    public $form, $title, $model;
+    public $modal, $form, $title, $model;
     public $tipoId;
     public $checkbox_attribute = 'id';
     public $checkbox_values = [];
 
-    public function mount($title, $model, $form)
+    public function mount( $modal, $title, $model, $form)
     {
+        $this->modal = $modal;
         $this->title = $title;
         $this->model = $model;
         $this->form = $form;

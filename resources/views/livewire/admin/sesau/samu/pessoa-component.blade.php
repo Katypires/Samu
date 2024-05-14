@@ -93,6 +93,8 @@
 
         <div class="card p-4 mb-4">
             <div>
+                <input type="text" class= "form-control mb-3 rounded" wire:model.live="search" placeholder="search users...">
+
                 <h2 class="my-4">Tabela de Pessoas</h2>
                 <table class="table table-hover">
                     <thead>
@@ -123,6 +125,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                    {{ $pessoas->links() }}
             </div>
         </div>
 
@@ -140,3 +143,5 @@
     </form>
 </div>
 </div>
+
+

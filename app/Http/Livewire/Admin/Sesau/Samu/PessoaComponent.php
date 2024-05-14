@@ -5,8 +5,10 @@ namespace App\Http\Livewire\Admin\Sesau\Samu;
 use Livewire\Component;
 use App\Models\Admin\Sesau\Samu\Pessoa;
 
+
 class PessoaComponent extends Component
 {
+
     public $pessoa = [];
     public $tipo = [];
 
@@ -49,6 +51,8 @@ class PessoaComponent extends Component
         session()->flash('message', 'Pessoa adicionada com sucesso.');
     }
 
+    public string $search = '';
+
     public function render()
     {
         // Busque todas as pessoas e passe para a view
@@ -57,6 +61,16 @@ class PessoaComponent extends Component
         // Retorne a view com a variável $pessoas
         return view('livewire.admin.sesau.samu.pessoa-component', [
             'pessoas' => \app\Models\Admin\Sesau\Samu\Pessoa::query()
+                ->when($this->search, function ($query){
+                    $query->where('nome', 'like', "%{$this->search}%")
+                        ->orWhere('rg', 'like', "%{$this->search}%")
+                        ->orWhere('cpf', 'like', "%{$this->search}%")
+                        ->orWhere('data_nascimento', 'like', "%{$this->search}%")
+                        ->orWhere('endereco', 'like', "%{$this->search}%")
+                        ->orWhere('bairro', 'like', "%{$this->search}%")
+                        ->orWhere('telefone', 'like', "%{$this->search}%")
+                        ->orWhere('email', 'like', "%{$this->search}%");
+                })
                 ->paginate(8),
 
         ]);
