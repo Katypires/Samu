@@ -21,17 +21,24 @@
                                     </div>
                                     <form wire:submit.prevent="store()">
                                         <div class="row">
-                                            <div class="form-floating mb-4 col-4">
-                                                <select wire:model.prevent="data.tipo_atividade" class="form-select"
-                                                    aria-label="Default select example">
-                                                    <option selected>---SELECIONE---</option>
-                                                    @foreach($atividades as $atividade)
-                                                    <option value="{{$atividade->id}}">{{$atividade->nome}}</option>
-                                                    @endforeach
-                                                </select>
-                                                <label for="tipo_atividade">Tipo Atividade</label>
+                                            <div class="mb-4 col-4">
+                                                <input type="hidden" wire:model="data.tipo_atividade" class="form-control">
+                                                <livewire:admin.sesau.voluntario.select-component  columnName="nome" columnId="id" title="Tipo Atividade" model="App\Models\Admin\Sesau\Voluntario\TipoAtividade" label="tipo_atividade"/>
+
                                             </div>
-                                            <div class="form-floating mb-4 col-4">
+                                            <div class="mb-4 col-4">
+                                                <input type="hidden" wire:model="data.tipo_seguimento" class="form-control">
+                                                <livewire:admin.sesau.voluntario.select-component  columnName="nome" columnId="id" title="Tipo Seguimento" model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento"/>
+
+
+                                            </div>
+                                            <div class="mb-4 col-4">
+                                                <input type="hidden" wire:model="data.regiao_urbana" class="form-control">
+                                                <livewire:admin.sesau.voluntario.select-component  columnName="id" columnId="id" title="Tipo Regiao Urbana" model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="regiao_urbana"/>
+
+                                            </div>
+                                            
+                                            {{-- <div class="form-floating mb-4 col-4">
                                                 <select wire:model.prevent="data.tipo_seguimento" class="form-select"
                                                     aria-label="Default select example">
                                                     <option selected>---SELECIONE---</option>
@@ -50,7 +57,7 @@
                                                     @endforeach 
                                                 </select>
                                                 <label for="regiao_urbana">Região Urbana</label>
-                                            </div>
+                                            </div> --}}
                                             <div class="form-floating mb-4 col-4">
                                                 <input type="text" wire:model.prevent="data.razao_social"
                                                     class="form-control">
@@ -97,7 +104,7 @@
                                                 <input type="checkbox" data-toggle="switchbutton" style="height: 10px">
                                             </div>
                                             <div class="form-floating mb-4 col-5">
-                                                <select wire:model.prevent="classificacao" class="form-select"
+                                                <select wire:model.prevent="data.classificacao" class="form-select"
                                                     aria-label="Default select example">
                                                     <option selected>---SELECIONE---</option>
                                                     <option value="1">AZUL</option>
@@ -108,7 +115,7 @@
                                                 <label for="select">Classificao</label>
                                             </div>
                                             <div class="form-floating mb-4 col-4">
-                                                <select wire:model.prevent="risco" class="form-select"
+                                                <select wire:model.prevent="data.risco" class="form-select"
                                                     aria-label="Default select example">
                                                     <option selected>---SELECIONE---</option>
                                                     <option value="1">AZUL</option>
@@ -119,7 +126,7 @@
                                                 <label for="select">Risco</label>
                                             </div>
                                             <div class="form-floating mb-4 col-1">
-                                                <select wire:model.prevent="prioridade" class="form-select"
+                                                <select wire:model.prevent="data.prioridade" class="form-select"
                                                     aria-label="Default select example">
                                                     <option selected>---SELECIONE---</option>
                                                     <option value="1">BAIXA</option>
@@ -131,7 +138,7 @@
                                                 <label for="select">Prioridade</label>
                                             </div>
                                             <div class="form-floating mb-4 col-1">
-                                                <select wire:model.prevent="complexidade" class="form-select"
+                                                <select wire:model.prevent="data.complexidade" class="form-select"
                                                     aria-label="Default select example">
                                                     <option selected>---SELECIONE---</option>
                                                     <option value="1">BAIXA</option>
@@ -141,7 +148,7 @@
                                                 <label for="select">Complexidade</label>
                                             </div>
                                             <div class="form-floating mb-4 col-1">
-                                                <select wire:model.prevent="situacao" class="form-select"
+                                                <select wire:model.prevent="data.situacao" class="form-select"
                                                     aria-label="Default select example">
                                                     <option selected>---SELECIONE---</option>
                                                     <option value="1">ABERTA</option>

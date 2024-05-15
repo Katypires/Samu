@@ -63,6 +63,7 @@ php artisan make:model Admin/Sesau/Voluntario/TipoRegiaoUrbana -m
 php artisan make:model Admin/Sesau/Voluntario/Colaborador -m
 
 php artisan make:livewire Admin/Sesau/Voluntario/VoluntarioComponent
-
-
 php artisan make:table Admin/Sesau/Voluntario/TipoTableComponent 
+
+php artisan make:livewire Admin/Sesau/Voluntario/SelectComponent
+-- Passar de parametro: model, label, columnName, columnId(option), column(coluna que ira retornar)

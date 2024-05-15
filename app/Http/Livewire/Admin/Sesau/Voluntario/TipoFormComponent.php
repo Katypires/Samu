@@ -45,6 +45,7 @@ class TipoFormComponent extends Component
             $item = $this->namespace::find($id);
             $item ? $item->delete() : false;
             $this->emit('refreshTipoTableComponent', $this->namespace);
+            $this->resetFields();
             session()->flash('success', " Deleted Successfully!!");
         } catch (\Exception $e) {
             session()->flash('error', "Something goes wrong while deleting category!!");
@@ -95,7 +96,7 @@ class TipoFormComponent extends Component
             // dd($this->data);
             $this->emit('refreshTipoTableComponent', $this->namespace);
             session()->flash('success', 'Atualizado com sucesso!!');
-            // $this->resetFields();
+            $this->resetFields();
         } catch (\Exception $ex) {
             
             session()->flash('success', 'Algo deu errado!!');

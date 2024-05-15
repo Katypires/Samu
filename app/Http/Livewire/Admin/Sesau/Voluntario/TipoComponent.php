@@ -91,9 +91,9 @@ class TipoComponent extends Component
         $this->data = [];
     }
 
-    public function deleteChecked()
-    {
-        app($this->model)::whereIn('id', $this->checkbox_values)->delete();
-        dd($this->checkbox_values);
-    }
+    // public function deleteChecked()
+    // {
+    //     app($this->model)::whereIn('id', $this->checkbox_values)->delete();
+    //     dd($this->checkbox_values);
+    // }
 }

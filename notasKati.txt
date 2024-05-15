@@ -1,17 +1,22 @@
+COMANDOS BASE (EXEMPLOS)
+
 laravel
 php artisan serve
-php artisan make:model Post -m
-php artisan migrate
+php artisan make:model Post -m (criar model)
+php artisan migrate (criar migrate)
 php artisan migrate:refresh
+php artisan make:livewire PostComponent (criar component)
  php artisan migrate:rollback
+ php artisan make:model
+
 
 
 //livewire
 php artisan make:livewire PostComponent
 
 //Samu 
-Criar banco Samu
-Criar esquema Samu
+Criando banco Samu
+Criando esquema (model)  Samu
 php artisan make:model Admin/Sesau/Samu/Atendimento -m
 php artisan make:model Admin/Sesau/Samu/Pessoa -m
 php artisan make:model Admin/Sesau/Samu/TipoParentesco -m
@@ -20,12 +25,15 @@ php artisan make:model Admin/Sesau/Samu/TipoPrazo -m
 php artisan make:model Admin/Sesau/Samu/Protocolo -m
 php artisan make:model Admin/Sesau/Samu/Ocorrencia -m
 
-//criar componente 
+//criando componente (Projeto Samu)
 php artisan make:livewire Admin/Sesau/Samu/TipoComponent
 php artisan make:livewire Admin/Sesau/Samu/PessoaComponent
 php artisan make:livewire Admin/Sesau/Samu/AtendimentoComponent
 php artisan make:livewire Admin/Sesau/Samu/ProtocoloComponent
 php artisan make:livewire Admin/Sesau/Samu/OcorrenciaComponent
 php artisan make:livewire Admin/Sesau/Samu/SamuComponent
+
+//Criando componente de Tabelas Livewire do Laravel p/ receber dados da ficha Pessoa, seguindo o exemplo do link ->(Kdion4891)
+php artisan make:table Admin/Sesau/Samu/PessoaTableComponent
 
 

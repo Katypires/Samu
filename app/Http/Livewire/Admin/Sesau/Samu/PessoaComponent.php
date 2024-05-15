@@ -4,26 +4,15 @@ namespace App\Http\Livewire\Admin\Sesau\Samu;
 
 use Livewire\Component;
 use App\Models\Admin\Sesau\Samu\Pessoa;
-
+use Dotenv\Parser\Value;
 
 class PessoaComponent extends Component
 {
 
     public $pessoa = [];
     public $tipo = [];
+    public $search = '';
 
-    public function mount()
-    {
-        $this->pessoa['solicitacao'] = '';
-        $this->pessoa['nome'] = '';
-        $this->pessoa['rg'] = '';
-        $this->pessoa['cpf'] = '';
-        $this->pessoa['data_nascimento'] = '';
-        $this->pessoa['endereco'] = '';
-        $this->pessoa['bairro'] = '';
-        $this->pessoa['telefone'] = '';
-        $this->pessoa['email'] = '';
-    }
 
     public function store()
     {
@@ -51,16 +40,16 @@ class PessoaComponent extends Component
         session()->flash('message', 'Pessoa adicionada com sucesso.');
     }
 
-    public string $search = '';
+   
 
     public function render()
     {
         // Busque todas as pessoas e passe para a view
-        $pessoas = Pessoa::all();
+        // $pessoas = Pessoa::all();
 
         // Retorne a view com a variável $pessoas
         return view('livewire.admin.sesau.samu.pessoa-component', [
-            'pessoas' => \app\Models\Admin\Sesau\Samu\Pessoa::query()
+            'pessoas' => Pessoa::query()
                 ->when($this->search, function ($query){
                     $query->where('nome', 'like', "%{$this->search}%")
                         ->orWhere('rg', 'like', "%{$this->search}%")
@@ -70,9 +59,14 @@ class PessoaComponent extends Component
                         ->orWhere('bairro', 'like', "%{$this->search}%")
                         ->orWhere('telefone', 'like', "%{$this->search}%")
                         ->orWhere('email', 'like', "%{$this->search}%");
-                })
-                ->paginate(8),
+                })->paginate(8),
 
         ]);
+    }
+
+    public function updatedSearch($search){
+        $this->search = $search;
+        $this->render();
+
     }
 }

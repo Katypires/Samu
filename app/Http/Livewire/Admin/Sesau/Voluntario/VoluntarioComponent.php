@@ -17,6 +17,8 @@ class VoluntarioComponent extends Component
     public $seguimentos;
     public $regioes;
     
+    protected $listeners=['selectedColumn'];
+    
     public function mount(){
         $this->data['razao_social']="AQUARIO PANTANAL";
         $this->data['nome_fantasia']="AQUARIO PANTANAL";
@@ -46,9 +48,14 @@ class VoluntarioComponent extends Component
         try{
             $tipoAtividade = TipoAtividade::create($this->data);
             $this->resetInputFields();
-        }catch (\Throwable $th){
+        }catch (\Throwable $th){    
             session()->flash('message',
             'Não foi possível cadastrar/atualizar informação.');
         }
+    }
+
+    public function selectedColumn($value, $label){
+        // dd($value);
+        $this->data[$label] = $value;
     }
 }

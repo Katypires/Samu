@@ -43,7 +43,7 @@
                                         <button type="button" wire:click="destroy({{$data['id']}})" data-bs-dismiss="modal" class="btn btn-danger ">DELETAR</button>   
                                     @endif                               
                                 @else
-                                    <button type="button" wire:click="store" type="submit" class="btn btn-primary btn-sm ms-2">SALVAR</button>
+                                    <button type="button" wire:click="store" type="submit" class="btn btn-primary">SALVAR</button>
                                 @endif
                                 <button type="button" class="btn btn-secondary  ">CANCELAR</button>
 

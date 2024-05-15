@@ -25,7 +25,7 @@
             <h5>Adicionar Pessoa</h5>
         </div>
 
-        <form wire:submit.prevent="store">
+        <form wire:submit.prevent="store" method="POST">
             <div class="row">
 
                 <div class="form-floating mb-4 col-1" hidden>
@@ -93,7 +93,7 @@
 
         <div class="card p-4 mb-4">
             <div>
-                <input type="text" class= "form-control mb-3 rounded" wire:model.live="search" placeholder="search users...">
+                <input type="text" class= "form-control mb-3 rounded"wire:model.debounce.500ms="search" placeholder="search users...">
 
                 <h2 class="my-4">Tabela de Pessoas</h2>
                 <table class="table table-hover">
