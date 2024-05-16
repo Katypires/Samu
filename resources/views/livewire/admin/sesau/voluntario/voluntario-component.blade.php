@@ -20,6 +20,7 @@
                                         <h5>INSTITUICAO</h5>
                                     </div>
                                     <form wire:submit.prevent="store()">
+                                        <livewire:admin.sesau.voluntario.dropdown-component  titulo="Tipo Atividade" model="App\Models\Admin\Sesau\Voluntario\TipoAtividade"  > 
                                         <div class="row">
                                             <div class="mb-4 col-4">
                                                 <input type="hidden" wire:model="data.tipo_atividade" class="form-control">
@@ -35,8 +36,9 @@
                                             <div class="mb-4 col-4">
                                                 <input type="hidden" wire:model="data.regiao_urbana" class="form-control">
                                                 <livewire:admin.sesau.voluntario.select-component  columnName="id" columnId="id" title="Tipo Regiao Urbana" model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="regiao_urbana"/>
-
+                                                
                                             </div>
+                                            
                                             
                                             {{-- <div class="form-floating mb-4 col-4">
                                                 <select wire:model.prevent="data.tipo_seguimento" class="form-select"
