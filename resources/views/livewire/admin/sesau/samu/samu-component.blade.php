@@ -16,7 +16,7 @@
     </div>
 
     <livewire:admin.sesau.samu.pessoa-component title="Pessoa" model="App\Models\Admin\Sesau\Samu\Pessoa" />
-    <livewire:admin.sesau.samu.pessoa-table-component />
+    <livewire:admin.sesau.samu.pessoa-table-component title="Pessoa" model="App\Models\Admin\Sesau\Samu\Pessoa" />
 
         <div class="card p-4 mb-4">                                                                                                 
             <div class="row">
