@@ -1,1 +1,1 @@
-<livewire:admin.sesau.semraiva.distrito-component key="2" />
+<livewire:admin.sesau.semraiva.distrito-component/>

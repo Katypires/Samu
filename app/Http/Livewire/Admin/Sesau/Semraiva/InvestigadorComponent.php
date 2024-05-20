@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Sesau\Semraiva;
 
-use App\Models\Admin\Sesau\Semraiva\Investigador;
+use App\Models\Semraiva\Investigador;
 use Livewire\Component;
 
 class InvestigadorComponent extends Component

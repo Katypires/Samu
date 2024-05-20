@@ -10,6 +10,7 @@ use Kdion4891\LaravelLivewireTables\Column;
 class TipoSeguimento extends Model
 {
     use HasFactory;
+    protected $connection = 'voluntario';
     protected $table = 'voluntario.tipo_seguimentos';
 
 

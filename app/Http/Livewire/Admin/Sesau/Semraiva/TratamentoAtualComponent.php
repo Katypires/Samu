@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Sesau\Semraiva;
 
-use App\Models\Admin\Sesau\Semraiva\TratamentoAtual;
+use App\Models\Semraiva\TratamentoAtual;
 use Livewire\Component;
 
 class TratamentoAtualComponent extends Component

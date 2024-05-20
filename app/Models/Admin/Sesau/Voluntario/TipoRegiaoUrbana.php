@@ -10,6 +10,7 @@ use Kdion4891\LaravelLivewireTables\Column;
 class TipoRegiaoUrbana extends Model
 {
     use HasFactory;
+    protected $connection = 'voluntario';
     protected $table = 'voluntario.tipo_regiao_urbanas';
 
     protected $fillable = ['nome','status'];

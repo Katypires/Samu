@@ -15,4 +15,8 @@ class Ficha extends Model
     public function unidades(){
         return $this->hasOne(Unidade::class);
     }
+
+    public function dado_geral(){
+        return  $this->hasOne(DadoGeral::class);
+    }
 }

@@ -69,3 +69,6 @@ php artisan make:livewire Admin/Sesau/Voluntario/SelectComponent
 -- Passar de parametro: model, label, columnName, columnId(option), column(coluna que ira retornar)
 
 php artisan make:livewire Admin/Sesau/Voluntario/DropdownComponent
+
+---FILTRA---
+php artisan make:livewire Admin/Sesau/Semraiva/FiltraComponent

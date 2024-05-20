@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Sesau\Semraiva;
 
-use App\Models\Admin\Sesau\Semraiva\DadoResidencia;
+use App\Models\Semraiva\DadoResidencia;
 use Livewire\Component;
 
 class DadoResidenciaComponent extends Component

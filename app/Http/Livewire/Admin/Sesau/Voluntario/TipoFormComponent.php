@@ -67,8 +67,7 @@ class TipoFormComponent extends Component
             session()->flash('message', 'Não foi possível cadastrar informação.');
         }
     }
-    //     session()->flash('message', 'Registro cadastrado com sucesso.');
-    // }
+    
 
     // public function delete($id)
     // {

@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Colaborador extends Model
 {
     use HasFactory;
+    protected $connection = 'voluntario';
 
     protected $fillable=[ 'nome', 'apelido', 'cpf', 'cargo', 'email', 'telefone', 'celular', 'data_inicial', 'data_final', 'nota', 'status'];
 }

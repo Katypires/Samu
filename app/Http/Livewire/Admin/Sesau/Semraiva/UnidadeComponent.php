@@ -4,18 +4,30 @@ namespace App\Http\Livewire\Admin\Sesau\Semraiva;
 
 use Livewire\Component;
 use App\Models\Admin\Sesau\Semraiva\Unidade;
+use Livewire\WithPagination;
+use Illuminate\Database\Eloquent\Builder;
+
 
 
 class UnidadeComponent extends Component
 {
     public $data=[];
     public $unidadeId;
+    public $search = '';
+    public $openForm = false;
+
    
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+    
+    protected $listeners=['unidade', 'search'];
 
     public function render()
     {
-        return view('livewire.admin.sesau.semraiva.unidade-component', ['unidades'=>Unidade::get()]);
+        return view('livewire.admin.sesau.semraiva.unidade-component', [
+            'unidades'=>Unidade::paginate(3)]);
     }
+
 
     public function store(){
         $this->validate([
@@ -25,7 +37,7 @@ class UnidadeComponent extends Component
         try {
 
             $unidade = Unidade::create($this->data);
-            
+
             session()->flash('message', 'Unidade cadastrada com sucesso.');
 
             $this->resetInputFields();
@@ -41,6 +53,7 @@ class UnidadeComponent extends Component
 
         $this->data = $unidade;
         $this->unidadeId = $unidade['id'];
+        $this->openForm();
 
     }
 
@@ -80,5 +93,19 @@ class UnidadeComponent extends Component
 
         $this->data = [];
         $this->unidadeId = null;
+    }
+
+    public function unidade($value){
+        $this->search = $value;
+        $this->render();
+    }
+
+    public function search($value){
+        $this->search = strtoupper(trim($value));
+        $this->render();
+    }
+
+    public function openForm(){
+        $this->openForm = true;
     }
 }

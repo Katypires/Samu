@@ -10,6 +10,7 @@ use Kdion4891\LaravelLivewireTables\Column;
 class TipoAtividade extends Model
 {
     use HasFactory;
+    protected $connection = 'voluntario';
     protected $table = 'voluntario.tipo_atividades';
 
     protected $fillable = ['nome','status'];
