@@ -1,1 +1,1 @@
-<livewire:admin.sesau.semraiva.distrito-component/>
+<livewire:admin.sesau.semraiva.distrito-component key="{{Str::random(5)}}"/>

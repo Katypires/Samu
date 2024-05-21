@@ -15,12 +15,13 @@ class DistritoComponent extends Component
     public $distritoId;
     public $openForm;
     public $search = '';
+    public $type;
 
    
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
     
-    protected $listeners=['distrito', 'search'];
+    protected $listeners=['distrito', 'search', 'deleteComponent','editComponent'];
 
     public function render()
     {
@@ -41,6 +42,7 @@ class DistritoComponent extends Component
             session()->flash('message', 'Distrito cadastrado com sucesso.');
 
             $this->resetInputFields();
+            $this->openForm = false;
 
         } catch (\Throwable $th) {
             dd($th);
@@ -58,22 +60,22 @@ class DistritoComponent extends Component
     }
 
     public function update(){
+        // dd('aqui')
         $this->validate([
             'data.nome' => 'required',
         ]);
 
         try {
 
-            $distrito = Distrito::find($this->distritoId);
-            $distrito->update([
-                'nome' => $this->data['nome'],
-                'codigo'=>$this->data['codigo'],
-                'status'=>$this->data['status'] ? true : false,
-            ]);
+           // dd($this->namespace);
+           Distrito::whereId($this->data['id'])->update($this->data);
+           // dd($this->data);
+        //    $this->emit('refreshTipoTableComponent', $this->namespace);
     
             session()->flash('message', 'Distrito atualizado com sucesso.');
     
             $this->resetInputFields();
+            $this->openForm = false;
 
         } catch (\Throwable $th) {
             dd($th);
@@ -83,11 +85,11 @@ class DistritoComponent extends Component
        
     }
 
-    public function delete($id)
-    {
-        Distrito::find($id)->delete();
-        session()->flash('message', 'Distrito deletado com sucesso.');
-    }
+    // public function delete($id)
+    // {
+    //     Distrito::find($id)->delete();
+    //     session()->flash('message', 'Distrito deletado com sucesso.');
+    // }
     
     public function resetInputFields(){
 
@@ -107,5 +109,24 @@ class DistritoComponent extends Component
 
     public function openForm(){
         $this->openForm = true;
+    }
+
+    public function deleteComponent($data){
+        $this->data = $data;
+        $this->type = 'delete';
+        $this->openForm();
+    }
+
+    public function editComponent($data){
+        $this->data = $data;
+        $this->type = 'update';
+        $this->openForm();
+    }
+
+    public function destroy($id)
+    {
+        Distrito::find($id)->delete();
+        $this->openForm = false;
+        $this->resetInputFields();
     }
 }

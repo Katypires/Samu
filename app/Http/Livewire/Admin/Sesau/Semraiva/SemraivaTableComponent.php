@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Sesau\Voluntario;
+namespace App\Http\Livewire\Admin\Sesau\Semraiva;
 
 use Faker\Guesser\Name;
 use Kdion4891\LaravelLivewireTables\Column;
@@ -8,7 +8,7 @@ use Kdion4891\LaravelLivewireTables\TableComponent;
 use Livewire\WithPagination;
 
 
-class TipoTableComponent extends TableComponent
+class SemraivaTableComponent extends TableComponent
 {
     public $modalId, $modal, $model, $form, $title, $namespace;
     public $checkbox = false;
@@ -16,7 +16,7 @@ class TipoTableComponent extends TableComponent
     public $data = [];
     public $modelId;
     public $model_id;
-    public $tableAction = true;
+    public $tableAction = false;
 
 
     use WithPagination;

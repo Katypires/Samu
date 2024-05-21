@@ -1,7 +1,7 @@
 <div>
     <livewire:admin.sesau.semraiva.modal-component key="1" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form" modalId="Unidade" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
     <livewire:admin.sesau.semraiva.modal-component key="1" title="Distrito" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.distrito.distritoform" modalId="Distrito" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
-
+    <livewire:admin.sesau.semraiva.modal-component key="1" title="Distrito" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.distrito.distritoform" modalId="Distritox" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
     <div class="card p-4 m-4">
         @if (session()->has('message'))
             <div class="alert alert-success">{{ session('message') }}</div>
@@ -15,6 +15,7 @@
                     <livewire:admin.sesau.semraiva.card-component key="4" title="Gestor" text_color='text-dark' text="teste texto" icon="fas fa-cogs icon" cor="bg-warning" link=''>
                     <livewire:admin.sesau.semraiva.card-component key="5" title="Unidade" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link='' modalId="Unidade">
                     <livewire:admin.sesau.semraiva.card-component key="6" title="Distrito" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link='' modalId="Distrito">   
+                        <livewire:admin.sesau.semraiva.card-component key="6" title="Distrito" text_color='text-white' text="teste texto" icon="fas fa-map-marker-alt icon" cor="bg-info" link='' modalId="Distritox">   
                 </div>
             </div>
             

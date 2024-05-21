@@ -40,45 +40,32 @@
                     </div>
                 @endif
             </div>
-            @if ($unidadeId)
+            @if (isset($data['id']))
+                @if ($type == 'update')
+                    <button type="button" wire:click="update({{ $data['id'] }})" data-bs-dismiss="modal"
+                        class="btn btn-primary ">ATUALIZAR</button>
+                @endif
+                @if ($type == 'delete')
+                    <button type="button" wire:click="destroy({{ $data['id'] }})" data-bs-dismiss="modal"
+                        class="btn btn-danger ">DELETAR</button>
+                @endif
+            @else
+                <button type="button" wire:click="store" type="submit" class="btn btn-primary">SALVAR</button>
+            @endif
+            <button type="button" class="btn btn-secondary  ">CANCELAR</button>
+
+            {{-- @if ($unidadeId)
                 <button type="submit" class="btn btn-primary mb-3">Atualizar</button>
             @else
                 <button type="submit" class="btn btn-primary mb-3">Salvar</button>
-            @endif
+            @endif --}}
         </form>
     @endif
     <div class="card p-4 mb-4">
         <div>
             <h2 class="my-4">Tabela de Unidade</h2>
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">Unidade</th>
-                        <th scope="col">Codigo </th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($unidades as $unidade)
-                        <tr>
-                            <td>{{ $unidade->nome }}</td>
-                            <td>{{ $unidade->codigo }}</td>
-                            <td>{{ $unidade->status }}</td>
-                            <td><button wire:click="edit({{ $unidade }})" class="btn btn-primary">Editar</button>
-                            </td>
-                            <td><button wire:click='delete({{ $unidade->id }})' class="btn btn-danger">Deletar</button>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item"> {{ $unidades->links() }}
-                    </li>
-                </ul>
-            </nav>
+            <livewire:admin.sesau.semraiva.semraiva-table-component key="{{ Str::random(5) }}"
+                model="App\Models\Admin\Sesau\Semraiva\Unidade" title="Unidade" />
         </div>
     </div>
 </div>

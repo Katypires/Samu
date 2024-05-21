@@ -15,12 +15,13 @@ class UnidadeComponent extends Component
     public $unidadeId;
     public $search = '';
     public $openForm = false;
+    public $type;
 
    
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
     
-    protected $listeners=['unidade', 'search'];
+    protected $listeners=['unidade', 'search', 'deleteComponent', 'editComponent'];
 
     public function render()
     {
@@ -41,6 +42,8 @@ class UnidadeComponent extends Component
             session()->flash('message', 'Unidade cadastrada com sucesso.');
 
             $this->resetInputFields();
+            $this->openForm = false;
+
 
         } catch (\Throwable $th) {
             dd($th);
@@ -64,14 +67,15 @@ class UnidadeComponent extends Component
 
         try {
 
-            $unidade = Unidade::find($this->unidadeId);
-            $unidade->update([
-                'nome' => $this->data['nome'],
-                'codigo'=>$this->data['codigo'],
-                'status'=>$this->data['status'] ? true : false,
-            ]);
-    
-            session()->flash('message', 'Unidade atualizada com sucesso.');
+            // dd($this->namespace);
+            Unidade::whereId($this->data['id'])->update($this->data);
+            // dd($this->data);
+         //    $this->emit('refreshTipoTableComponent', $this->namespace);
+     
+             session()->flash('message', 'Unidade atualizado com sucesso.');
+     
+             $this->resetInputFields();
+             $this->openForm = false;
     
             $this->resetInputFields();
 
@@ -83,11 +87,11 @@ class UnidadeComponent extends Component
        
     }
 
-    public function delete($id)
-    {
-        Unidade::find($id)->delete();
-        session()->flash('message', 'Unidade deletada com sucesso.');
-    }
+    // public function delete($id)
+    // {
+    //     Unidade::find($id)->delete();
+    //     session()->flash('message', 'Unidade deletada com sucesso.');
+    // }
     
     public function resetInputFields(){
 
@@ -107,5 +111,24 @@ class UnidadeComponent extends Component
 
     public function openForm(){
         $this->openForm = true;
+    }
+
+    public function deleteComponent($data){
+        $this->data = $data;
+        $this->type = 'delete';
+        $this->openForm();
+    }
+
+    public function editComponent($data){
+        $this->data = $data;
+        $this->type = 'update';
+        $this->openForm();
+    }
+
+    public function destroy($id)
+    {
+        Unidade::find($id)->delete();
+        $this->openForm = false;
+        $this->resetInputFields();
     }
 }

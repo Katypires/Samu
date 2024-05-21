@@ -40,23 +40,31 @@
                     </div>
                 @endif
             </div>
-            @if ($distritoId)
+            @if (isset($data['id']))
+                @if ($type == 'update')
+                    <button type="button" wire:click="update({{ $data['id'] }})" 
+                        class="btn btn-primary ">ATUALIZAR</button>
+                @endif
+                @if ($type == 'delete')
+                    <button type="button" wire:click="destroy({{ $data['id'] }})" 
+                        class="btn btn-danger ">DELETAR</button>
+                @endif
+            @else
+                <button type="button" wire:click="store" type="submit" class="btn btn-primary">SALVAR</button>
+            @endif
+            <button type="button" class="btn btn-secondary  ">CANCELAR</button>
+            {{-- @if ($distritoId)
                 <button type="submit" class="btn btn-primary mb-3">Atualizar</button>
             @else
                 <button type="submit" class="btn btn-primary mb-3">Salvar</button>
-            @endif
+            @endif --}}
         </form>
     @endif
     <div class="card p-4 mb-4">
         <div>
             <h2 class="my-4">Tabela de Distritos</h2>
-            <livewire:admin.sesau.voluntario.tipo-table-component key="{{Str::random(5)}}"  model="App\Models\Admin\Sesau\Semraiva\Distrito"  title="Distrito" />
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <li class="page-item"> {{ $distritos->links() }}
-                    </li>
-                </ul>
-            </nav>
+            <livewire:admin.sesau.semraiva.semraiva-table-component key="{{ Str::random(5) }}"
+                model="App\Models\Admin\Sesau\Semraiva\Distrito"  title="Distrito" />
         </div>
     </div>
 </div>

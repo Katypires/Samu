@@ -70,5 +70,5 @@ php artisan make:livewire Admin/Sesau/Voluntario/SelectComponent
 
 php artisan make:livewire Admin/Sesau/Voluntario/DropdownComponent
 
----FILTRA---
-php artisan make:livewire Admin/Sesau/Semraiva/FiltraComponent
+php artisan make:table Admin/Sesau/Semraiva/SemraivaTableComponent 
+
