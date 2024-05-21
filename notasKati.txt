@@ -36,4 +36,39 @@ php artisan make:livewire Admin/Sesau/Samu/SamuComponent
 //Criando componente de Tabelas Livewire do Laravel p/ receber dados da ficha Pessoa, seguindo o exemplo do link ->(Kdion4891)
 php artisan make:table Admin/Sesau/Samu/PessoaTableComponent
 
+//Criando "ModalComponent" como componente 
+php artisan make:livewire Admin/Sesau/Samu/ModalComponent
+
+//Juridico 
+Criando banco Juridico
+Criando esquema (model)  Juridico
+php artisan make:model Admin/Sesau/Juridico/TipoSituacao -m
+php artisan make:model Admin/Sesau/Juridico/Pessoa -m
+php artisan make:model Admin/Sesau/Juridico/TipoFuncaoPessoa -m
+php artisan make:model Admin/Sesau/Juridico/Sindicancia -m
+php artisan make:model Admin/Sesau/Juridico/Membro -m
+php artisan make:model Admin/Sesau/Juridico/TipoFuncaoMembro -m
+php artisan make:model Admin/Sesau/Juridico/Oitiva -m
+php artisan make:model Admin/Sesau/Juridico/OitivaPessoa -m
+php artisan make:model Admin/Sesau/Juridico/SindicanciaMembro -m
+php artisan make:model Admin/Sesau/Juridico/SindicanciaPessoa -m
+
+//criando componente (Projeto Juridico)
+php artisan make:livewire Admin/Sesau/Juridico/JuridicoComponent
+php artisan make:livewire Admin/Sesau/Juridico/JuridicoSindicanciaComponent
+php artisan make:livewire Admin/Sesau/Juridico/JuridicoSindicanciaOitivaComponent
+
+
+php artisan make:livewire Admin/Sesau/Juridico/CrudComponent
+php artisan make:livewire Admin/Sesau/Juridico/CrudFormComponent
+php artisan make:table Admin/Sesau/Juridico/CrudTableComponent
+
+*****************
+php artisan make:livewire Admin/Sesau/Juridico/TipoComponent
+php artisan make:livewire Admin/Sesau/Juridico/PessoaComponent
+php artisan make:livewire Admin/Sesau/Juridico/MembroComponent
+***********
+
+
+
 

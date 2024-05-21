@@ -3,14 +3,14 @@
 
 <div>
     <div class="card p-4 m-4">
-        <livewire:admin.sesau.semraiva.modal-component key="1" title="Pessoa" icon="fas fa-user icon"
+        <livewire:admin.sesau.samu.modal-component key="1" title="Pessoa" icon="fas fa-user icon"
             form="admin.sesau.samu.pessoa.form" modalId="Pessoa" tamanho="modal-fullscreen" icon="fas fa-user icon" />
 
         <div class="card p-4 mb-4">
             <div class="row">
-                <livewire:admin.sesau.semraiva.card-component key="1" title="App" text_color='text-white' text="teste texto" icon="fas fa-mobile-alt icon" cor="bg-primary" link="https://semraiva.flutterflow.app/" />
-                <livewire:admin.sesau.semraiva.card-component key="2" title="Site" text_color='text-white' text="teste texto" icon="fas fa-globe icon" cor="bg-success" link='http://semraiva.by.dev.br/' />
-                <livewire:admin.sesau.semraiva.card-component key="6" title="Pessoa" text_color='text-white' text="teste texto" icon="fas fa-user icon" cor="bg-info" link='' modalId="Pessoa" />
+                <livewire:admin.sesau.samu.card-component key="1" title="App" text_color='text-white' text="teste texto" icon="fas fa-mobile-alt icon" cor="bg-primary" link="" />
+                <livewire:admin.sesau.samu.card-component key="2" title="Site" text_color='text-white' text="teste texto" icon="fas fa-globe icon" cor="bg-success" link='' />
+                <livewire:admin.sesau.samu.card-component key="6" title="Pessoa" text_color='text-white' text="teste texto" icon="fas fa-user icon" cor="bg-info" link='' modalId="Pessoa" />
             </div>
         </div>
     </div>
