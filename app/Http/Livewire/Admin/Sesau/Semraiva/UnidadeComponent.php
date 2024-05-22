@@ -113,6 +113,10 @@ class UnidadeComponent extends Component
         $this->openForm = true;
     }
 
+    public function closeForm(){
+        $this->openForm = false;
+    }
+
     public function deleteComponent($data){
         $this->data = $data;
         $this->type = 'delete';

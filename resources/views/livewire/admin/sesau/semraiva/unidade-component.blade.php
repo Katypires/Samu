@@ -52,7 +52,7 @@
             @else
                 <button type="button" wire:click="store" type="submit" class="btn btn-primary">SALVAR</button>
             @endif
-            <button type="button" class="btn btn-secondary  ">CANCELAR</button>
+            <button wire:click="closeForm" type="button" class="btn btn-secondary">CANCELAR</button>
 
             {{-- @if ($unidadeId)
                 <button type="submit" class="btn btn-primary mb-3">Atualizar</button>

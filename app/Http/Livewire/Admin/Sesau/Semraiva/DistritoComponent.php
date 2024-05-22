@@ -13,7 +13,7 @@ class DistritoComponent extends Component
 {
     public $data=[];
     public $distritoId;
-    public $openForm;
+    public $openForm = false;
     public $search = '';
     public $type;
 
@@ -109,6 +109,11 @@ class DistritoComponent extends Component
 
     public function openForm(){
         $this->openForm = true;
+    }
+
+    public function closeForm(){
+        $this->openForm = false;
+        $this->resetInputFields();
     }
 
     public function deleteComponent($data){

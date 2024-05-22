@@ -14,13 +14,22 @@ class Unidade extends Model
 
     protected $fillable=['nome','codigo','status'];
 
+    public $rules = [
+        'data.nome' => 'required|min:1|max:255',
+    ];
+
+    protected $casts = [
+        'nome' => 'string',
+        'status' => 'boolean',
+    ];
+
     public static function columns()
     {
         return [
             Column::make('ID')->searchable()->sortable(),
             Column::make('Unidade', 'nome')->searchable()->sortable(),
             Column::make('Codigo', 'codigo')->searchable()->sortable(),
-            Column::make('Ações')->view('admin.sesau.voluntario.table-actions'),
+            Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }
 

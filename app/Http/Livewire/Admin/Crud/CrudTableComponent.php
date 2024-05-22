@@ -10,10 +10,14 @@ class CrudTableComponent extends TableComponent
     public $per_page = 5;
     public $checkbox = false;
     protected $paginationTheme = 'bootstrap';
-    public $header_view = 'livewire.admin.crud.header';
-    public $footer_view = '';
+    public $header_view = 'livewire.admin.crud.table.header';
+    // public $footer_view = 'livewire.admin.crud.table.footer';
 
-    public $model, $form, $title, $modalId;
+    public $model, $form, $title, $modalId, $formType, $modal;
+
+    protected $listeners = [
+        'refreshCrudTable'=>'$refresh'      
+    ];
 
     public function query()
     {

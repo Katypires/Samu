@@ -1,19 +1,19 @@
 <div class="card p-4 mb-4">
     <div class="card p-2 mb-4 bg-light">
-        <h5>Distrito</h5>
+        <h5>Unidade</h5>
     </div>
 
     @if (session()->has('message'))
         <div class="alert alert-success">{{ session('message') }}</div>
     @endif
 
-    <button wire:click="openForm()" class="btn btn-primary mb-3 col-1">ADICIONAR</button>
+    <button wire:click="openForm" class="btn btn-primary mb-3 col-1">ADICIONAR UNIDADE</button>
     @if ($openForm)
-        <form wire:submit.prevent="{{ $distritoId ? 'update' : 'store' }}">
+        <form wire:submit.prevent="{{ $unidadeId ? 'update' : 'store' }}">
             <div class="row">
                 <div class="form-floating mb-4 col-6">
                     <input type="text" wire:model.prevent="data.nome" class="form-control">
-                    <label for="nome">1 - Nome do Distrito</label>
+                    <label for="nome">1 - Unidade de Saúde (ou outra fonte notificadora)</label>
                 </div>
                 <div class="form-floating mb-4 col-6">
                     <input type="text" wire:model.prevent="data.codigo" class="form-control">
@@ -42,29 +42,24 @@
             </div>
             @if (isset($data['id']))
                 @if ($type == 'update')
-                    <button type="button" wire:click="update({{ $data['id'] }})" 
+                    <button type="button" wire:click="update({{ $data['id'] }})" data-bs-dismiss="modal"
                         class="btn btn-primary ">ATUALIZAR</button>
                 @endif
                 @if ($type == 'delete')
-                    <button type="button" wire:click="destroy({{ $data['id'] }})" 
+                    <button type="button" wire:click="destroy({{ $data['id'] }})" data-bs-dismiss="modal"
                         class="btn btn-danger ">DELETAR</button>
                 @endif
             @else
                 <button type="button" wire:click="store" type="submit" class="btn btn-primary">SALVAR</button>
             @endif
             <button wire:click="closeForm" type="button" class="btn btn-secondary">CANCELAR</button>
-            {{-- @if ($distritoId)
-                <button type="submit" class="btn btn-primary mb-3">Atualizar</button>
-            @else
-                <button type="submit" class="btn btn-primary mb-3">Salvar</button>
-            @endif --}}
         </form>
     @endif
-    <div class="card p-4 mt-3">
+    <div class="card p-4 mb-4">
         <div>
-            <h2 class="my-4">Tabela de Distritos</h2>
+            <h2 class="my-4">Tabela de Unidade</h2>
             <livewire:admin.sesau.semraiva.semraiva-table-component key="{{ Str::random(5) }}"
-                model="App\Models\Admin\Sesau\Semraiva\Distrito"  title="Distrito" />
+                model="App\Models\Admin\Sesau\Semraiva\Unidade" title="Unidade" />
         </div>
     </div>
 </div>
