@@ -16,8 +16,10 @@ class CreateTipoSituacaosTable extends Migration
         Schema::create('juridico.tipo_situacaos', function (Blueprint $table) {
             $table->id();
             $table->string('nome')->nullable();
+
+            $table->unsignedBigInteger('user_id')->nullable()->index();
             $table->boolean('status')->default(true);
-            
+
             $table->timestamps();
         });
     }

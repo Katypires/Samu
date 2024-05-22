@@ -40,8 +40,8 @@ php artisan make:table Admin/Sesau/Samu/PessoaTableComponent
 php artisan make:livewire Admin/Sesau/Samu/ModalComponent
 
 //Juridico 
-Criando banco Juridico
-Criando esquema (model)  Juridico
+Criando db e colocando informações nescessária: banco Juridico
+Criando esquema (model) e colocando informações nescessária:  Juridico
 php artisan make:model Admin/Sesau/Juridico/TipoSituacao -m
 php artisan make:model Admin/Sesau/Juridico/Pessoa -m
 php artisan make:model Admin/Sesau/Juridico/TipoFuncaoPessoa -m

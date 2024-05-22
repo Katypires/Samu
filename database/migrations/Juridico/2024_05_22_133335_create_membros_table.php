@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoFuncaoPessoasTable extends Migration
+class CreateMembrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateTipoFuncaoPessoasTable extends Migration
      */
     public function up()
     {
-        Schema::create('juridico.tipo_funcao_pessoas', function (Blueprint $table) {
+        Schema::create('juridico.membros', function (Blueprint $table) {
             $table->id();
             $table->string('nome')->nullable();
+            $table->string('matricula')->nullable();
 
             $table->unsignedBigInteger('user_id')->nullable()->index();
             $table->boolean('status')->default(true);
@@ -31,6 +32,6 @@ class CreateTipoFuncaoPessoasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('juridico.tipo_funcao_pessoas');
+        Schema::dropIfExists('juridico.membros');
     }
 }

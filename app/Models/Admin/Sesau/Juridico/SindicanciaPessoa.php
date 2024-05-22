@@ -5,9 +5,9 @@ namespace App\Models\Admin\Sesau\Juridico;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Pessoa extends Model
+class SindicanciaPessoa extends Model
 {
     use HasFactory;
-    protected $table = 'juridico.pessoas';
-    protected $fillable = ['nome', 'cpf', 'cnpj', 'oab', 'status'];
+    protected $table = 'juridico.sindicancia_pessoas';
+    protected $fillable = ['sindicancia_id', 'pessoa_id', 'status'];
 }

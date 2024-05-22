@@ -15,7 +15,9 @@ class CreateSindicanciasTable extends Migration
     {
         Schema::create('juridico.sindicancias', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->nullable();
+            $table->unsignedBigInteger('tipo_situacao_id')->nullable();
+            $table->foreign('tipo_situacao_id')->references('id')->on('juridico.tipo_situacaos')->onUpdate('cascade')->onDelete('set null');
+
             $table->string('numero_processo')->nullable();
             $table->string('especie')->nullable();
             $table->string('numero_resolucao')->nullable();

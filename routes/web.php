@@ -37,3 +37,7 @@ Route::get('/samu', function () {
 Route::get('/voluntario', function () {
     return view('admin.sesau.voluntario.index');
 });
+
+Route::get('/juridico', function () {
+    return view('admin.sesau.juridico.juridicos.index');
+});
