@@ -1,6 +1,2 @@
-
-<div class="form-floating my-8 col-10 m-3">
-    <input type="text" wire:model="data.nome" class="form-control">
-    <label for="nome">Nome:</label>
-</div>
-
+<livewire:admin.crud.crud-component  key="{{Str::random(5)}}" formType="form" modal="TipoSituacao" title="Tipo Situacao" model="App\Models\Admin\Sesau\Juridico\TipoSituacao" form="admin.sesau.juridico.tipo_situacoes.form_tipo" />
+model="App\Models\Admin\Sesau\Juridico\TipoSituacao"
