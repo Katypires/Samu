@@ -6,8 +6,8 @@ php artisan make:model Post -m (criar model)
 php artisan migrate (criar migrate)
 php artisan migrate:refresh
 php artisan make:livewire PostComponent (criar component)
- php artisan migrate:rollback
- php artisan make:model
+php artisan migrate:rollback
+php artisan make:model
 
 
 
@@ -52,6 +52,10 @@ php artisan make:model Admin/Sesau/Juridico/Oitiva -m
 php artisan make:model Admin/Sesau/Juridico/OitivaPessoa -m
 php artisan make:model Admin/Sesau/Juridico/SindicanciaMembro -m
 php artisan make:model Admin/Sesau/Juridico/SindicanciaPessoa -m
+
+//Migrate
+criando schema: juridico no banco de dados "sesau"
+php artisan migrate
 
 //criando componente (Projeto Juridico)
 php artisan make:livewire Admin/Sesau/Juridico/JuridicoComponent
