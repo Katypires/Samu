@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class CrudComponent extends Component
 {
-    public $modal, $model, $form, $title, $modalId, $formType;
+    public $modal, $model, $form, $title, $modalId, $formType, $key;
     public $data = [];
     public $openForm = false;
     

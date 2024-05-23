@@ -15,6 +15,5 @@
             <livewire:admin.crud.crud-table-component key="{{Str::random(5)}}" formType="{{$formType}}" modal="{{$modal}}" title="{{$title}}" model="{{$model}}" form="{{$form}}" />
         </div>
     </div>
-    
-   
+
 </div>
