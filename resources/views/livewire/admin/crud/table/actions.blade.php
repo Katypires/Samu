@@ -4,7 +4,9 @@
 @if($formType == 'form')
     <button  class="btn btn-danger"  wire:click="$emit('openDeleteFormCrud', {{$model}})">Deletar</button>
     <button  class="btn btn-success"  wire:click="$emit('openEditFormCrud', {{$model}})">Editar</button>
-@else
+    @endif
+
+@if($formType == 'modal')
     <button  class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#{{$modal}}" wire:click="$emit('openDeleteFormCrud', {{$model}})">Deletar</button>
     <button  class="btn btn-success" data-bs-toggle="modal" data-bs-target="#{{$modal}}"  wire:click="$emit('openEditFormCrud', {{$model}})">Editar{{$modal}}</button>
 @endif

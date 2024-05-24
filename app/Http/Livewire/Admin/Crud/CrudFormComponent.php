@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class CrudFormComponent extends Component
 {
-    public $model, $form, $title, $modalId, $type;
+    public $model, $form, $title, $modalId, $type, $formType,$modal;
     public $data = [];
     public $openForm = false;
     
@@ -14,6 +14,14 @@ class CrudFormComponent extends Component
         'editCrudForm' => 'edit',
         'deleteCrudForm' => 'delete',
     ];
+
+    public function mount($formType,$modal,$title,$model,$form){
+        $this->formType = $formType;
+        $this->modal = $modal;
+        $this->title = $title;
+        $this->model = $model;
+        $this->form = $form;
+    }
 
     public function render()
     {

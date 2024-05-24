@@ -16,8 +16,13 @@ class VoluntarioComponent extends Component
     public $atividades;
     public $seguimentos;
     public $regioes;
+    public $model, $form, $title;
     
     protected $listeners=['selectedColumn'];
+
+    protected $rules = [
+        'nome' => 'required|min:6',
+    ];
     
     public function mount(){
         $this->data['razao_social']="AQUARIO PANTANAL";
@@ -31,6 +36,9 @@ class VoluntarioComponent extends Component
         $this->data['bairro']="CENTRO";
         $this->data['cidade']="CAMPO GRANDE";
         $this->data['url']="https://cdn6.campograndenews.com.br/uploads/noticias/2022/03/22/88ab207723b75173ef4c97bff0e61a5a766010be.jpg";
+        // $this->model = $model;
+        // $this->model = $form;
+        // $this->model = $title;
     }
     public function render()
     {
@@ -41,9 +49,11 @@ class VoluntarioComponent extends Component
     }
 
     public function store(){
-        $this->validate([
-            
-        ]);
+        // $this->validate([
+        //     $this->atividades->rules,
+        //     $this->seguimentos->rules,
+        //     $this->regioes->rules,
+        // ]);
 
         try{
             $tipoAtividade = TipoAtividade::create($this->data);

@@ -70,5 +70,3 @@ php artisan make:livewire Admin/Sesau/Voluntario/SelectComponent
 
 php artisan make:livewire Admin/Sesau/Voluntario/DropdownComponent
 
-php artisan make:table Admin/Sesau/Semraiva/SemraivaTableComponent 
-
