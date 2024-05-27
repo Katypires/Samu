@@ -1,39 +1,44 @@
 <div class="row">
     <div class="form-floating mb-4 col-6">
+        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
+        <label for="numero_processo">numero_processo</label>
+    </div>
+    <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.especie" class="form-control">
-        <label for="especie">numero_processo</label>
+        <label for="especie">especie</label>
     </div>
     <div class="form-floating mb-4 col-6">
-        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">especie</label>
+        <input type="text" wire:model.defer="data.numero_resolucao" class="form-control">
+        <label for="numero_resolucao">numero_resolucao</label>
     </div>
     <div class="form-floating mb-4 col-6">
-        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">numero_diogrande</label>
+        <input type="text" wire:model.defer="data.numero_diogrande" class="form-control">
+        <label for="numero_diogrande">numero_diogrande</label>
     </div>
     <div class="form-floating mb-4 col-6">
-        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">data_abertura</label>
+        <input type="date" wire:model.defer="data.data_abertura" class="form-control">
+        <label for="data_abertura">data_abertura</label>
+    </div>
+    
+    <div class="form-floating mb-4 col-6">
+        <input type="date" wire:model.defer="data.data_instauracao" class="form-control">
+        <label for="data_instauracao">data_instauracao</label>
     </div>
     <div class="form-floating mb-4 col-6">
-        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">data_instauracao</label>
+        <input type="text" wire:model.defer="data.assunto_fato" class="form-control">
+        <label for="assunto_fato">assunto_fato</label>
     </div>
     <div class="form-floating mb-4 col-6">
-        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">assunto_fato</label>
+        <input type="text" wire:model.defer="data.numero_documento" class="form-control">
+        <label for="numero_documento">numero_documento</label>
     </div>
     <div class="form-floating mb-4 col-6">
-        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">numero_documento</label>
+        <input type="text" wire:model.defer="data.conclusao_decisao" class="form-control">
+        <label for="conclusao_decisao">conclusao_decisao</label>
     </div>
     <div class="form-floating mb-4 col-6">
-        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">conclusao_decisao</label>
-    </div>
-    <div class="form-floating mb-4 col-6">
-        <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">data_finalizacao</label>
+        <input type="date" wire:model.defer="data.data_finalizacao" class="form-control">
+        <label for="data_finalizacao">data_finalizacao</label>
     </div>
 
     <div class="row form-check form-switch">

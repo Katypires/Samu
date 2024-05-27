@@ -25,8 +25,7 @@ class TipoFuncaoMembro extends Model
     {
         return [
             Column::make('ID')->searchable()->sortable(),
-            Column::make('Numero de', 'nome')->searchable()->sortable(),
-            Column::make('Codigo', 'codigo')->searchable()->sortable(),
+            Column::make('nome')->searchable()->sortable(),
             Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }
