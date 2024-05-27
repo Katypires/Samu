@@ -16,12 +16,14 @@ class CreateInstituicaosTable extends Migration
         Schema::create('voluntario.instituicoes', function (Blueprint $table) {
             $table->id();
 
-            // $table->unsignedBigInteger('tipo_atividade_id')->nullable();
-            // $table->foreign('tipo_atividade_id')->references('id')->on('tipo_atividades')->onUpdate('cascade')->onDelete('set null');
-            // $table->unsignedBigInteger('tipo_seguimento_id')->nullable();
-            // $table->foreign('tipo_seguimento_id')->references('id')->on('tipo_seguimentos')->onUpdate('cascade')->onDelete('set null');
-            // $table->unsignedBigInteger('tipo_regiao_urbana_id')->nullable();
-            // $table->foreign('tipo_regiao_urbana')->references('id')->on('tipo_regiao_urbanas')->onUpdate('cascade')->onDelete('set null');
+            $table->unsignedBigInteger('tipo_atividade_id')->nullable();
+            $table->foreign('tipo_atividade_id')->references('id')->on('voluntario.tipo_atividades')->onUpdate('cascade')->onDelete('set null');
+            
+            $table->unsignedBigInteger('tipo_seguimento_id')->nullable();
+            $table->foreign('tipo_seguimento_id')->references('id')->on('voluntario.tipo_seguimentos')->onUpdate('cascade')->onDelete('set null');
+
+            $table->unsignedBigInteger('tipo_regiao_urbana_id')->nullable();
+            $table->foreign('tipo_regiao_urbana_id')->references('id')->on('voluntario.tipo_regiao_urbanas')->onUpdate('cascade')->onDelete('set null');
 
             $table->string('nome')->nullable();
             $table->text('descricao')->nullable();

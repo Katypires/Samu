@@ -10,22 +10,23 @@ use Kdion4891\LaravelLivewireTables\Column;
 class Instituicao extends Model
 {
     use HasFactory;
-    protected $connection = 'voluntario';
+    // protected $connection = 'voluntario';
     protected $table = 'voluntario.instituicoes';
 
-    public $rules = [   
-        'data.nome' => 'required|min:1|max:255',
-    ];
+    protected $fillable = ['tipo_atividade_id', 'tipo_seguimento_id', 'tipo_regiao_urbana_id', 'nome', 'descricao', 'nome_fantasia', 'razao_social', 'cnpj', 'fone_contato', 'email', 'sigla', 'cep', 'numero', 'uf', 'bairro', 'cidade', 'complemento', 'classificacao', 'risco', 'prioridade', 'complexidade', 'situacao', 'status'];
 
-    protected $fillable = ['nome', 'descricao', 'nome_fantasia', 'razao_social', 'cnpj', 'fone_contato', 'email', 'sigla', 'cep', 
-    'numero', 'uf', 'bairro', 'cidade', 'complemento', 'classificacao', 'risco', 'prioridade', 'complexidade', 'situacao', 'status'];
+    public $rules = [   
+        'data.tipo_atividade_id' => 'required',
+        'data.tipo_seguimento_id' => 'required',
+        'data.tipo_regiao_urbana_id' => 'required',
+        'data.nome_fantasia' => 'required|min:1|max:255',
+    ];
 
     public static function columns()
     {
         return [
             Column::make('ID')->searchable()->sortable(),
             Column::make('Instituicao', 'nome_fantasia')->searchable()->sortable(),
-            Column::make('Telefone de Contato', 'fone_contato')->searchable()->sortable(),
             Column::make('Email', 'email')->searchable()->sortable(),
             Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];

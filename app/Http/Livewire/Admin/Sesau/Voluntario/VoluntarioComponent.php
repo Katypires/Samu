@@ -18,7 +18,7 @@ class VoluntarioComponent extends Component
     public $regioes;
     public $model, $form, $title;
     
-    protected $listeners=['selectedColumn'];
+    //protected $listeners=['selectedColumn'];
 
     protected $rules = [
         'nome' => 'required|min:6',
@@ -49,16 +49,20 @@ class VoluntarioComponent extends Component
     }
 
     public function store(){
-        // $this->validate([
-        //     $this->atividades->rules,
-        //     $this->seguimentos->rules,
-        //     $this->regioes->rules,
-        // ]);
+        $this->validate([
+            'data.razao_social' => 'required',
+            // 'data.tipo_seguimento_id'=>'required',
+            // 'data.tipo_regiao_urbana_id'=>'required',
+        ]);
+        // dd("aaa");
+
 
         try{
-            $tipoAtividade = TipoAtividade::create($this->data);
-            $this->resetInputFields();
-        }catch (\Throwable $th){    
+            // dd($this->data);
+           Instituicao::create($this->data);    
+            $this->resetFields();
+        }catch (\Throwable $th){ 
+            dd($th);   
             session()->flash('message',
             'Não foi possível cadastrar/atualizar informação.');
         }
@@ -67,5 +71,11 @@ class VoluntarioComponent extends Component
     public function selectedColumn($value, $label){
         // dd($value);
         $this->data[$label] = $value;
+    }
+
+    public function resetFields()
+    {
+
+        $this->data = [];
     }
 }
