@@ -1,10 +1,10 @@
-<div>
+<div class="p-3" style="background-color:#D8AE7E">
     
-    <livewire:admin.sesau.semraiva.modal-component key="{{Str::random(5)}}" title="Unidadee" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form_table" modalId="Unidadee" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
+    <livewire:admin.sesau.semraiva.modal-component key="{{Str::random(5)}}" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form_table" modalId="Unidadee" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
     <livewire:admin.sesau.semraiva.modal-component key="{{Str::random(5)}}" title="Distrito" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.distrito.distritoform" modalId="Distrito" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
     <livewire:admin.sesau.semraiva.modal-component key="{{Str::random(5)}}" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form_modal" modalId="Unidade" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
 
-    <div class="card p-4 m-4">
+    <div class="card p-4 m-4" style="background-color:#F8C794">
         @if (session()->has('message'))
             <div class="alert alert-success">{{ session('message') }}</div>
         @endif

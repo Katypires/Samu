@@ -1,16 +1,20 @@
-<div class="dropdown-center">
-    <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        {{ $titulo }}
+<div wire:ignore.self class="dropdown d-grid gap-2" >
+    <button type="button" class="btn btn-lg btn-{{$color}} dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+        data-bs-auto-close="outside">
+        {{$titulo}}
     </button>
-    <ul class="dropdown-menu row">
-            <select class="form-select" aria-label="Default select example">
-                @foreach ($columns as $column)
-                    <option class="dropdown-item" value="{{$column->columnId}}">{{ $column->columnName }}</option>
-                    {{-- <li><a class="dropdown-item" href="#">Another action</a></li> --}}
-                @endforeach
-            </select>
-            <label for="{{ $label }}">{{ $titulo }}</label>
-        {{-- <li><hr class="dropdown-divider" {{$colunas->link()}}></li> --}}
-        <li></li>
-    </ul>
+    <div wire:ignore.self class="dropdown-menu p-4 " style="width: 100%;">
+        <div class="mb-3">
+            <input type="text" wire:model.debounce.500ms="search" class="form-control" placeholder="search">
+          </div>
+        @foreach ($colunas as $column)
+            <label wire:ignore.self class="d-block" for="{{ $label }}">
+                <input class="radio_animated mt-2 mx-2" type="radio" wire:model="selected"
+                    value="{{ $column->$columnId }}">{{ $column->$columnName }}
+            </label>
+        @endforeach
+        <div wire:ignore.self class="m-3">
+            {{ $colunas->links() }}
+        </div>
+    </div>
 </div>
