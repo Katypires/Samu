@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Sesau\Voluntario;
+namespace App\Http\Livewire\Admin\Sesau\Juridico;
 
 use Livewire\Component;
 use Livewire\WithPagination;
 
-
 class DropdownComponent extends Component
 {
-
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
 
@@ -46,7 +44,7 @@ class DropdownComponent extends Component
     {
         $this->columns = app($this->model)::where('status', true)->get();
         
-        return view('livewire.admin.sesau.voluntario.dropdown-component',[
+        return view('livewire.admin.sesau.juridico.dropdown-component',[
             'colunas' => app($this->model)::query()
                 ->when($this->search, function ($query){
                     $query->where($this->columnName, 'like', "%{$this->search}%");})->paginate(5),

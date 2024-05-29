@@ -9,6 +9,7 @@
 
         <form wire:submit.prevent="{{ isset($data['id']) ? $type == 'update' ? 'update' : 'destroy' : 'store' }}">
             @include('livewire.admin.crud.table.message')
+
             @include($form)
             @if (isset($data['id']))
                 @if ($type == 'update')
@@ -21,7 +22,7 @@
             @else
                 <button type="button" wire:click="store" type="submit" class="btn btn-primary">SALVAR</button>
             @endif
-            <button wire:click="$emit('openCloseFormCrud')" type="button" class="btn btn-secondary">CANCELAR</button>
+            <button wire:click="$emit('closeFormCrud')" type="button" class="btn btn-secondary">CANCELAR</button>
         </form>
 
 

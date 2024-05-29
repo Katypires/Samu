@@ -11,7 +11,6 @@
                                     <h5>INSTITUICAO</h5>
                                 </div>
                                 <form wire:submit.prevent="store()">
-                                    {{-- <livewire:admin.sesau.voluntario.dropdown-component  titulo="Tipo Atividade" model="App\Models\Admin\Sesau\Voluntario\TipoAtividade"  >  --}}
                                     <div class="row">
                                         <div class="mb-4 col-4">
                                             <input type="hidden" wire:model.prevent="data.tipo_atividade" class="form-control">

@@ -16,7 +16,7 @@ class VoluntarioComponent extends Component
     public $atividades;
     public $seguimentos;
     public $regioes;
-    public $model, $form, $title;
+    public $model, $form, $title,$tableAction;
     
     //protected $listeners=['selectedColumn'];
 

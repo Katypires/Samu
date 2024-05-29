@@ -7,7 +7,7 @@ use Livewire\Component;
 class TipoFormComponent extends Component
 {
     public $data = [];
-    public $modal, $form, $title, $namespace;
+    public $modal, $form, $title, $namespace,$tableAction;
     public $type;
 
     public $listeners = ['editTipoFormComponent', 'deleteTipoFormComponent'];

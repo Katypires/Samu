@@ -1,8 +1,8 @@
 <div class="row">
     <div class="mb-4 col-12">
-        {{-- <input type="hidden" wire:model.prevent="data.tipo_situacao_id" class="form-control"> --}}
-        <livewire:admin.sesau.juridico.select-component key="{{Str::random(5)}}" columnName="nome" columnId="id" title="Tipo Situação" model="App\Models\Admin\Sesau\Juridico\TipoSituacao" label="tipo_situacao_id" value="{{ isset($data['tipo_situacao_id']) ? $data['tipo_situacao_id'] : '0' }}"/>
-        {{-- <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="id" columnId="id" titulo="Tipo Regiao Urbana" model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="tipo_regiao_urbana_id" value="{{ isset($data['tipo_regiao_urbana_id']) ? $data['tipo_regiao_urbana_id'] : '0' }}"/> --}}
+        <input type="hidden" wire:model.prevent="data.tipo_situacao_id" class="form-control">
+        {{-- <livewire:admin.sesau.juridico.select-component key="{{Str::random(5)}}" columnName="nome" columnId="id" title="Tipo Situação" model="App\Models\Admin\Sesau\Juridico\TipoSituacao" label="tipo_situacao_id" value="{{ isset($data['tipo_situacao_id']) ? $data['tipo_situacao_id'] : '0' }}"/> --}}
+        <livewire:admin.sesau.juridico.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="nome" columnId="id" titulo="Tipo Situação" model="App\Models\Admin\Sesau\Juridico\TipoSituacao" label="tipo_situacao_id" value="{{ isset($data['tipo_situacao_id']) ? $data['tipo_situacao_id'] : '0' }}"/>
         @error('data.tipo_situacao_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
     </div>
 

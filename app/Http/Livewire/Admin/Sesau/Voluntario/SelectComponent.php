@@ -8,7 +8,7 @@ use Livewire\WithPagination;
 
 class SelectComponent extends Component
 {
-    public $model, $label, $columnName, $columnId, $columns ,$title,$value;
+    public $model, $label, $columnName, $columnId, $columns ,$title,$value,$tableAction;
     public $selected;
 
     use WithPagination;

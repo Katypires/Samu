@@ -76,6 +76,9 @@ php artisan make:livewire Admin/Sesau/Juridico/MembroComponent
 28-05-24= Criação de componente Select
 php artisan make:livewire Admin/Sesau/Juridico/SelectComponent
 
+29-05-24= Criação de componente dropdown
+php artisan make:livewire Admin/Sesau/Juridico/DropdownComponent
+
 link de icones: https://fontawesome.com/search?o=r&m=free
 
 

@@ -6,10 +6,15 @@ use Livewire\Component;
 
 class ModalComponent extends Component
 {
-    public $title, $form, $modalId, $icon, $tamanho,$model,$formType, $modal, $modalForm; 
+    public $title, $form, $modalId, $icon, $tamanho,$model,$formType, $modal, $modalForm,$tableAction; 
     
     public function render()
     {
         return view('livewire.admin.sesau.semraiva.modal-component');
+    }
+
+    public function updatedTitulo($value){
+        // dd($value);
+        $this->emit('selectedColumn', $value, $this->label);
     }
 }

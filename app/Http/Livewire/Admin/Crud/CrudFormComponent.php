@@ -13,12 +13,13 @@ class CrudFormComponent extends Component
     protected $listeners = [
         'editCrudForm' => 'edit',
         'deleteCrudForm' => 'delete',
-        'selectedColumn'
+        'selectedColumn',
+        'selectedTitulo'
     ];
 
   
 
-    public function mount($formType,$modal,$title,$model,$form){
+    public function mount($formType, $modal, $title, $model, $form){
         $this->formType = $formType;
         $this->modal = $modal;
         $this->title = $title;
@@ -100,6 +101,10 @@ class CrudFormComponent extends Component
     }
 
     public function selectedColumn($value, $label){
+        $this->data[$label] = $value;
+    }
+
+    public function selectedTitulo($value, $label){
         $this->data[$label] = $value;
     }
 

@@ -8,7 +8,7 @@ class TipoComponent extends Component
 {
     public $data = [];
     public $tipo;
-    public $modal, $form, $title, $model;
+    public $modal, $form, $title, $model,$tableAction;
     public $tipoId;
     public $checkbox_attribute = 'id';
     public $checkbox_values = [];
