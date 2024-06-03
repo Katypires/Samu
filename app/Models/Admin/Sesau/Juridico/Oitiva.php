@@ -14,11 +14,11 @@ class Oitiva extends Model
 
     public $rules = [
         'data.sindicancia_id' => 'required',
-        'data.pessoa_id' => 'required',
+        
     ];
 
     protected $casts = [
-    
+        'data.pessoa_id' => 'string',
         'data_oitiva' => 'date',
         'local' => 'string',
         'relatorio' => 'string',

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Crud;
+namespace App\Http\Livewire\Admin\Sesau\Juridico;
 
 use Livewire\Component;
 
-class CrudComponent extends Component
+class BtnComponent extends Component
 {
     public $modal, $model, $form, $title, $modalId, $formType, $key;
     public $data = [];
@@ -20,18 +20,9 @@ class CrudComponent extends Component
         'editComponent'
     ];
 
-    public function mount($formType, $modal, $title, $model, $form)
-    {
-       $this->formType = $formType;
-       $this->modal = $modal;
-       $this->title = $title;
-       $this->model = $model;
-       $this->form = $form;
-    }
-    
     public function render()
     {
-        return view('livewire.admin.crud.crud-component');
+        return view('livewire.admin.sesau.juridico.btn-component');
     }
 
     public function closeFormCrud()
