@@ -29,6 +29,8 @@ class CreateColaboradorsTable extends Migration
             $table->date('data_inicial')->nullable();
             $table->date('data_final')->nullable();
             $table->text('nota')->nullable();
+            $table->boolean('cv')->default(true);
+            $table->boolean('pe')->default(true);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

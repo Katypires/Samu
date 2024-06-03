@@ -3,31 +3,44 @@
                     <div class="mb-4 col-4">
                         <input type="hidden" wire:model.defer="data.tipo_atividade_id" class="form-control">
                         {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}"  columnName="nome" columnId="id" title="Tipo Atividade" model="App\Models\Admin\Sesau\Voluntario\TipoAtividade" label="tipo_atividade_id" value="{{ isset($data['tipo_atividade_id']) ? $data['tipo_atividade_id'] : '0' }}"  /> --}}
-                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{Str::random(5)}}"  columnName="nome" columnId="id" titulo="Tipo Atividade" model="App\Models\Admin\Sesau\Voluntario\TipoAtividade" label="tipo_atividade_id" value="{{ isset($data['tipo_atividade_id']) ? $data['tipo_atividade_id'] : '0' }}"  />
+                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{ Str::random(5) }}"
+                            columnName="nome" columnId="id" titulo="Tipo Atividade"
+                            model="App\Models\Admin\Sesau\Voluntario\TipoAtividade" label="tipo_atividade_id"
+                            value="{{ isset($data['tipo_atividade_id']) ? $data['tipo_atividade_id'] : '0' }}" />
 
-                        @error('data.tipo_atividade_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
+                        @error('data.tipo_atividade_id')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mb-4 col-4">
                         <input type="hidden" wire:model.defer="data.tipo_seguimento_id" class="form-control">
                         {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}" columnName="nome" columnId="id" title="Tipo Seguimento" model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id" value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}"/> --}}
-                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="nome" columnId="id" titulo="Tipo Seguimento" model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id" value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}"/>
-                        @error('data.tipo_seguimento_id')<span class="text-danger">{{ $message }}</span> @enderror                                                
-                  </div>
+                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{ Str::random(5) }}"
+                            columnName="nome" columnId="id" titulo="Tipo Seguimento"
+                            model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id"
+                            value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}" />
+                        @error('data.tipo_seguimento_id')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
                     <div class="mb-4 col-4">
                         <input type="hidden" wire:model.defer="data.tipo_regiao_urbana_id" class="form-control">
                         {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}" columnName="id" columnId="id" title="Tipo Regiao Urbana" model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="tipo_regiao_urbana_id" value="{{ isset($data['tipo_regiao_urbana_id']) ? $data['tipo_regiao_urbana_id'] : '0' }}"/> --}}
-                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="nome" columnId="id" titulo="Tipo Regiao Urbana" model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="tipo_regiao_urbana_id" value="{{ isset($data['tipo_regiao_urbana_id']) ? $data['tipo_regiao_urbana_id'] : '0' }}"/>
-                        @error('data.tipo_regiao_urbana_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
+                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{ Str::random(5) }}"
+                            columnName="nome" columnId="id" titulo="Tipo Regiao Urbana"
+                            model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="tipo_regiao_urbana_id"
+                            value="{{ isset($data['tipo_regiao_urbana_id']) ? $data['tipo_regiao_urbana_id'] : '0' }}" />
+                        @error('data.tipo_regiao_urbana_id')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                     </div>
-                
+
                     <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.defer="data.razao_social"
-                            class="form-control">
+                        <input type="text" wire:model.defer="data.razao_social" class="form-control">
                         <label for="razao_social">Razao Social</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
-                        <input type="text"
-                            wire:model.defer="data.nome_fantasia"class="form-control">
+                        <input type="text" wire:model.defer="data.nome_fantasia"class="form-control">
                         <label for="nome_fantasia">Nome fantasia</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
@@ -43,29 +56,41 @@
                         <label for="email">Email</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.defer="data.telefone"
-                            class="form-control">
+                        <input type="text" wire:model.defer="data.telefone" class="form-control">
                         <label for="telefone">Telefone</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.defer="data.contato"
-                            class="form-control">
+                        <input type="text" wire:model.defer="data.contato" class="form-control">
                         <label for="contato">Contato</label>
                     </div>
-                    <div class="form-floating p-0 mb-4 col-1">
-                        <p class="m-0 p-0">Status</p>
-                        <input type="checkbox" data-toggle="switchbutton" style="height: 10px">
-                         
+                    <div class="form-check form-switch col-2">
+                        <div class="mb-4 px-4">
+                            <label for="status" class="form-check-label">Status</label>
+                            <input type="checkbox" wire:model="data.status" id="status" class="form-check-input">
+                            @error('status')
+                                <span class="error">{{ $mssage }}</span>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="form-floating mb-4 col-1">
-                        {{-- <label for="cv" class="control-label" style="height: 20px">Status</label> --}}
-                        <input type="checkbox" data-toggle="switchbutton" style="height: 10px">
+                    <div class="row form-check form-switch col-2">
+                        <div class="mb-4 px-4">
+                            <label for="cv" class="form-check-label">CV</label>
+                            <input type="checkbox" wire:model="data.cv" id="cv" class="form-check-input">
+                            @error('status')
+                                <span class="error">{{ $mssage }}</span>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="form-floating mb-4 col-2">
-                        {{-- <label for="pe" class="control-label" style="height: 20px">Status</label> --}}
-                        <input type="checkbox" data-toggle="switchbutton" style="height: 10px">
+                    <div class="row form-check form-switch col-3">
+                        <div class="mb-4 px-4">
+                            <label for="pe" class="form-check-label">PE</label>
+                            <input type="checkbox" wire:model="data.pe" id="status" class="form-check-input">
+                            @error('status')
+                                <span class="error">{{ $mssage }}</span>
+                            @enderror
+                        </div>
                     </div>
-                    <div class="form-floating mb-4 col-5">
+                    <div class="form-floating mb-4 col-3">
                         <select wire:model.defer="data.classificacao" class="form-select"
                             aria-label="Default select example">
                             <option selected>---SELECIONE---</option>
@@ -76,9 +101,8 @@
                         </select>
                         <label for="select">Classificao</label>
                     </div>
-                    <div class="form-floating mb-4 col-4">
-                        <select wire:model.defer="data.risco" class="form-select"
-                            aria-label="Default select example">
+                    <div class="form-floating mb-4 col-3">
+                        <select wire:model.defer="data.risco" class="form-select" aria-label="Default select example">
                             <option selected>---SELECIONE---</option>
                             <option value="1">AZUL</option>
                             <option value="2">VERDE</option>
@@ -87,7 +111,7 @@
                         </select>
                         <label for="select">Risco</label>
                     </div>
-                    <div class="form-floating mb-4 col-1">
+                    <div class="form-floating mb-4 col-2">
                         <select wire:model.defer="data.prioridade" class="form-select"
                             aria-label="Default select example">
                             <option selected>---SELECIONE---</option>
@@ -99,7 +123,7 @@
                         </select>
                         <label for="select">Prioridade</label>
                     </div>
-                    <div class="form-floating mb-4 col-1">
+                    <div class="form-floating mb-4 col-2">
                         <select wire:model.defer="data.complexidade" class="form-select"
                             aria-label="Default select example">
                             <option selected>---SELECIONE---</option>
@@ -109,7 +133,7 @@
                         </select>
                         <label for="select">Complexidade</label>
                     </div>
-                    <div class="form-floating mb-4 col-1">
+                    <div class="form-floating mb-4 col-2">
                         <select wire:model.defer="data.situacao" class="form-select"
                             aria-label="Default select example">
                             <option selected>---SELECIONE---</option>
@@ -127,13 +151,11 @@
                         <label for="cep">CEP</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.defer="data.endereco"
-                            class="form-control">
+                        <input type="text" wire:model.defer="data.endereco" class="form-control">
                         <label for="endereco">Endereço</label>
                     </div>
                     <div class="form-floating mb-4 col-2">
-                        <input type="text" wire:model.defer="data.numero"
-                            class="form-control">
+                        <input type="text" wire:model.defer="data.numero" class="form-control">
                         <label for="numero">Numero</label>
                     </div>
                     <div class="form-floating mb-4 col-2">
@@ -141,18 +163,15 @@
                         <label for="uf">Uf</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.defer="data.bairro"
-                            class="form-control">
+                        <input type="text" wire:model.defer="data.bairro" class="form-control">
                         <label for="bairro">Bairro</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.defer="data.cidade"
-                            class="form-control">
+                        <input type="text" wire:model.defer="data.cidade" class="form-control">
                         <label for="cidade">Cidade</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.defer="data.complemento"
-                            class="form-control">
+                        <input type="text" wire:model.defer="data.complemento" class="form-control">
                         <label for="complemento">Complemento</label>
                     </div>
                     <div class="form-floating mb-4 col-12">
@@ -160,5 +179,3 @@
                         <label for="url">URL</label>
                     </div>
                 </div>
-               
-

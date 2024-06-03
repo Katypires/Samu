@@ -4,7 +4,7 @@
     </button>
     <div wire:ignore.self  class="dropdown-menu p-4 " style="width: 100%;">
         <div class="mb-3">
-            <input type="text" wire:model.debounce.500ms="search" class="form-control" placeholder="search">
+            <input type="text" wire:model.debounce.500ms="search" class="form-control" placeholder="Pesquise aqui">
         </div>
         @foreach ($colunas as $column)
             <label wire:ignore.self class="d-block" for="{{ $label }}">

@@ -15,7 +15,9 @@ class CrudComponent extends Component
         'closeFormCrud',
         'openCloseFormCrud',
         'openEditFormCrud',
-        'openDeleteFormCrud'
+        'openDeleteFormCrud',
+        'deleteComponent',
+        'editComponent'
     ];
 
     public function render()

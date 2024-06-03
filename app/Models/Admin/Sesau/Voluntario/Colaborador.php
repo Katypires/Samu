@@ -16,14 +16,14 @@ class Colaborador extends Model
 
     protected $fillable=[ 'nome', 'apelido', 'cpf', 'cargo', 'email', 'telefone', 'celular', 'data_inicial', 'data_final', 'nota', 'status'];
 
-    public static function columns()
-    {
-        return [
-            Column::make('ID')->searchable()->sortable(),
-            Column::make('Instituicao', 'nome')->searchable()->sortable(),
-            Column::make('Telefone de Contato', 'telefone')->searchable()->sortable(),
-            Column::make('Email', 'email')->searchable()->sortable(),
-            Column::make('Ações')->view('livewire.admin.crud.table.actions'),
-        ];
-    }
+    // public static function columns()
+    // {
+    //     return [
+    //         Column::make('ID')->searchable()->sortable(),
+    //         Column::make('Instituicao', 'nome')->searchable()->sortable(),
+    //         Column::make('Telefone de Contato', 'telefone')->searchable()->sortable(),
+    //         Column::make('Email', 'email')->searchable()->sortable(),
+    //         Column::make('Ações')->view('livewire.admin.crud.table.actions'),
+    //     ];
+    // }
 }
