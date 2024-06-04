@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class ModalComponent extends Component
 {
-    public $title, $form, $modalId, $icon, $tamanho,$model,$formType, $modal, $modalForm,$tableAction; 
+    public $title, $form, $modalId, $icon, $tamanho,$model,$formType, $modal, $modalForm,$tableAction, $corPrimaria, $corSecundaria, $corFooter; 
     
     public function render()
     {

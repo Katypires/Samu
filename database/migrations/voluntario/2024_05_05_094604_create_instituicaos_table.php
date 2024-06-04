@@ -30,10 +30,12 @@ class CreateInstituicaosTable extends Migration
             $table->string('nome_fantasia')->nullable();
             $table->string('razao_social')->nullable();
             $table->string('cnpj')->nullable();
+            $table->string('telefone')->nullable();
             $table->string('fone_contato')->nullable();
             $table->string('email')->nullable();
             $table->string('sigla')->nullable();
             $table->string('cep')->nullable();
+            $table->string('endereco')->nullable();
             $table->string('numero')->nullable();
             $table->string('uf')->nullable();
             $table->string('bairro')->nullable();

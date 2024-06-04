@@ -26,13 +26,13 @@
     }
 
     .icon {
-      font-size: 5rem;
+      font-size: 3rem;
       line-height: 1;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .card-title {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 15px;
     }

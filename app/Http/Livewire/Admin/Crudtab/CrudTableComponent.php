@@ -14,14 +14,22 @@ class CrudTableComponent extends TableComponent
     // public $footer_view = 'livewire.admin.crud.table.footer';
 
     public $model, $form, $title, $modalId, $formType, $modal, $key,$tableAction;
+    public $emitId = 0;
 
     protected $listeners = [
-        'refreshCrudTabTable'=>'$refresh'      
+        'refreshCrudTabTable'=>'$refresh',
+        'editCrudTabForm' => 'x',   
     ];
+
+    public function x($data)
+    {
+        $this->emitId = $data['id'];
+        $this->query();
+    }
 
     public function query()
     {
-        return $this->model::query();
+        return $this->model::query()->where('sindicancia_id', $this->emitId);
     }
 
     public function columns()

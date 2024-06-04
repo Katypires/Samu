@@ -32,7 +32,8 @@ class CrudFormComponent extends Component
         return view('livewire.admin.crud.crud-form-component');
     }
 
-    public function edit($data){       
+    public function edit($data){ 
+        // dd("edit");      
         try {
            $this->type = 'update';
            $this->data = $data;
@@ -42,6 +43,7 @@ class CrudFormComponent extends Component
     }
 
     public function delete($data){       
+        // dd("delete");
         try {
            $this->type = 'delete';
            $this->data = $data;
@@ -58,6 +60,7 @@ class CrudFormComponent extends Component
             session()->flash('success','Criado com sucesso!!');
             $this->resetFields();
             $this->emit('refreshCrudTable');
+            $this->emit('closeFormCrud');
         } catch (\Exception $ex) {
             session()->flash('error','Algo deu errado!!');
         }
@@ -65,11 +68,13 @@ class CrudFormComponent extends Component
 
     public function update()
     {
+        // dd("update");
         $this->validate(app($this->model)->rules);
         try {
             app($this->model)::whereId($this->data['id'])->update($this->data);
             session()->flash('success','Atualizado com sucesso!!');
             $this->emit('refreshCrudTable');
+            $this->emit('closeFormCrud');
             $this->resetFields();
         } catch (\Exception $ex) {
             session()->flash('success','Algo deu errado!!');
@@ -83,7 +88,7 @@ class CrudFormComponent extends Component
             $destroy ? $destroy->delete() : false;
             session()->flash('success',"Deletado com sucesso!!");
             $this->emit('refreshCrudTable');
-            $this->emit('openCloseFormCrud');
+            $this->emit('closeFormCrud');
         }catch(\Exception $e){
             session()->flash('error',"Algo deu errado!!");
         }

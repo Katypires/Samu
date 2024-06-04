@@ -13,7 +13,7 @@ class Instituicao extends Model
     // protected $connection = 'voluntario';
     protected $table = 'voluntario.instituicoes';
 
-    protected $fillable = ['tipo_atividade_id', 'tipo_seguimento_id', 'tipo_regiao_urbana_id', 'nome', 'descricao', 'nome_fantasia', 'razao_social', 'cnpj', 'fone_contato', 'email', 'sigla', 'cep', 'numero', 'uf', 'bairro', 'cidade', 'complemento', 'classificacao', 'risco', 'prioridade', 'complexidade', 'situacao','cv','pe', 'status'];
+    protected $fillable = ['tipo_atividade_id', 'tipo_seguimento_id', 'tipo_regiao_urbana_id', 'nome', 'descricao', 'nome_fantasia', 'razao_social', 'cnpj','telefone', 'fone_contato', 'email', 'sigla', 'cep','endereco', 'numero', 'uf', 'bairro', 'cidade', 'complemento', 'classificacao', 'risco', 'prioridade', 'complexidade', 'situacao','cv','pe', 'status'];
 
     public $rules = [   
         'data.tipo_atividade_id' => 'required',

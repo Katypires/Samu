@@ -1,15 +1,15 @@
 <div class="p-3" style="background-color:#D8AE7E">
     
-    <livewire:admin.sesau.semraiva.modal-component key="{{Str::random(5)}}" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form_table" modalId="Unidadee" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
-    <livewire:admin.sesau.semraiva.modal-component key="{{Str::random(5)}}" title="Distrito" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.distrito.distritoform" modalId="Distrito" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
-    <livewire:admin.sesau.semraiva.modal-component key="{{Str::random(5)}}" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form_modal" modalId="Unidade" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
+    <livewire:admin.sesau.semraiva.modal-component corPrimaria="#D8AE7E" corSecundaria="#F8C794" corFooter="#D8AE7E" key="{{Str::random(5)}}" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form_table" modalId="Unidadee" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
+    <livewire:admin.sesau.semraiva.modal-component corPrimaria="#D8AE7E" corSecundaria="#F8C794" corFooter="#D8AE7E" key="{{Str::random(5)}}" title="Distrito" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.distrito.distritoform" modalId="Distrito" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
+    <livewire:admin.sesau.semraiva.modal-component corPrimaria="#D8AE7E" corSecundaria="#F8C794" corFooter="#D8AE7E" key="{{Str::random(5)}}" title="Unidade" icon="fas fa-mobile-alt icon"  form="admin.sesau.semraiva.unidade.form_modal" modalId="Unidade" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
 
     <div class="card p-4 m-4" style="background-color:#F8C794">
         @if (session()->has('message'))
             <div class="alert alert-success">{{ session('message') }}</div>
         @endif
 
-            <div class="card p-4 mb-4">            
+            <div class="card p-4 mb-4 ml-4">            
                 <div class="row">
                     <livewire:admin.sesau.semraiva.card-component key="{{Str::random(5)}}" title="App" text_color='text-white' text="teste texto" icon="fas fa-mobile-alt icon" cor="bg-primary" link="https://semraiva.flutterflow.app/" /> 
                     <livewire:admin.sesau.semraiva.card-component key="{{Str::random(5)}}" title="Site" text_color='text-white' text="teste texto" icon="fas fa-globe icon" cor="bg-success" link='http://semraiva.by.dev.br/'>

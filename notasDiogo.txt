@@ -70,3 +70,22 @@ php artisan make:livewire Admin/Sesau/Voluntario/SelectComponent
 
 php artisan make:livewire Admin/Sesau/Voluntario/DropdownComponent
 
+-----ARRUMAR VOLUNTARIO-----
+*Tipos - não está editando, nem deletando...
+*Tipo - colocar dentro de um card...
+*Tipo - Modal - Deixar no padrao bootstrap NORMAL ...
+
+ADICIONAR FICHA 
+- RETORNAR MSG DE ERROS 
+- RETORNAR MSG DE SUSSESS
+- NÃO ESTÁ ATUALIZADO...
+* TELEFONE NAO ESTÁ SALVANDO
+* CONTATONAO ESTÁ SALVANDO
+* END NÃO ESTÁ SALVANDO
+* DESCRICAO NAO ESTÁ SALVANDO
+
+*VOLTAR A PAGINA INICIAL APOS INSERIR
+- ADICIONAR OPCAO DE VISUALIZACAO
+- BOTAO PARA IMPRIMIR 
+* ADICIONAR COLABORADOR VOLUNTARIO
+------------------------------------

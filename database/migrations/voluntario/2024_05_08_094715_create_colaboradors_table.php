@@ -13,15 +13,16 @@ class CreateColaboradorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('voluntario.colaboradors', function (Blueprint $table) {
+        Schema::create('voluntario.colaboradores', function (Blueprint $table) {
             $table->id();
 
-            // $table->unsignedBigInteger('instituicao_id')->nullable();
-            // $table->foreign('instituicao_id')->references('id')->on('voluntario.instituicao')->onUpdate('cascade')->onDelete('set null');
+            $table->unsignedBigInteger('instituicao_id')->nullable();
+            $table->foreign('instituicao_id')->references('id')->on('voluntario.instituicoes')->onUpdate('cascade')->onDelete('set null');
 
             $table->string('nome')->nullable();
             $table->string('apelido')->nullable();
             $table->string('cpf')->nullable();
+            $table->string('empresa')->nullable();
             $table->string('cargo')->nullable();
             $table->string('email')->nullable();
             $table->string('telefone')->nullable();
@@ -29,8 +30,6 @@ class CreateColaboradorsTable extends Migration
             $table->date('data_inicial')->nullable();
             $table->date('data_final')->nullable();
             $table->text('nota')->nullable();
-            $table->boolean('cv')->default(true);
-            $table->boolean('pe')->default(true);
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
@@ -43,6 +42,6 @@ class CreateColaboradorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voluntario.colaboradors');
+        Schema::dropIfExists('voluntario.colaboradores');
     }
 }

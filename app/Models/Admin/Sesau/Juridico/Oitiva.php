@@ -34,7 +34,7 @@ class Oitiva extends Model
             Column::make('data da oitiva','data_oitiva')->searchable()->sortable(),
             Column::make('local')->searchable()->sortable(),
             Column::make('relatorio')->searchable()->sortable(),
-            Column::make('Ações')->view('livewire.admin.crud.table.actions'),
+            Column::make('Ações')->view('livewire.admin.crudtab.table.actions'),
         ];
     }
 }

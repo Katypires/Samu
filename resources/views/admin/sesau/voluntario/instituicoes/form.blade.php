@@ -60,7 +60,7 @@
                         <label for="telefone">Telefone</label>
                     </div>
                     <div class="form-floating mb-4 col-4">
-                        <input type="text" wire:model.defer="data.contato" class="form-control">
+                        <input type="text" wire:model.defer="data.fone_contato" class="form-control">
                         <label for="contato">Contato</label>
                     </div>
                     <div class="form-check form-switch col-2">
