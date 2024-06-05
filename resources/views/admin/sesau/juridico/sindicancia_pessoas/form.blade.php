@@ -1,0 +1,2 @@
+
+<livewire:admin.crud.crud-component key="{{Str::random(5)}}" formType="form" modal="SindicanciaPessoa" title="Sindicancia Pessoa" model="App\Models\Admin\Sesau\Juridico\SindicanciaPessoa" form="admin.sesau.juridico.sindicancia_pessoas.form_sindicancia_pessoa" />

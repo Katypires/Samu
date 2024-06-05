@@ -17,7 +17,8 @@ class CrudComponent extends Component
         'openEditFormCrud',
         'openDeleteFormCrud',
         'deleteComponent',
-        'editComponent'
+        'editComponent',
+        'openViewFormCrud'
     ];
 
     public function mount($formType, $title, $model, $form)
@@ -49,7 +50,7 @@ class CrudComponent extends Component
 
     public function openEditFormCrud($data, $form)
     {      
-          //dd($data, $this->form, $form);
+        //dd($data, $this->form, $form);
         $this->emitForm = $form;
         $this->openForm =  true;
         $this->emit('editCrudForm', $data);
@@ -62,4 +63,11 @@ class CrudComponent extends Component
         $this->openForm =  true;
         $this->emit('deleteCrudForm', $data);
     }
+
+    public function openViewFormCrud($data,$form){
+        // dd($data);
+        $this->emitForm = $form;
+        $this->emit('viewFormCrud', $data);
+    }
+
 }

@@ -3,9 +3,7 @@
         <h5>{{$title}}</h5>
     </div>
 
-    
-        <form wire:submit.prevent="{{ isset($data['id']) ? $type == 'update' ? 'update' : 'destroy' : 'store' }}">
-            @include('livewire.admin.crud.table.message')
+        <form  wire:submit.prevent="{{ isset($data['id']) ? $type == 'update' ? 'update' : 'destroy' : 'store' }}">
 
             @include($form)
             @if (isset($data['id']))
@@ -13,15 +11,18 @@
                     <button type="submit" class="btn btn-primary "><i class="fas fa-edit"></i> ATUALIZAR</button>
                 @endif
                 @if ($type == 'delete')
-                    <button type="submit"class="btn btn-danger "><i class="fas fa-times"> DELETAR</button>
+                    <button type="submit"class="btn btn-danger "><i class="fas fa-times"></i> DELETAR</button>
+                @endif
+                @if($type == 'view')
                 @endif
             @else
                 <button type="button" wire:click="store" type="submit" class="btn btn-primary"><i class="fa fa-save"></i> SALVAR</button>
             @endif
-            <button wire:click="$emit('closeFormCrud')" type="button" class="btn btn-secondary"><i class="fas fa-times"></i> CANCELAR</button>
+            <button data-bs-dismiss="modal" wire:click="$emit('closeFormCrud')" type="button" class="btn btn-secondary"><i class="fas fa-times"></i> CANCELAR</button>
         </form>
 
-        @if (session()->has('message'))
-            <div class="alert alert-success">{{ session('message') }}</div>
-        @endif
+        <div class="p-2">
+            @include('livewire.admin.crud.table.message')
+        </div>
+        
 </div>  

@@ -1,44 +1,44 @@
                 <div class="row">
 
                     <div class="mb-4 col-4">
-                        <input type="hidden" wire:model.defer="data.tipo_atividade_id" class="form-control">
-                        {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}"  columnName="nome" columnId="id" title="Tipo Atividade" model="App\Models\Admin\Sesau\Voluntario\TipoAtividade" label="tipo_atividade_id" value="{{ isset($data['tipo_atividade_id']) ? $data['tipo_atividade_id'] : '0' }}"  /> --}}
-                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{ Str::random(5) }}"
-                            columnName="nome" columnId="id" titulo="Tipo Atividade"
-                            model="App\Models\Admin\Sesau\Voluntario\TipoAtividade" label="tipo_atividade_id"
-                            value="{{ isset($data['tipo_atividade_id']) ? $data['tipo_atividade_id'] : '0' }}" />
+                            <input type="hidden" wire:model.defer="data.tipo_atividade_id" class="form-control">
+                            {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}"  columnName="nome" columnId="id" title="Tipo Atividade" model="App\Models\Admin\Sesau\Voluntario\TipoAtividade" label="tipo_atividade_id" value="{{ isset($data['tipo_atividade_id']) ? $data['tipo_atividade_id'] : '0' }}"  /> --}}
+                            <livewire:admin.sesau.voluntario.dropdown-component color="secondary"
+                                key="{{ Str::random(5) }}" columnName="nome" columnId="id" titulo="Tipo Atividade"
+                                model="App\Models\Admin\Sesau\Voluntario\TipoAtividade" label="tipo_atividade_id"
+                                value="{{ isset($data['tipo_atividade_id']) ? $data['tipo_atividade_id'] : '0' }}" />
 
-                        @error('data.tipo_atividade_id')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                            @error('data.tipo_atividade_id')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                     </div>
                     <div class="mb-4 col-4">
-                        <input type="hidden" wire:model.defer="data.tipo_seguimento_id" class="form-control">
-                        {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}" columnName="nome" columnId="id" title="Tipo Seguimento" model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id" value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}"/> --}}
-                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{ Str::random(5) }}"
-                            columnName="nome" columnId="id" titulo="Tipo Seguimento"
-                            model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id"
-                            value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}" />
-                        @error('data.tipo_seguimento_id')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                            <input type="hidden" wire:model.defer="data.tipo_seguimento_id" class="form-control">
+                            {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}" columnName="nome" columnId="id" title="Tipo Seguimento" model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id" value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}"/> --}}
+                            <livewire:admin.sesau.voluntario.dropdown-component color="secondary"
+                                key="{{ Str::random(5) }}" columnName="nome" columnId="id" titulo="Tipo Seguimento"
+                                model="App\Models\Admin\Sesau\Voluntario\TipoSeguimento" label="tipo_seguimento_id"
+                                value="{{ isset($data['tipo_seguimento_id']) ? $data['tipo_seguimento_id'] : '0' }}" />
+                            @error('data.tipo_seguimento_id')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                     </div>
                     <div class="mb-4 col-4">
-                        <input type="hidden" wire:model.defer="data.tipo_regiao_urbana_id" class="form-control">
-                        {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}" columnName="id" columnId="id" title="Tipo Regiao Urbana" model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="tipo_regiao_urbana_id" value="{{ isset($data['tipo_regiao_urbana_id']) ? $data['tipo_regiao_urbana_id'] : '0' }}"/> --}}
-                        <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{ Str::random(5) }}"
-                            columnName="nome" columnId="id" titulo="Tipo Regiao Urbana"
-                            model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="tipo_regiao_urbana_id"
-                            value="{{ isset($data['tipo_regiao_urbana_id']) ? $data['tipo_regiao_urbana_id'] : '0' }}" />
-                        @error('data.tipo_regiao_urbana_id')
-                            <span class="text-danger">{{ $message }}</span>
-                        @enderror
+                            <input type="hidden" wire:model.defer="data.tipo_regiao_urbana_id" class="form-control">
+                            {{-- <livewire:admin.sesau.voluntario.select-component key="{{Str::random(5)}}" columnName="id" columnId="id" title="Tipo Regiao Urbana" model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="tipo_regiao_urbana_id" value="{{ isset($data['tipo_regiao_urbana_id']) ? $data['tipo_regiao_urbana_id'] : '0' }}"/> --}}
+                            <livewire:admin.sesau.voluntario.dropdown-component color="secondary"
+                                key="{{ Str::random(5) }}" columnName="nome" columnId="id" titulo="Tipo Regiao Urbana"
+                                model="App\Models\Admin\Sesau\Voluntario\TipoRegiaoUrbana" label="tipo_regiao_urbana_id"
+                                value="{{ isset($data['tipo_regiao_urbana_id']) ? $data['tipo_regiao_urbana_id'] : '0' }}" />
+                            @error('data.tipo_regiao_urbana_id')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                     </div>
-
                     <div class="form-floating mb-4 col-4">
                         <input type="text" wire:model.defer="data.razao_social" class="form-control">
                         <label for="razao_social">Razao Social</label>
                     </div>
+
                     <div class="form-floating mb-4 col-4">
                         <input type="text" wire:model.defer="data.nome_fantasia"class="form-control">
                         <label for="nome_fantasia">Nome fantasia</label>
@@ -102,7 +102,8 @@
                         <label for="select">Classificao</label>
                     </div>
                     <div class="form-floating mb-4 col-3">
-                        <select wire:model.defer="data.risco" class="form-select" aria-label="Default select example">
+                        <select wire:model.defer="data.risco" class="form-select"
+                            aria-label="Default select example">
                             <option selected>---SELECIONE---</option>
                             <option value="1">AZUL</option>
                             <option value="2">VERDE</option>

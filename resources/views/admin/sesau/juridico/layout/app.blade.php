@@ -26,28 +26,29 @@
     }
 
     .icon {
-      font-size: 3rem;
+      color: #d8a19b;
+      font-size: 2rem;
       line-height: 1;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
     }
 
     .card-title {
       font-size: 1.2rem;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 5px;
     }
 
     .btn-custom {
-      background-color: #4CAF50;
-      color: #fff;
+      background-color: #d8a19b;
+      color: #0f0e0e;
       border: none;
-      padding: 10px 20px;
+      padding: 2px 10px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
     }
 
     .btn-custom:hover {
-      background-color: #45a049;
+      background-color: #b2463a;
     }
     </style>
     <style>
