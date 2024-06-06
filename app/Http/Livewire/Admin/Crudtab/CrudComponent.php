@@ -38,14 +38,23 @@ class CrudComponent extends Component
         $this->openForm =  false;
     }
 
-    public function openCloseFormCrudTab($form)
+    public function openCloseFormCrudTab($form,$data)
     {
+        // dd($data);
+        // $this->data = $data;
+        if($data != 0)
+        {
+            // dd($data);
+            $this->data = $data;
+            // dd($this->data);
+        }
         $this->emitForm = $form;
         $this->openForm =  !$this->openForm;
     }
 
     public function openEditFormCrudTab($data)
-    {      
+    {    
+        //dd("aqui");
         // dd($data, $this->form);
         $this->emitForm = $this->form;
         $this->openForm =  false;

@@ -49,8 +49,8 @@ class CrudComponent extends Component
     }
 
     public function openEditFormCrud($data, $form)
-    {      
-        //dd($data, $this->form, $form);
+    {    
+        // dd($data, $this->form, $form);
         $this->emitForm = $form;
         $this->openForm =  true;
         $this->emit('editCrudForm', $data);

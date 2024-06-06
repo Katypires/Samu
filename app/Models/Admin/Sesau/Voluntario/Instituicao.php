@@ -28,6 +28,7 @@ class Instituicao extends Model
             Column::make('ID')->searchable()->sortable(),
             Column::make('Instituicao', 'nome_fantasia')->searchable()->sortable(),
             Column::make('Email', 'email')->searchable()->sortable(),
+            Column::make('Colaborador')->view('livewire.admin.sesau.voluntario.colaborador.table.actions'),
             Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }

@@ -58,11 +58,11 @@ class CrudFormComponent extends Component
         $this->validate(app($this->model)->rules);
         try {
             app($this->model)::create($this->data);
-            session()->flash('success','Criado com sucesso!!');
+            session()->flash('message','Criado com sucesso!!');
             $this->resetFields();
             $this->emit('refreshCrudTabTable');
         } catch (\Exception $ex) {
-            session()->flash('error','Algo deu errado!!');
+            session()->flash('message','Algo deu errado!!');
         }
     }
 

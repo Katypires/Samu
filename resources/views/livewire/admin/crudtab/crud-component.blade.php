@@ -7,7 +7,7 @@
         </div>   
     @endif
 
-    @if(!$openForm)
+    @if(!$openForm) 
         <div class="card p-4 mb-4">
             <div>
                 <h2 class="my-4">Tabela {{$title}}</h2>

@@ -1,8 +1,9 @@
 <div>
     <div class="row">
-        <div class="form-floating mb-4 col-12">
-            <input type="text" wire:model.defer="data.empresa" class="form-control">
-            <label for="empresa">Empresa</label>
+        <div class="mb-4 col-12">
+            <input type="hidden" wire:model.prevent="data.instituicao_id" class="form-control">
+            <livewire:admin.sesau.juridico.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="id" columnId="id" titulo="Instituicao" model="App\Models\Admin\Sesau\Voluntario\Instituicao" label="instituicao_id" value="{{ isset($data['instituicao_id']) ? $data['instituicao_id'] : '0' }}"/>
+            @error('data.instituicao_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
         </div>
         <div class="form-floating mb-4 col-6">
             <input type="text" wire:model.defer="data.nome" class="form-control">
@@ -51,7 +52,7 @@
         </div>
         <div data-mdb-input-init class="form-outline mb-4">
             <label class="form-label">Nota</label>
-            <textarea class="form-control" wire:model.defer="data.nota" rows="4"></textarea>
+            <textarea class="form-control" wire:model.defer="data.nota" rows="3"></textarea>
         </div>
     </div>
 </div>

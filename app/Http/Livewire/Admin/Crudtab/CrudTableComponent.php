@@ -13,7 +13,7 @@ class CrudTableComponent extends TableComponent
     public $header_view = 'livewire.admin.crudtab.table.header';
     // public $footer_view = 'livewire.admin.crud.table.footer';
 
-    public $model, $form, $title, $modalId, $formType, $modal, $key,$tableAction;
+    public $model, $form, $title, $modalId, $formType, $modal, $key,$tableAction,$modelName;
     public $emitId = 0;
 
     protected $listeners = [

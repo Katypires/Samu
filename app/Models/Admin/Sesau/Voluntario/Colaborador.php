@@ -14,11 +14,10 @@ class Colaborador extends Model
     protected $table = 'voluntario.colaboradores';
 
 
-    protected $fillable=[ 'nome', 'apelido', 'cpf','empresa', 'cargo', 'email', 'telefone', 'celular', 'data_inicial', 'data_final', 'nota', 'status'];
+    protected $fillable=[ 'instituicao_id', 'nome', 'apelido', 'cpf', 'empresa', 'cargo', 'email', 'telefone', 'celular', 'data_inicial', 'data_final', 'nota', 'status',];
 
     public $rules = [   
         'data.nome' => 'required',
-        'data.empresa' => 'required',
         'data.email' => 'required',
     ];
 
@@ -27,10 +26,10 @@ class Colaborador extends Model
         return [
             Column::make('ID')->searchable()->sortable(),
             Column::make('Nome do Colaborador', 'nome')->searchable()->sortable(),
-            Column::make('Empresa', 'empresa')->searchable()->sortable(),
+            Column::make('Instituicao', 'instituicao_id')->searchable()->sortable(),
             Column::make('Email', 'email')->searchable()->sortable(),
 
-            Column::make('Ações')->view('livewire.admin.crud.table.actions'),
+            Column::make('Ações')->view('admin.sesau.voluntario.table-actions'),
         ];
     }
 }
