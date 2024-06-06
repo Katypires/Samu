@@ -28,7 +28,7 @@ class SindicanciaPessoa extends Model
             Column::make('ID')->searchable()->sortable(),
             Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
             Column::make('pessoa','pessoa_id')->searchable()->sortable(),
-            Column::make('Ações')->view('livewire.admin.crudtab.table.actions'),
+            Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }
 }

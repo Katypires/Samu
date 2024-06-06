@@ -9,9 +9,11 @@
 
     @if(!$openForm) 
         <div class="card p-4 mb-4">
+            @include('livewire.admin.crudtab.table.message')
             <div>
                 <h2 class="my-4">Tabela {{$title}}</h2>
-                <livewire:admin.crudtab.crud-table-component key="{{Str::random(5)}}" formType="{{$formType}}" modal="{{$modal}}" title="{{$title}}" model="{{$model}}"  form="{{$form}}" />
+                @include('livewire.admin.crudtab.table.message')
+                <livewire:admin.crudtab.crud-table-component key="{{Str::random(5)}}" formType="{{$formType}}" modal="{{$modal}}" title="{{$title}}" model="{{$model}}" form="{{$form}}" />
             </div>
         </div>
     @endif

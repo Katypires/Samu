@@ -14,10 +14,6 @@
         @error('data.pessoa_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
     </div>
 
-    <div class="form-floating mb-4 col-12">
-        <input type="text" wire:model.defer="data.sindicancia_id" class="form-control">
-        <label for="sindicancia_id">sindicancia_id</label>
-    </div>  
     <div class="form-floating mb-4 col-6">
         <input type="date" wire:model.defer="data.data_oitiva" class="form-control">
         <label for="data_oitiva">data_oitiva</label>

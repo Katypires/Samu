@@ -11,7 +11,7 @@ class CrudFormComponent extends Component
     public $openForm = false;
     
     protected $listeners = [
-        'editCrudTabForm' => 'edit',
+        'editCrudTabForm' => 'edit', 
         'deleteCrudTabForm' => 'delete',
         'selectedColumn',
         'selectedTitulo'
@@ -86,7 +86,7 @@ class CrudFormComponent extends Component
             $destroy ? $destroy->delete() : false;
             session()->flash('success',"Deletado com sucesso!!");
             $this->emit('refreshCrudTabTable');
-            $this->emit('openCloseFormCrud');
+            $this->emit('openCloseFormCrudTab');
         }catch(\Exception $e){
             session()->flash('error',"Algo deu errado!!");
         }

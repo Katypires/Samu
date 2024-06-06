@@ -34,19 +34,11 @@ class Sindicancia extends Model
     public static function columns()
     {
         return [
-            Column::make('ID')->searchable()->sortable(),
-            Column::make('processo','numero_processo')->searchable()->sortable(),
-            Column::make('especie')->searchable()->sortable(),
-            Column::make ('resolução','numero_resolucao')->searchable()->sortable(),
-            Column::make('diogrande','numero_diogrande')->searchable()->sortable(),
-            // Column::make('data_abertura')->searchable()->sortable(),
-            // Column::make('data_instauracao')->searchable()->sortable(),
-            // Column::make('assunto','assunto_fato')->searchable()->sortable(),
-            Column::make('documento','numero_documento')->searchable()->sortable(),
+               Column::make('processo','numero_processo')->searchable()->sortable(),
+               Column::make('data_instauracao')->searchable()->sortable(),
             // Column::make('conclusão','conclusao_decisao')->searchable()->sortable(),
-            // Column::make('data_finalizacao')->searchable()->sortable(),
-            Column::make('Ações')->view('livewire.admin.sesau.juridico.sindicancia.table.action'),
-            Column::make('Ações')->view('livewire.admin.crud.table.actions'),
+               Column::make('Ações')->view('livewire.admin.sesau.juridico.sindicancia.table.action'),
+               Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }
 }
