@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class CrudFormComponent extends Component
 {
-    public $model, $modelName,  $form, $title, $modalId, $type, $formType,$modal;
+    public $model, $modelName,  $form, $title, $modalId, $type, $formType,$modal, $modelId;
     public $data = [];
     public $openForm = false;
     
@@ -19,13 +19,15 @@ class CrudFormComponent extends Component
 
   
 
-    public function mount($modelName, $formType, $modal, $title, $model, $form){       
+    public function mount($modelName, $formType, $modal, $title, $model, $form, $modelId){       
         $this->modelName = $modelName;
         $this->formType = $formType;
         $this->modal = $modal;
         $this->title = $title;
         $this->model = $model;
         $this->form = $form;
+        $this->data[$modelName] = $modelId;
+        $this->modelId = $modelId;
     }
 
     public function render()
@@ -34,13 +36,13 @@ class CrudFormComponent extends Component
     }
 
     public function edit($data){       
-        //dd($data);
+        // dd($data);
         try {
            $this->type = 'update';
            $this->data = $data;
            $this->data[$this->modelName] = $data['id'];
         } catch (\Exception $ex) {
-            session()->flash('error','Algo deu errado!!');
+            session()->flash('message','Algo deu errado!!');
         }
     }
 
@@ -48,8 +50,9 @@ class CrudFormComponent extends Component
         try {
            $this->type = 'delete';
            $this->data = $data;
+           $this->data[$this->modelName] = $data['id'];
         } catch (\Exception $ex) {
-            session()->flash('error','Algo deu errado!!');
+            session()->flash('message','Algo deu errado!!');
         }
     }
 
@@ -75,7 +78,7 @@ class CrudFormComponent extends Component
             $this->emit('refreshCrudTabTable');
             $this->resetFields();
         } catch (\Exception $ex) {
-            session()->flash('success','Algo deu errado!!');
+            session()->flash('message','Algo deu errado!!');
         }
     }
 
@@ -84,11 +87,11 @@ class CrudFormComponent extends Component
         try{
             $destroy = app($this->model)::find($this->data['id']);
             $destroy ? $destroy->delete() : false;
-            session()->flash('success',"Deletado com sucesso!!");
+            session()->flash('message',"Deletado com sucesso!!");
             $this->emit('refreshCrudTabTable');
             $this->emit('openCloseFormCrudTab');
         }catch(\Exception $e){
-            session()->flash('error',"Algo deu errado!!");
+            session()->flash('message',"Algo deu errado!!");
         }
     }
 

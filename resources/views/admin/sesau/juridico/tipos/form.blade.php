@@ -1,4 +1,2 @@
-<livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Função Membro" text_color='text-secondary-emphasis' text="teste texto" icon="fas fa-user icon" cor="" link=''  modalId="TipoFuncaoMembro" >
-<livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Função Pessoa" text_color='text-secondary-emphasis' text="teste texto" icon="fas fa-user icon" cor="" link='' modalId="TipoFuncaoPessoa">
-<livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Situação" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="TipoSituacao">                   
-                
+
+<livewire:admin.crud.crud-component  key="{{Str::random(5)}}" formType="form" modal="Tipo" title="tipo" model="App\Models\Admin\Sesau\Juridico\Tipo" form="admin.sesau.juridico.tipos.form_tipo/>

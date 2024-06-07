@@ -14,6 +14,7 @@ class CrudComponent extends Component
     protected $listeners = [
         'closeFormCrudTab',
         'openCloseFormCrudTab',
+        'openModalCrudTab',
         'openEditFormCrudTab',
         'openDeleteFormCrudTab'
     ];
@@ -38,26 +39,26 @@ class CrudComponent extends Component
         $this->openForm =  false;
     }
 
-    public function openCloseFormCrudTab($form,$data)
+    public function openCloseFormCrudTab($form, $data)
     {
-        // dd($data);
-        // $this->data = $data;
-        if($data != 0)
-        {
-            // dd($data);
-            $this->data = $data;
-            // dd($this->data);
-        }
+        // dd($form,$data);
+        $this->data['id'] = $data;
         $this->emitForm = $form;
         $this->openForm =  !$this->openForm;
     }
 
-    public function openEditFormCrudTab($data)
-    {    
-        //dd("aqui");
-        // dd($data, $this->form);
+    public function openModalCrudTab($data)
+    {   
+
         $this->emitForm = $this->form;
-        $this->openForm =  false;
+        $this->openForm = false;
+        $this->emit('editCrudTabForm', $data);
+    }
+
+    public function openEditFormCrudTab($data, $form)
+    {   
+        $this->emitForm =  $form;
+        $this->openForm = true;
         $this->emit('editCrudTabForm', $data);
     }
 

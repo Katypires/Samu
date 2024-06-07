@@ -11,7 +11,7 @@
     <livewire:admin.card.modal-component key="{{Str::random(5)}}" title="Oitiva" icon="fas fa-mobile-alt icon"  form="admin.sesau.juridico.oitiva.form" modalId="Oitiva" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
     <livewire:admin.card.modal-component key="{{Str::random(5)}}" title="Membro" icon="fas fa-mobile-alt icon"  form="admin.sesau.juridico.membros.form" modalId="Membro" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
     <livewire:admin.card.modal-component key="{{Str::random(5)}}" title="Sindicancia Membro" icon="fas fa-mobile-alt icon"  form="admin.sesau.juridico.sindicancia_membros.form" modalId="SindicanciaMembro" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
-    <livewire:admin.card.modal-component key="{{Str::random(5)}}" title="Tipos" icon="fas fa-mobile-alt icon"  form="admin.sesau.juridico.tipos.form" modalId="" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
+    <livewire:admin.card.modal-component key="{{Str::random(5)}}" title="Tipos" icon="fas fa-mobile-alt icon"  form="admin.sesau.juridico.tipos.form"  modalId="Tipo" tamanho="modal-fullscreen" icon="fas fa-map-marker-alt icon"/>
 
 
     <div class="card p-4 mb-4" style="background-color: rgba(187, 178, 178, 0.472)"> 
@@ -24,7 +24,7 @@
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Oitiva" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="Oitiva">  
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Membro" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="Membro">  
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Sindicancia Membro" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="SindicanciaMembro">  
-                <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipos" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="Tipos">  
+                <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipos" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="Tipo">  
             </div>
         </div>
 

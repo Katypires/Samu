@@ -5,6 +5,10 @@
             <livewire:admin.sesau.juridico.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="id" columnId="id" titulo="Instituicao" model="App\Models\Admin\Sesau\Voluntario\Instituicao" label="instituicao_id" value="{{ isset($data['instituicao_id']) ? $data['instituicao_id'] : '0' }}"/>
             @error('data.instituicao_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
         </div>
+        <div class="form-floating mb-4 col-12">
+            <input type="text" wire:model.defer="data.instituicao_id" class="form-control">
+            <label for="nome">Nome</label>
+        </div>
         <div class="form-floating mb-4 col-6">
             <input type="text" wire:model.defer="data.nome" class="form-control">
             <label for="nome">Nome</label>

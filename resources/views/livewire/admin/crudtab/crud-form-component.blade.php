@@ -3,12 +3,7 @@
         <h5>{{$title}}</h5>
     </div>
 
-        @if (session()->has('message'))
-            <div class="alert alert-success">{{ session('message') }}</div>
-        @endif
-
         <form wire:submit.prevent="{{ isset($data['id']) ? $type == 'update' ? 'update' : 'destroy' : 'store' }}">
-            @include('livewire.admin.crudtab.table.message')
 
             @include($form)
             @if (isset($data['id']))
@@ -25,5 +20,6 @@
             <button wire:click="$emit('closeFormCrudTab')" type="button" class="btn btn-secondary">CANCELAR</button>
         </form>
 
+        @include('livewire.admin.crudtab.table.message')
 
 </div>

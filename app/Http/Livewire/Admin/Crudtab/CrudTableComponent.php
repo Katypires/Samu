@@ -29,7 +29,7 @@ class CrudTableComponent extends TableComponent
 
     public function query()
     {
-        return $this->model::query()->where('sindicancia_id', $this->emitId);
+        return $this->model::query()->where($this->modelName, $this->emitId);
     }
 
     public function columns()
