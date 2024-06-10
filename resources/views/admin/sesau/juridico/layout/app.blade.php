@@ -26,7 +26,7 @@
     }
 
     .icon {
-      color: #d8a19b;
+      color: #bb928d;
       font-size: 2rem;
       line-height: 1;
       margin-bottom: 10px;
@@ -39,8 +39,8 @@
     }
 
     .btn-custom {
-      background-color: #d8a19b;
-      color: #0f0e0e;
+      background-color: #bb928d;
+      color: #ffffff;
       border: none;
       padding: 2px 10px;
       border-radius: 5px;
@@ -48,7 +48,7 @@
     }
 
     .btn-custom:hover {
-      background-color: #b2463a;
+      background-color: #b65c52;
     }
     </style>
     <style>

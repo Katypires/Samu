@@ -23,6 +23,7 @@ class CrudTableComponent extends TableComponent
 
     public function x($data)
     {
+       // dd($data);
         $this->emitId = $data['id'];
         $this->query();
     }

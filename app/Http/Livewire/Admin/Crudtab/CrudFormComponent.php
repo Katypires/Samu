@@ -79,7 +79,7 @@ class CrudFormComponent extends Component
             app($this->model)::whereId($this->data["id"])->update($this->data);
             session()->flash('message','Atualizado com sucesso!!');
             $this->emit('refreshCrudTabTable');
-            $this->resetFields();
+            //$this->resetFields();
         } catch (\Exception $ex) {
             dd($ex);
             session()->flash('errors','Algo deu errado!!');

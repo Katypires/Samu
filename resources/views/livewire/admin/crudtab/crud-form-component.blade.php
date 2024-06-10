@@ -2,7 +2,7 @@
     <div class="card p-2 mb-4 bg-light">
         <h5>{{$title}}</h5>
     </div>
-
+         @include('livewire.admin.crudtab.table.message')
         <form wire:submit.prevent="{{ isset($data['id']) ? $type == 'update' ? 'update' : 'destroy' : 'store' }}">
 
             @include($form)
@@ -20,6 +20,6 @@
             <button wire:click="$emit('closeFormCrudTab')" type="button" class="btn btn-secondary">CANCELAR</button>
         </form>
 
-        @include('livewire.admin.crudtab.table.message')
+       
 
 </div>

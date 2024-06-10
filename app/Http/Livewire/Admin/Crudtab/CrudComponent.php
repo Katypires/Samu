@@ -36,7 +36,9 @@ class CrudComponent extends Component
 
     public function closeFormCrudTab()
     {
+        //dd($this->data);
         $this->openForm =  false;
+        $this->emit('editCrudTabForm',$this->data);
     }
 
     public function openCloseFormCrudTab($form, $modelName,$emitId)
@@ -51,6 +53,7 @@ class CrudComponent extends Component
 
     public function openModalCrudTab($data)
     {   
+        $this->data = $data;
         $this->emitForm = $this->form;
         $this->openForm = false;
         $this->emit('editCrudTabForm', $data);

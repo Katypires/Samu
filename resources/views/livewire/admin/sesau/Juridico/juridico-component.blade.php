@@ -17,9 +17,9 @@
     <div class="card p-4 mb-4" style="background-color: rgba(187, 178, 178, 0.472)"> 
         <div class="card p-4 mb-4">         
             <div class="row" style="justify-content: center">
-                <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Função Membro" text_color='text-secondary-emphasis' text="teste texto" icon="fas fa-user icon" cor="" link=''  modalId="TipoFuncaoMembro" >
+                {{-- <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Função Membro" text_color='text-secondary-emphasis' text="teste texto" icon="fas fa-user icon" cor="" link=''  modalId="TipoFuncaoMembro" >
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Função Pessoa" text_color='text-secondary-emphasis' text="teste texto" icon="fas fa-user icon" cor="" link='' modalId="TipoFuncaoPessoa">
-                <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Situação" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="TipoSituacao">                   
+                <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Situação" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="TipoSituacao">                    --}}
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Pessoa" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="Pessoa">                   
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Oitiva" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="Oitiva">  
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Membro" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="" link='' modalId="Membro">  
