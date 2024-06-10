@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class CrudComponent extends Component
 {
-    public $modal, $modelName, $model, $form, $title, $modalId, $formType, $key;
+    public $modal, $modelName, $model, $form, $title, $modalId, $formType, $key,$modelId;
     public $data = [];
     public $openForm = false;
     public $emitForm;
@@ -39,17 +39,18 @@ class CrudComponent extends Component
         $this->openForm =  false;
     }
 
-    public function openCloseFormCrudTab($form, $data)
+    public function openCloseFormCrudTab($form, $modelName,$emitId)
     {
-        // dd($form,$data);
-        $this->data['id'] = $data;
+        // dd($form, $modelName,$emitId);
+        // $this->data[$modelName] = $emitId;
+        $this->modelId = $emitId;
         $this->emitForm = $form;
         $this->openForm =  !$this->openForm;
+        // $this->emit('editCrudTabForm', $data);
     }
 
     public function openModalCrudTab($data)
     {   
-
         $this->emitForm = $this->form;
         $this->openForm = false;
         $this->emit('editCrudTabForm', $data);
@@ -62,9 +63,9 @@ class CrudComponent extends Component
         $this->emit('editCrudTabForm', $data);
     }
 
-    public function openDeleteFormCrudTab($data, $form)
+    public function openDeleteFormCrudTab($data)
     {
-        $this->emitForm = $form;
+        // $this->emitForm = $form;
         $this->openForm =  true;
         $this->emit('deleteCrudTabForm', $data);
     }

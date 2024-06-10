@@ -8,14 +8,14 @@
             @include($form)
             @if (isset($data['id']))
                 @if ($type == 'update')
-                    <button type="submit" class="btn btn-primary ">ATUALIZAR</button>
+                    <button type="submit" class="btn btn-primary">ATUALIZAR</button>
                 @endif
                 @if ($type == 'delete')
                     {{-- <button type="button" wire:click="destroy({{ $data['id'] }})" data-bs-dismiss="modal" class="btn btn-danger ">DELETAR</button> --}}
-                    <button type="submit"class="btn btn-danger ">DELETAR</button>
+                    <button type="submit" class="btn btn-danger ">DELETAR</button>
                 @endif
             @else
-                <button type="button" wire:click="store" type="submit" class="btn btn-primary">SALVAR</button>
+                <button type="submit" class="btn btn-primary">SALVAR</button>
             @endif
             <button wire:click="$emit('closeFormCrudTab')" type="button" class="btn btn-secondary">CANCELAR</button>
         </form>

@@ -21,13 +21,17 @@ class Colaborador extends Model
         'data.email' => 'required',
     ];
 
+    public function instituicao(){
+        return  $this->belongsTo(Instituicao::class);
+    }
+
     public static function columns()
     {
         return [
             Column::make('ID')->searchable()->sortable(),
-            Column::make('Nome do Colaborador', 'nome')->searchable()->sortable(),
-            Column::make('Instituicao', 'instituicao_id')->searchable()->sortable(),
+            Column::make('Colaborador', 'nome')->searchable()->sortable(),
             Column::make('Email', 'email')->searchable()->sortable(),
+            Column::make('Instituicao')->view('livewire.admin.sesau.voluntario.colaborador.table.instituicao'),
 
             Column::make('Ações')->view('admin.sesau.voluntario.table-actions'),
         ];

@@ -16,10 +16,8 @@ class VoluntarioComponent extends Component
     public $atividades;
     public $seguimentos;
     public $regioes;
-    public $model, $form, $title,$tableAction;
+    public $model, $form, $title,$tableAction,$dado;
     
-    //protected $listeners=['selectedColumn'];
-
     protected $rules = [
         'nome' => 'required|min:6',
     ];
@@ -75,7 +73,6 @@ class VoluntarioComponent extends Component
 
     public function resetFields()
     {
-
         $this->data = [];
     }
 }
