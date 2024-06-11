@@ -46,7 +46,8 @@ class SindicanciaMembro extends Model
             Column::make('numero processo sindicancia','numero_processo_sindicancia')->searchable()->sortable(),
             // Column::make('data publicação despacho secretário','data_publicacao_despacho_secretario')->searchable()->sortable(),
             Column::make('rubrica')->searchable()->sortable(),
-            Column::make('Ações')->view('livewire.admin.crudtab.table.actions'),
+            //Column::make('Ações')->view('livewire.admin.crudtab.table.actions'),
+            Column::make('Ações')->view('admin.sesau.voluntario.table-actions'),
         ];
     }
 }

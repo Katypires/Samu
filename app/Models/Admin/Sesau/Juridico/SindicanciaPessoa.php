@@ -28,7 +28,14 @@ class SindicanciaPessoa extends Model
             Column::make('ID')->searchable()->sortable(),
             Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
             Column::make('pessoa','pessoa_id')->searchable()->sortable(),
-            Column::make('Ações')->view('livewire.admin.crud.table.actions'),
+            //Column::make('Ações')->view('livewire.admin.crud.table.actions'),
+            Column::make('Ações')->view('admin.sesau.voluntario.table-actions'),
         ];
     }
+
+    public function pessoa()
+{
+    return $this->belongsTo(\app\Models\Admin\Sesau\Juridico\Pessoa::class, 'pessoa_id');
+}
+
 }
