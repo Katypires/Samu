@@ -1,8 +1,11 @@
 <div wire:ignore.self class="dropdown d-grid gap-2">
-    <button wire:ignore.self type="button"class="btn btn-lg btn-{{ $color }} dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"data-bs-auto-close="outside">
-        {{$title}}          
-    </button>
-    <div wire:ignore.self  class="dropdown-menu p-4 " style="width: 100%;">
+    <fieldset disabled="disabled" class="d-grid gap-2">
+        <button wire:ignore.self type="button"class="btn btn-lg btn-{{ $color }} dropdown-toggle"
+            data-bs-toggle="dropdown" aria-expanded="false"data-bs-auto-close="outside">
+            {{ $title }}
+        </button>
+    </fieldset>
+    <div wire:ignore.self class="dropdown-menu p-4 " style="width: 100%;">
         <div class="mb-3">
             <input type="text" wire:model.debounce.500ms="search" class="form-control" placeholder="Pesquise aqui">
         </div>

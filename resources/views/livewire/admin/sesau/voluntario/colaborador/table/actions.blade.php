@@ -1,1 +1,1 @@
-<button  class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Colaborador"  wire:click="$emit('openModalCrudTab', {{$model}}, 'admin.sesau.voluntario.colaborador.form')"><i class="fas fa-address-book"></i> Colaborador</button>
+<button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Colaborador"  wire:click="$emit('openModalCrudTab', {{$model}}, 'admin.sesau.voluntario.colaborador.form')"><i class="fas fa-address-book"></i> Colaborador</button>

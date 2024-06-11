@@ -18,7 +18,6 @@ class Colaborador extends Model
 
     public $rules = [   
         'data.nome' => 'required',
-        'data.email' => 'required',
     ];
 
     public function instituicao(){

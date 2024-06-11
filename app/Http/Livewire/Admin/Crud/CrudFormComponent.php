@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class CrudFormComponent extends Component
 {
-    public $model, $form, $title, $modalId, $type, $formType,$modal;
+    public $model, $form, $title, $modalId, $type, $formType,$modal,$modelName;
     public $data = [];
     public $openForm = false;
     
@@ -38,6 +38,7 @@ class CrudFormComponent extends Component
         try {
            $this->type = 'update';
            $this->data = $data;
+           $this->data[$this->modelName] = $data[$this->modelName];
         } catch (\Exception $ex) {
             session()->flash('message','Algo deu errado!!');
         }
@@ -48,6 +49,7 @@ class CrudFormComponent extends Component
         try {
            $this->type = 'delete';
            $this->data = $data;
+           $this->data[$this->modelName] = $data[$this->modelName];
         } catch (\Exception $ex) {
             session()->flash('message','Algo deu errado!!');
         }

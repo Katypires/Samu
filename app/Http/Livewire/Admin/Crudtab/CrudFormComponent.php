@@ -43,7 +43,7 @@ class CrudFormComponent extends Component
            $this->data[$this->modelName] = $data[$this->modelName];
            //    dd($this->data[$this->modelName]);
         } catch (\Exception $ex) {
-            session()->flash('errors','Algo deu errado!!');
+            session()->flash('error','Algo deu errado!!');
         }
     }
 
@@ -53,7 +53,7 @@ class CrudFormComponent extends Component
            $this->data = $data;
            $this->data[$this->modelName] = $data[$this->modelName];
         } catch (\Exception $ex) {
-            session()->flash('errors','Algo deu errado!!');
+            session()->flash('error','Algo deu errado!!');
         }
     }
 
@@ -67,7 +67,7 @@ class CrudFormComponent extends Component
             $this->emit('refreshCrudTabTable');
             $this->emit('closeFormCrudTab');
         } catch (\Exception $ex) {
-            session()->flash('errors','Algo deu errado!!');
+            session()->flash('error','Algo deu errado!!');
         }
     }
 
@@ -76,13 +76,14 @@ class CrudFormComponent extends Component
         $this->validate(app($this->model)->rules);
         try {
             // dd($this->data);
-            app($this->model)::whereId($this->data["id"])->update($this->data);
+            app($this->model)::find($this->data["id"])->update($this->data);
             session()->flash('message','Atualizado com sucesso!!');
             $this->emit('refreshCrudTabTable');
+            $this->emit('closeFormCrudTab');
             //$this->resetFields();
         } catch (\Exception $ex) {
             dd($ex);
-            session()->flash('errors','Algo deu errado!!');
+            session()->flash('error','Algo deu errado!!');
         }
     }
 
@@ -95,7 +96,7 @@ class CrudFormComponent extends Component
             $this->emit('refreshCrudTabTable');
             $this->emit('closeFormCrudTab');
         }catch(\Exception $e){
-            session()->flash('errors',"Algo deu errado!!");
+            session()->flash('error',"Algo deu errado!!");
         }
     }
 

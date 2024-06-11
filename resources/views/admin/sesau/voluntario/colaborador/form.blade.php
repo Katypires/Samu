@@ -2,12 +2,12 @@
     <div class="row">
         <div class="mb-4 col-12">
             <input type="hidden" wire:model.prevent="data.instituicao_id" class="form-control">
-            <livewire:admin.sesau.juridico.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="nome_fantasia" columnId="id" titulo="Instituicao" model="App\Models\Admin\Sesau\Voluntario\Instituicao" label="instituicao_id" value="{{ isset($data['instituicao_id']) ? $data['instituicao_id'] : '0' }}"/>
+            <livewire:admin.sesau.voluntario.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="nome_fantasia" columnId="id" titulo="Instituicao" model="App\Models\Admin\Sesau\Voluntario\Instituicao" label="instituicao_id" value="{{ isset($data['instituicao_id']) ? $data['instituicao_id'] : '0' }}"/>
             @error('data.instituicao_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
         </div>
         <div class="form-floating mb-4 col-6">
             <input type="text" wire:model.defer="data.nome" class="form-control">
-            <label for="nome">Nome</label>
+            <label for="nome">Nome*</label>
         </div>
         <div class="form-floating mb-4 col-3">
             <input type="text" wire:model.defer="data.apelido" class="form-control">
@@ -34,19 +34,19 @@
                 @enderror
             </div>
         </div>
-        <div class="form-floating mb-4 col-5">
+        <div class="form-floating mb-4 col-12">
             <input type="text" wire:model.defer="data.telefone" class="form-control">
             <label for="telefone">Telefone</label>
         </div>
-        <div class="form-floating mb-4 col-5">
+        <div class="form-floating mb-4 col-12">
             <input type="text" wire:model.defer="data.celular" class="form-control">
             <label for="celular">Celular</label>
         </div>
-        <div class="form-floating mb-4 col-2">
+        <div class="form-floating mb-4 col-12">
             <input type="date" wire:model.prevent="data.data_inicial" class="form-control">
             <label for="data_inicial">Data Inicial</label>
         </div>
-        <div class="form-floating mb-4 col-2">
+        <div class="form-floating mb-4 col-12">
             <input type="date" wire:model.prevent="data.data_final" class="form-control">
             <label for="data_final">Data Final</label>
         </div>

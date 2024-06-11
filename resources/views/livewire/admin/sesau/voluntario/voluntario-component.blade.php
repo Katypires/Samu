@@ -16,7 +16,6 @@
                     <livewire:admin.sesau.semraiva.card-component key="{{Str::random(5)}}" title="Atividade" text_color='text-white' text="Adicionar Tipo Atividade" icon="fas fa-clipboard-list icon" cor="border-black bg-primary" link='' modalId="TipoAtividade" />  
                     <livewire:admin.sesau.semraiva.card-component key="{{Str::random(5)}}" title="Seguimento" text_color='text-white' text="Adicione Tipo Seguimento" icon="fas fa-map-marker-alt icon" cor="border-black bg-info" link='' modalId="TipoSeguimento" />                   
                     <livewire:admin.sesau.semraiva.card-component key="{{Str::random(5)}}" title="Regiao Urbana" text_color='text-white' text="Adicione Regiao Urbana" icon="fas fa-building icon" cor="border-black bg-success" link='' modalId="TipoRegiaoUrbana" />
-                    <livewire:admin.sesau.semraiva.card-component key="{{Str::random(5)}}" title="Colaborador" text_color='text-white' text="Colaborador Voluntario " icon="fas fa-address-book icon" cor="border-black bg-warning" link='' modalId="Colaborador" />
                 </div>
             </div>
 

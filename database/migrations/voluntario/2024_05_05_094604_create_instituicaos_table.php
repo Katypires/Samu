@@ -46,9 +46,10 @@ class CreateInstituicaosTable extends Migration
             $table->string('prioridade')->nullable();
             $table->string('complexidade')->nullable();
             $table->string('situacao')->nullable();
-            $table->boolean('cv')->default(true);
-            $table->boolean('pe')->default(true);
-            $table->boolean('status')->default(true);
+            $table->boolean('cv')->default(false);
+            $table->boolean('pe')->default(false);
+            $table->string('url')->nullable();
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

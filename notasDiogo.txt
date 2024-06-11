@@ -70,22 +70,32 @@ php artisan make:livewire Admin/Sesau/Voluntario/SelectComponent
 
 php artisan make:livewire Admin/Sesau/Voluntario/DropdownComponent
 
+---------EXEMPLO SALVAR CARACTERES DE FORMA ESPECIFICA-------
+'name' = ucfirst(objeto->name)as df As df
+ucwords(objeto->name) as df   As Df
+---------------------------------------------
+
 -----ARRUMAR VOLUNTARIO-----
-*Tipos - não está editando, nem deletando...
-*Tipo - colocar dentro de um card...
-*Tipo - Modal - Deixar no padrao bootstrap NORMAL ...
+INSTITUICAO
 
-ADICIONAR FICHA 
-*? RETORNAR MSG DE ERROS 
-* RETORNAR MSG DE SUSSESS
-- NÃO ESTÁ ATUALIZADO...
-* TELEFONE NAO ESTÁ SALVANDO
-* CONTATONAO ESTÁ SALVANDO
-* END NÃO ESTÁ SALVANDO
-* DESCRICAO NAO ESTÁ SALVANDO
+MSG= Algo deu errado!! alterar para a cor para error... 
+*URL - não esta salndo...
 
-*VOLTAR A PAGINA INICIAL APOS INSERIR
-* ADICIONAR OPCAO DE VISUALIZACAO
-- BOTAO PARA IMPRIMIR 
-* ADICIONAR COLABORADOR VOLUNTARIO
+NOME SOCIAL = MAISCULO
+NOME FANTASIA = MAISCULO
+SIGLA = MAISCULO
+CONTATO = MAISCULO
+
+
+COLABORADOR
+EMAIL - NÃO É OBRIGATORIO
+LINHA - Telefone / Celular / DataInicial - TAMANHO 12
+
+CARD
+- ESCONDER O CARD COLABORADOR
+
+TIPO - CARD
+- NOME - MAISCULO
+- DELETAR E EDITAR - NAO TA FUNCIONANDO...
 ------------------------------------
+

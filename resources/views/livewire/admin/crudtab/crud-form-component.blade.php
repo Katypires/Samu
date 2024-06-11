@@ -11,15 +11,13 @@
                     <button type="submit" class="btn btn-primary">ATUALIZAR</button>
                 @endif
                 @if ($type == 'delete')
-                    {{-- <button type="button" wire:click="destroy({{ $data['id'] }})" data-bs-dismiss="modal" class="btn btn-danger ">DELETAR</button> --}}
-                    <button type="submit" class="btn btn-danger ">DELETAR</button>
+                    {{-- <button type="button" wire:click="destroy({{ $data['id'] }})" data-bs-dismiss="modal" class="btn btn-danger ">REMOVER</button> --}}
+                    <button type="submit" class="btn btn-danger ">REMOVER</button>
                 @endif
             @else
                 <button type="submit" class="btn btn-primary">SALVAR</button>
             @endif
             <button wire:click="$emit('closeFormCrudTab')" type="button" class="btn btn-secondary">CANCELAR</button>
         </form>
-
-       
 
 </div>
