@@ -18,7 +18,7 @@
     <div class="card p-4 mb-4"  style="background-color: rgba(135, 170, 209, 0.69)"> 
         <div class="card p-4 mb-4">         
             <div class="row" style="justify-content: center">
-                <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Função Membro" text_color='text-secondary-emphasis' text="teste texto" icon="fas fa-user icon" cor="bg-secondary-subtle border border-subtle"  link=''  modalId="TipoFuncaoMembro" >
+                <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Função Membro" text_color='text-secondary-emphasis' text="teste texto" icon="fas fa-user icon" cor="bg-light-subtle border border-light"  link=''  modalId="TipoFuncaoMembro" >
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Função Pessoa" text_color='text-secondary-emphasis' text="teste texto" icon="fas fa-user icon" cor="bg-secondary-subtle border border-subtle"  link='' modalId="TipoFuncaoPessoa">
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Tipo Situação" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="bg-secondary-subtle border border-subtle"  link='' modalId="TipoSituacao">                   
                 <livewire:admin.card.card-component key="{{Str::random(5)}}" title="Pessoa" text_color='text-secondary-emphasis' text="teste texto" icon="fa-solid fa-layer-group icon" cor="bg-secondary-subtle border border-subtle"  link='' modalId="Pessoa">                   
