@@ -1,7 +1,7 @@
 <div>   
 
 @if ($openForm && $form == $emitForm && $formType != 'modal')
-    <div class="card p-4 mb-4">
+    <div class="card p-4 mb-4 bg-light-subtle border-light-subtle">
         <div>
             @if (session()->has('message'))
             <div class="alert alert-success">{{ session('message') }}</div>
@@ -13,7 +13,7 @@
 
  
     @if(!$openForm)
-    <div class="card p-4 mb-4">
+    <div class="card p-4 mb-4 bg-secondary-subtle border-light-subtle shadow text-center">
         @include('livewire.admin.crud.table.message')
         <div>
             <h2 class="my-4">Tabela {{$title}}</h2>

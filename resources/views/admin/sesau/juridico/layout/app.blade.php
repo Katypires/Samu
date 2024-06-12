@@ -26,7 +26,7 @@
     }
 
     .icon {
-      color: #bb928d;
+      color: #f2cfcc;
       font-size: 2rem;
       line-height: 1;
       margin-bottom: 10px;
@@ -36,15 +36,18 @@
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 5px;
+      color: #f2cfcc;
     }
 
     .btn-custom {
-      background-color: #bb928d;
-      color: #ffffff;
+      background-color: #f2cfcc;
+      color: #721111;
       border: none;
       padding: 2px 10px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
+      font-weight: bold;
+      font-size: 13px;
     }
 
     .btn-custom:hover {
