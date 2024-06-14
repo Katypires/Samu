@@ -11,6 +11,14 @@
         <livewire:admin.sesau.juridico.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="nome" columnId="id" titulo="Pessoa" model="App\Models\Admin\Sesau\Juridico\Pessoa" label="pessoa_id" value="{{ isset($data['pessoa_id']) ? $data['pessoa_id'] : '0' }}"/>
         @error('data.pessoa_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
     </div>
+    <div class="form-floating mb-4 col-6">
+        <input type="text" wire:model.defer="data.sindicancia_id" class="form-control">
+        <label for="sindicancia_id">sindicancia_id</label>
+    </div>
+    <div class="form-floating mb-4 col-6">
+        <input type="text" wire:model.defer="data.pessoa_id" class="form-control">
+        <label for="pessoa_id">pessoa_id</label>
+    </div>
 
     <div class="row form-check form-switch">
         <div class="mb-4 px-4">

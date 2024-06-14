@@ -10,6 +10,7 @@ class CrudComponent extends Component
     public $data = [];
     public $openForm = false;
     public $emitForm;
+    public $relacionamento;
     
     protected $listeners = [
         'closeFormCrudTab',

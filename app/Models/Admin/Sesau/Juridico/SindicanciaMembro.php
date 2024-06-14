@@ -36,18 +36,22 @@ class SindicanciaMembro extends Model
         return [
             Column::make('ID')->searchable()->sortable(),
             Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
-            Column::make ('membro','membro_id')->searchable()->sortable(),
-            // Column::make('tipo função membro','tipo_funcao_membro_id')->searchable()->sortable(),
-            // Column::make('espécie')->searchable()->sortable(),
-            // Column::make('número ato','numero_ato')->searchable()->sortable(),
-            // Column::make('data ato','data_ato')->searchable()->sortable(),
-            // Column::make('numero diogrande','numero_diogrande')->searchable()->sortable(),
-            // Column::make('data publicação','data_publicacao')->searchable()->sortable(),
+            Column::make ('membro','membro.nome')->searchable()->sortable(),
+            Column::make('tipo função membro','tipo_funcao_membro.nome')->searchable()->sortable(),
             Column::make('numero processo sindicancia','numero_processo_sindicancia')->searchable()->sortable(),
             // Column::make('data publicação despacho secretário','data_publicacao_despacho_secretario')->searchable()->sortable(),
             Column::make('rubrica')->searchable()->sortable(),
             //Column::make('Ações')->view('livewire.admin.crudtab.table.actions'),
             Column::make('Ações')->view('admin.sesau.voluntario.table-actions'),
         ];
+    }
+
+    public function membro()
+    {
+        return $this->belongsTo(Pessoa::class, 'membro_id', 'id');
+    }
+    public function tipo_funcao_membro()
+    {
+        return $this->belongsTo(Pessoa::class, 'tipo_funcao_membro_id', 'id');
     }
 }

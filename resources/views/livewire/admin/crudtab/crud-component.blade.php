@@ -13,7 +13,7 @@
             <div>
                 <h2 class="my-4">Tabela {{$title}}</h2>
                 @include('livewire.admin.crudtab.table.message')
-                <livewire:admin.crudtab.crud-table-component key="{{Str::random(5)}}" modelName="{{$modelName}}" formType="{{$formType}}" modal="{{$modal}}" title="{{$title}}" model="{{$model}}" form="{{$form}}" />
+                <livewire:admin.crudtab.crud-table-component key="{{Str::random(5)}}" modelName="{{$modelName}}" formType="{{$formType}}" modal="{{$modal}}" title="{{$title}}" model="{{$model}}" form="{{$form}}" :relacionamento=$relacionamento />
             </div>
         </div>
     @endif

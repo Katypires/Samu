@@ -15,6 +15,7 @@ class CrudTableComponent extends TableComponent
 
     public $model, $form, $title, $modalId, $formType, $modal, $key,$tableAction,$modelName;
     public $emitId = 0;
+    public $relacionamento;
 
     protected $listeners = [
         'refreshCrudTabTable'=>'$refresh',
@@ -30,7 +31,12 @@ class CrudTableComponent extends TableComponent
 
     public function query()
     {
-        return $this->model::query()->where($this->modelName, $this->emitId);
+        if($this->relacionamento){
+            return $this->model::query()->where($this->modelName, $this->emitId)->with($this->relacionamento);
+        }else{
+            return $this->model::query()->where($this->modelName, $this->emitId);
+        }
+        
     }
 
     public function columns()

@@ -37,20 +37,31 @@ class CrudFormComponent extends Component
         // dd("edit");      
         try {
            $this->type = 'update';
-           $this->data = $data;
+           $this->data = $data; 
+
+        if (array_key_exists($this->modelName, $data)) {
            $this->data[$this->modelName] = $data[$this->modelName];
+        } else {
+        }
         } catch (\Exception $ex) {
+            //dd($ex->getMessage());
             session()->flash('message','Algo deu errado!!');
         }
     }
+
 
     public function delete($data){       
         // dd("delete");
         try {
            $this->type = 'delete';
            $this->data = $data;
-           $this->data[$this->modelName] = $data[$this->modelName];
+           
+        if (array_key_exists($this->modelName, $data)) {
+            $this->data[$this->modelName] = $data[$this->modelName];
+        } else {
+        }
         } catch (\Exception $ex) {
+            //dd($ex->getMessage());
             session()->flash('message','Algo deu errado!!');
         }
     }
