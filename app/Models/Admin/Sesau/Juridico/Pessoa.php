@@ -27,7 +27,7 @@ class Pessoa extends Model
     public static function columns()
     {
         return [
-            Column::make('ID')->searchable()->sortable(),
+            // Column::make('ID')->searchable()->sortable(),
             Column::make('nome')->searchable()->sortable(),
             Column::make('cpf')->searchable()->sortable(),
             Column::make('cnpj')->searchable()->sortable(),

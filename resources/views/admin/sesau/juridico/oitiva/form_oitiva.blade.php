@@ -9,7 +9,7 @@
 
     <div class="mb-4 col-6">
         <input type="hidden" wire:model.prevent="data.pessoa_id" class="form-control">
-        {{-- <livewire:admin.sesau.juridico.select-component key="{{Str::random(5)}}" columnName="nome" columnId="id" title="Tipo Situação" model="App\Models\Admin\Sesau\Juridico\TipoSituacao" label="pessoa_id" value="{{ isset($data['pessoa_id']) ? $data['pessoa_id'] : '0' }}"/> --}}
+        {{-- <livewire:admin.sesau.juridico.select-component key="{{Str::random(5)}}" columnName="nome" columnId="id" title="Pessoa" model="App\Models\Admin\Sesau\Juridico\Pessoa" label="pessoa_id" value="{{ isset($data['pessoa_id']) ? $data['pessoa_id'] : '0' }}"/> --}}
         <livewire:admin.sesau.juridico.dropdown-component color="secondary" key="{{Str::random(5)}}" columnName="nome" columnId="id" titulo="Pessoa" model="App\Models\Admin\Sesau\Juridico\Pessoa" label="pessoa_id" value="{{ isset($data['pessoa_id']) ? $data['pessoa_id'] : '0' }}"/>
         @error('data.pessoa_id')<span class="text-danger">{{ $message }}</span> @enderror                                          
     </div>

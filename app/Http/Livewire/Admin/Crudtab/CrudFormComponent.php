@@ -79,7 +79,7 @@ class CrudFormComponent extends Component
             app($this->model)::find($this->data["id"])->update($this->data);
             session()->flash('message','Atualizado com sucesso!!');
             $this->emit('refreshCrudTabTable');
-            $this->emit('closeFormCrudTab');
+            //$this->emit('closeFormCrudTab');
             //$this->resetFields();
         } catch (\Exception $ex) {
             dd($ex);
@@ -94,7 +94,7 @@ class CrudFormComponent extends Component
             $destroy ? $destroy->delete() : false;
             session()->flash('message',"Deletado com sucesso!!");
             $this->emit('refreshCrudTabTable');
-            $this->emit('closeFormCrudTab');
+            $this->emit('openTableCrudTab');
         }catch(\Exception $e){
             session()->flash('error',"Algo deu errado!!");
         }

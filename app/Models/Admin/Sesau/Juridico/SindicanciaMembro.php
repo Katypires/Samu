@@ -12,6 +12,12 @@ class SindicanciaMembro extends Model
     protected $table = 'juridico.sindicancia_membros';
     protected $fillable = ['sindicancia_id', 'membro_id', 'tipo_funcao_membro_id', 'especie', 'numero_ato', 'data_ato', 'numero_diogrande', 'data_publicacao', 'numero_processo_sindicancia', 'data_publicacao_despacho_secretario', 'rubrica' ];
 
+    protected $dates = [
+        'data_ato' => 'date',
+        'data_publicacao' => 'date',
+        'data_publicacao_despacho_secretario' => 'date',
+    ];
+
     public $rules = [
         'data.sindicancia_id' => 'required',
         'data.membro_id' => 'required',
@@ -22,20 +28,22 @@ class SindicanciaMembro extends Model
     protected $casts = [
         'especie' => 'string',
         'numero_ato' => 'string',
-        'data_ato' => 'date',
         'numero_diogrande' => 'string',
-        'data_publicacao' => 'date',
         'numero_processo_sindicancia' => 'string',
-        'data_publicacao_despacho_secretario' => 'date',
         'rubrica' => 'string',
         'status' => 'boolean',
     ];
 
+    public function getDataInstauracaoAttribute($value)
+    {
+        return $this->asDateTime($value)->format('Y-m-d');
+    }
+
     public static function columns()
     {
         return [
-            Column::make('ID')->searchable()->sortable(),
-            Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
+            // Column::make('ID')->searchable()->sortable(),
+            // Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
             Column::make ('membro','membro.nome')->searchable()->sortable(),
             Column::make('tipo função membro','tipo_funcao_membro.nome')->searchable()->sortable(),
             Column::make('numero processo sindicancia','numero_processo_sindicancia')->searchable()->sortable(),
@@ -52,6 +60,6 @@ class SindicanciaMembro extends Model
     }
     public function tipo_funcao_membro()
     {
-        return $this->belongsTo(Pessoa::class, 'tipo_funcao_membro_id', 'id');
+        return $this->belongsTo(TipoFuncaoMembro::class, 'tipo_funcao_membro_id', 'id');
     }
 }

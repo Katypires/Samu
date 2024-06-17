@@ -12,6 +12,10 @@ class Sindicancia extends Model
     protected $table = 'juridico.sindicancias';
     protected $fillable = ['tipo_situacao_id', 'numero_processo', 'especie', 'numero_resolucao', 'numero_diogrande', 'data_abertura', 'data_instauracao', 'assunto_fato', 'numero_documento', 'conclusao_decisao', 'data_finalizacao', 'status'];
 
+    // protected $dates = [
+    //     'data_abertura', 'data_instauracao', 'data_finalizacao'
+    // ];
+
     public $rules = [
         'data.numero_processo' => 'required|min:1|max:255',
         'data.tipo_situacao_id' => 'required',
@@ -22,14 +26,24 @@ class Sindicancia extends Model
         'especie' => 'string',
         'numero_resolucao' => 'string',
         'numero_diogrande' => 'string',
-        'data_abertura' => 'date',
-        'data_instauracao' => 'date',
         'assunto_fato' => 'string',
         'numero_documento' => 'string',
         'conclusao_decisao' => 'string',
-        'data_finalizacao' => 'date',
         'status' => 'boolean',
     ];
+
+    // public function getDataAberturaAttribute($value)
+    // {
+    //     return $this->asDateTime($value)->format('Y-m-d');
+    // }
+    // public function getDataInstauracaoAttribute($value)
+    // {
+    //     return $this->asDateTime($value)->format('Y-m-d');
+    // }
+    // public function getDataFinalizacaoAttribute($value)
+    // {
+    //     return $this->asDateTime($value)->format('Y-m-d');
+    // }
 
     public static function columns()
     {

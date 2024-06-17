@@ -17,7 +17,7 @@
             @else
                 <button type="submit" class="btn btn-primary">SALVAR</button>
             @endif
-            <button wire:click="$emit('closeFormCrudTab')" type="button" class="btn btn-secondary">CANCELAR</button>
+            <button wire:click="$emit('openTableCrudTab')" type="button" class="btn btn-secondary">CANCELAR</button>
         </form>
 
 </div>

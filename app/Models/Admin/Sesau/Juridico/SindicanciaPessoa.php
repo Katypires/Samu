@@ -25,8 +25,8 @@ class SindicanciaPessoa extends Model
     public static function columns()
     {
         return [
-            Column::make('ID')->searchable()->sortable(),
-            Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
+            // Column::make('ID')->searchable()->sortable(),
+            // Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
             Column::make('sindicancia.numero_processo')->searchable()->sortable(),
             Column::make('pessoa.nome')->searchable()->sortable(),
             //Column::make('Ações')->view('livewire.admin.crud.table.actions'),

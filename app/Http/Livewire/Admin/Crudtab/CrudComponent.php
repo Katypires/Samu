@@ -9,11 +9,13 @@ class CrudComponent extends Component
     public $modal, $modelName, $model, $form, $title, $modalId, $formType, $key,$modelId;
     public $data = [];
     public $openForm = false;
+    public $openTable = false;
     public $emitForm;
     public $relacionamento;
     
     protected $listeners = [
         'closeFormCrudTab',
+        'openTableCrudTab',
         'openCloseFormCrudTab',
         'openModalCrudTab',
         'openEditFormCrudTab',
@@ -39,10 +41,19 @@ class CrudComponent extends Component
     {
         //dd($this->data);
         $this->openForm =  false;
+        $this->openTable =  false;
         $this->emit('editCrudTabForm',$this->data);
     }
 
-    public function openCloseFormCrudTab($form, $modelName,$emitId)
+    public function openTableCrudTab()
+    {
+        //dd($this->data);
+        $this->openForm =  false;
+        $this->openTable =  true;
+        $this->emit('editCrudTabForm',$this->data);
+    }
+
+    public function openCloseFormCrudTab($form, $modelName, $emitId)
     {
         // dd($form, $modelName,$emitId);
         // $this->data[$modelName] = $emitId;
@@ -56,6 +67,7 @@ class CrudComponent extends Component
     {   
         $this->data = $data;
         $this->emitForm = $this->form;
+        $this->openTable = true;
         $this->openForm = false;
         $this->emit('editCrudTabForm', $data);
     }
