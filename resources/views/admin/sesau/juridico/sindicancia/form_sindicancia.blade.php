@@ -8,44 +8,44 @@
 
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.numero_processo" class="form-control">
-        <label for="numero_processo">numero_processo</label>
+        <label for="numero_processo">Número do Processo:</label>
     </div>
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.especie" class="form-control">
-        <label for="especie">especie</label>
+        <label for="especie">Espécie:</label>
     </div>
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.numero_resolucao" class="form-control">
-        <label for="numero_resolucao">numero_resolucao</label>
+        <label for="numero_resolucao">N° da Resolução:</label>
     </div>
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.numero_diogrande" class="form-control">
-        <label for="numero_diogrande">numero_diogrande</label>
+        <label for="numero_diogrande">N° do Diogrande:</label>
     </div>
     <div class="form-floating mb-4 col-6">
         <input type="date" wire:model.defer="data.data_abertura" class="form-control">
-        <label for="data_abertura">data_abertura</label>
+        <label for="data_abertura">Data de Abertura:</label>
     </div>
     
     <div class="form-floating mb-4 col-6">
         <input type="date" wire:model.defer="data.data_instauracao" class="form-control">
-        <label for="data_instauracao">data_instauracao</label>
+        <label for="data_instauracao">Data de Instauração:</label>
     </div>
     <div class="form-floating mb-4 col-12">
         <textarea wire:model.defer="data.assunto_fato" class="form-control" rows="5" cols="50"></textarea>
-        <label for="assunto_fato">assunto_fato</label>
+        <label for="assunto_fato">Assunto Fato:</label>
     </div>
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.numero_documento" class="form-control">
-        <label for="numero_documento">numero_documento</label>
+        <label for="numero_documento">N° do Documento:</label>
     </div>
     <div class="form-floating mb-4 col-6">
         <input type="date" wire:model.defer="data.data_finalizacao" class="form-control">
-        <label for="data_finalizacao">data_finalizacao</label>
+        <label for="data_finalizacao">Data de Finalização:</label>
     </div>
     <div class="form-floating mb-4 col-12">
         <textarea wire:model.defer="data.conclusao_decisao" class="form-control" rows="5" cols="50"></textarea>
-        <label for="conclusao_decisao">conclusao_decisao</label>
+        <label for="conclusao_decisao">Conclusão/Decisão:</label>
     </div>
     
 

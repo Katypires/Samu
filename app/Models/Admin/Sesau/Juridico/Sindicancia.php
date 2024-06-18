@@ -48,10 +48,10 @@ class Sindicancia extends Model
     public static function columns()
     {
         return [
-               Column::make('processo','numero_processo')->searchable()->sortable(),
-               Column::make('data_instauracao')->searchable()->sortable(),
+               Column::make('N° do Processo','numero_processo')->searchable()->sortable(),
+               Column::make('Data de Instauração','data_instauracao')->searchable()->sortable(),
             // Column::make('conclusão','conclusao_decisao')->searchable()->sortable(),
-               Column::make('Ações')->view('livewire.admin.sesau.juridico.sindicancia.table.action'),
+               Column::make('Oitivas','Ações')->view('livewire.admin.sesau.juridico.sindicancia.table.action'),
                Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }

@@ -24,8 +24,8 @@ class TipoSituacao extends Model
     public static function columns()
     {
         return [
-            Column::make('ID')->searchable()->sortable(),
-            Column::make('nome')->searchable()->sortable(),
+            //Column::make('ID')->searchable()->sortable(),
+            Column::make('Situação','nome')->searchable()->sortable(),
             Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }

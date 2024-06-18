@@ -24,8 +24,8 @@ class TipoFuncaoPessoa extends Model
     public static function columns()
     {
         return [
-            Column::make('ID')->searchable()->sortable(),
-            Column::make('nome')->searchable()->sortable(),
+            //Column::make('ID')->searchable()->sortable(),
+            Column::make('Nome','nome')->searchable()->sortable(),
             Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }

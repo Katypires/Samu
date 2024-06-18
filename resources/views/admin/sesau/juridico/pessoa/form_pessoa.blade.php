@@ -2,19 +2,19 @@
 
     <div class="form-floating mb-4 col-12">
         <input type="text" wire:model.defer="data.nome" class="form-control">
-        <label for="nome">nome</label>
+        <label for="nome">Nome:</label>
     </div>  
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.cpf" class="form-control">
-        <label for="cpf">cpf</label>
+        <label for="cpf">CPF:</label>
     </div>
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.cnpj" class="form-control">
-        <label for="cnpj">cnpj</label>
+        <label for="cnpj">CNPJ:</label>
     </div>
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.oab" class="form-control">
-        <label for="oab">oab</label>
+        <label for="oab">OAB:</label>
     </div>
     
 

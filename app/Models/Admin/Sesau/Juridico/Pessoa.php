@@ -28,10 +28,10 @@ class Pessoa extends Model
     {
         return [
             // Column::make('ID')->searchable()->sortable(),
-            Column::make('nome')->searchable()->sortable(),
-            Column::make('cpf')->searchable()->sortable(),
-            Column::make('cnpj')->searchable()->sortable(),
-            Column::make('oab')->searchable()->sortable(),
+            Column::make('Nome','nome')->searchable()->sortable(),
+            Column::make('CPF','cpf')->searchable()->sortable(),
+            Column::make('CNPJ','cnpj')->searchable()->sortable(),
+            Column::make('OAB','oab')->searchable()->sortable(),
             Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }

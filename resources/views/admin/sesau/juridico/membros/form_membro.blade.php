@@ -2,11 +2,11 @@
 
     <div class="form-floating mb-4 col-12">
         <input type="text" wire:model.defer="data.nome" class="form-control">
-        <label for="nome">nome</label>
+        <label for="nome">Nome:</label>
     </div>  
     <div class="form-floating mb-4 col-6">
         <input type="text" wire:model.defer="data.matricula" class="form-control">
-        <label for="matricula">matricula</label>
+        <label for="matricula">Matrícula:</label>
     </div>
     
 

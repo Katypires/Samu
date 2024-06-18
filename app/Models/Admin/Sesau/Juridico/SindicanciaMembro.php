@@ -44,11 +44,11 @@ class SindicanciaMembro extends Model
         return [
             // Column::make('ID')->searchable()->sortable(),
             // Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
-            Column::make ('membro','membro.nome')->searchable()->sortable(),
-            Column::make('tipo função membro','tipo_funcao_membro.nome')->searchable()->sortable(),
-            Column::make('numero processo sindicancia','numero_processo_sindicancia')->searchable()->sortable(),
+            Column::make ('Membro','membro.nome')->searchable()->sortable(),
+            Column::make('Função Membro','tipo_funcao_membro.nome')->searchable()->sortable(),
+            Column::make('N° do Processo Sindicância','numero_processo_sindicancia')->searchable()->sortable(),
             // Column::make('data publicação despacho secretário','data_publicacao_despacho_secretario')->searchable()->sortable(),
-            Column::make('rubrica')->searchable()->sortable(),
+            Column::make('Rubrica')->searchable()->sortable(),
             //Column::make('Ações')->view('livewire.admin.crudtab.table.actions'),
             Column::make('Ações')->view('admin.sesau.voluntario.table-actions'),
         ];

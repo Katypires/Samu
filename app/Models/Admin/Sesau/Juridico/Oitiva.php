@@ -14,11 +14,12 @@ class Oitiva extends Model
 
     public $rules = [
         'data.sindicancia_id' => 'required',
+        'data.pessoa_id' => 'required',
         
     ];
 
     protected $casts = [
-        'data.pessoa_id' => 'string',
+        
         'local' => 'string',
         'relatorio' => 'string',
         'status' => 'boolean',
@@ -30,11 +31,11 @@ class Oitiva extends Model
         return [
             // Column::make('ID')->searchable()->sortable(),
             // Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
-            Column::make('pessoa','pessoa.nome')->searchable()->sortable(),
+            Column::make('Nome','pessoa.nome')->searchable()->sortable(),
             // Column::make ('pessoa','pessoa_id')->searchable()->sortable(),
-            Column::make('data da oitiva','data_oitiva')->searchable()->sortable(),
-            Column::make('local')->searchable()->sortable(),
-            Column::make('relatorio')->searchable()->sortable(),
+            Column::make('Data da Oitiva','data_oitiva')->searchable()->sortable(),
+            Column::make('Local','local')->searchable()->sortable(),
+            Column::make('Relatório','relatorio')->searchable()->sortable(),
             //Column::make('Ações')->view('livewire.admin.crudtab.table.actions'),
             Column::make('Ações')->view('admin.sesau.voluntario.table-actions'),
         ];
