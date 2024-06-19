@@ -4,6 +4,8 @@ namespace App\Http\Livewire\Admin\Crud;
 
 use Kdion4891\LaravelLivewireTables\Column;
 use Kdion4891\LaravelLivewireTables\TableComponent;
+use App\Exports\ModelExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CrudTableComponent extends TableComponent
 {
@@ -13,10 +15,10 @@ class CrudTableComponent extends TableComponent
     public $header_view = 'livewire.admin.crud.table.header';
     // public $footer_view = 'livewire.admin.crud.table.footer';
 
-    public $model, $form, $title, $modalId, $formType, $modal, $key,$tableAction;
+    public $model, $form, $title, $modalId, $formType, $modal, $key, $tableAction;
 
     protected $listeners = [
-        'refreshCrudTable'=>'$refresh'      
+        'refreshCrudTable'=>'$refresh'
     ];
 
     public function query()
@@ -35,6 +37,13 @@ class CrudTableComponent extends TableComponent
                 Column::make('Updated At')->searchable()->sortable(),
             ];
         }
+    }
+
+    public function export() {
+
+        $export = $this->title.'.xlsx';
+        //dd( $export);
+        return Excel::download(new ModelExport($this->model), $export );
     }
 
 }

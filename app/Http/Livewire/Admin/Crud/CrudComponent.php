@@ -2,7 +2,9 @@
 
 namespace App\Http\Livewire\Admin\Crud;
 
+
 use Livewire\Component;
+
 
 class CrudComponent extends Component
 {
@@ -10,7 +12,7 @@ class CrudComponent extends Component
     public $data = [];
     public $openForm = false;
     public $emitForm;
-    
+
     protected $listeners = [
         'closeFormCrud',
         'openCloseFormCrud',
@@ -30,7 +32,7 @@ class CrudComponent extends Component
        $this->model = $model;
        $this->form = $form;
     }
-    
+
     public function render()
     {
         return view('livewire.admin.crud.crud-component');
@@ -49,7 +51,7 @@ class CrudComponent extends Component
     }
 
     public function openEditFormCrud($data, $form)
-    {    
+    {
         // dd($data, $this->form, $form);
         $this->emitForm = $form;
         $this->openForm =  true;
@@ -69,5 +71,6 @@ class CrudComponent extends Component
         $this->emitForm = $form;
         $this->emit('viewFormCrud', $data);
     }
+
 
 }

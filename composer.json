@@ -1,5 +1,6 @@
 {
     "name": "laravel/laravel",
+    "version": "8",
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": ["framework", "laravel"],
@@ -13,6 +14,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.12",
+        "maatwebsite/excel": "^3.1",
         "snapappointments/bootstrap-select": "^1.13"
     },
     "require-dev": {

@@ -15,7 +15,7 @@ class Membro extends Model
     public $rules = [
         'data.nome' => 'required',
         'data.matricula' => 'required',
-        
+
     ];
 
     protected $casts = [

@@ -14,7 +14,7 @@ php artisan make:model
 //livewire
 php artisan make:livewire PostComponent
 
-//Samu 
+//Samu
 Criando banco Samu
 Criando esquema (model)  Samu
 php artisan make:model Admin/Sesau/Samu/Atendimento -m
@@ -36,10 +36,10 @@ php artisan make:livewire Admin/Sesau/Samu/SamuComponent
 //Criando componente de Tabelas Livewire do Laravel p/ receber dados da ficha Pessoa, seguindo o exemplo do link ->(Kdion4891)
 php artisan make:table Admin/Sesau/Samu/PessoaTableComponent
 
-//Criando "ModalComponent" como componente 
+//Criando "ModalComponent" como componente
 php artisan make:livewire Admin/Sesau/Samu/ModalComponent
 
-//Juridico 
+//Juridico
 Criando db e colocando informações nescessária: banco Juridico
 Criando esquema (model) e colocando informações nescessária:  Juridico
 php artisan make:model Admin/Sesau/Juridico/TipoSituacao -m
@@ -84,5 +84,5 @@ php artisan make:livewire Admin/Sesau/Juridico/BtnComponent
 
 link de icones: https://fontawesome.com/search?o=r&m=free
 
-
-
+subindo o projeto
+php artisan serve --host=10.8.2.40 --port=8000
