@@ -86,3 +86,24 @@ link de icones: https://fontawesome.com/search?o=r&m=free
 
 subindo o projeto
 php artisan serve --host=10.8.2.40 --port=8000
+
+
+===== PDF (https://github.com/barryvdh/laravel-dompdf) =====
+
+* php artisan cache:clear
+* php artisan config:clear
+* composer install
+
+* Dentro do arquivo composer.json do projeto Laravel e adicione "barryvdh/laravel-dompdf"
+dentro do bloco "require": "barryvdh/laravel-dompdf": "^0.9.0"
+
+* Depois disso, executar o comando no terminal: "composer require barryvdh/laravel-dompdf"
+
+* Certifique-se de que o provedor de serviços DomPDF esteja registrado corretamente no formato config/app.php.
+Deve ter algo assim:
+'providers' => [
+    // Other providers
+    Barryvdh\DomPDF\ServiceProvider::class,
+],
+
+* Execute o comando "vendor:publish": php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider" e continuação do github...

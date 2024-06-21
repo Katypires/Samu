@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/imprimir-receituario/{id}', function ($id) {
+    $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');
+    return $pdf->stream();
+})->middleware('auth')->name('imprimir-receituario');
+
+Route::get('/imprimir-pdf', function () {
+    $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');
+    return $pdf->stream();
+})->name('imprimir-pdf');
+
 
 Route::get('/', function () {
     return view('index');

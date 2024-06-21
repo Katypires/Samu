@@ -6,6 +6,7 @@ use Kdion4891\LaravelLivewireTables\Column;
 use Kdion4891\LaravelLivewireTables\TableComponent;
 use App\Exports\ModelExport;
 use Maatwebsite\Excel\Facades\Excel;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CrudTableComponent extends TableComponent
 {
@@ -45,5 +46,12 @@ class CrudTableComponent extends TableComponent
         //dd( $export);
         return Excel::download(new ModelExport($this->model), $export );
     }
+    // public function pdf() {
+
+    //     $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');
+    //     //dd($pdf);
+    //     return $pdf->stream();
+
+    // }
 
 }
