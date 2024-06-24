@@ -16,7 +16,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 Route::get('/imprimir-receituario/{id}', function ($id) {
     $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');
     return $pdf->stream();
-})->middleware('auth')->name('imprimir-receituario');
+})->name('imprimir-receituario');  //->middleware('auth')
 
 Route::get('/imprimir-pdf', function () {
     $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');

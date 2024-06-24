@@ -55,4 +55,9 @@ class Sindicancia extends Model
                Column::make('Ações')->view('livewire.admin.crud.table.actions'),
         ];
     }
+
+    public function oitivas() {
+        return $this->hasMany(Oitiva::class);
+    }
+
 }
