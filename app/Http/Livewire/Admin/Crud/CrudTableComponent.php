@@ -46,7 +46,14 @@ class CrudTableComponent extends TableComponent
         //dd( $export);
         return Excel::download(new ModelExport($this->model), $export );
     }
-    
+
+    // public function criaQR() {
+    //     $this->qrcode = QrCode::size(300)
+    //         ->format('png')
+    //         ->generate('https://www.google.com.br/')
+    //         ->toHtml();
+    // }
+
     public function pdf() {
 
         $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');

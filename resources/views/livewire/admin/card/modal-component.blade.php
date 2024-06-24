@@ -15,3 +15,4 @@
     </div>
 </div>
 
+{{-- <img src="{{ $qrcode }}" alt="qr code"> --}}
