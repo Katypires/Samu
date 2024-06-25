@@ -60,7 +60,10 @@ class Sindicancia extends Model
         return $this->hasMany(Oitiva::class);
     }
     public function sindicancia_membros() {
-        return $this->hasMany(Oitiva::class);
+        return $this->hasMany(SindicanciaMembro::class);
+    }
+    public function sindicancia_pessoas() {
+        return $this->hasMany(SindicanciaPessoa::class);
     }
 
 }

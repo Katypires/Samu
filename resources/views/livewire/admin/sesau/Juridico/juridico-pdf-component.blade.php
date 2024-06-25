@@ -33,8 +33,11 @@
             @empty
                 não existe oitiva
             @endforelse
-          </table>
 
+        </br>
+    </br>
+
+          </table>
     <div>
         <h2><strong>RELATÓRIO DE MEMBROS</h2></strong>
     </div>
@@ -46,9 +49,28 @@
             </tr>
             @forelse ( $sindicancia->sindicancia_membros as $item )
                 <tr>
-                    <td>{{$item->membro_id}}</td>
-                    <td>{{$item->tipo_funcao_membro_id}}</td>
+                    <td>{{$item->membro->nome}}</td>
+                    <td>{{$item->tipo_funcao_membro->nome}}</td>
                     <td>{{$item->rubrica}}</td>
+
+                </tr>
+            @empty
+                não existe oitiva
+            @endforelse
+        </br>
+    </br>
+
+          </table>
+    <div>
+        <h2><strong>RELATÓRIO DE PESSOAS</h2></strong>
+    </div>
+        <table>
+            <tr>
+              <th>Nome</th>
+            </tr>
+            @forelse ( $sindicancia->sindicancia_pessoas as $item )
+                <tr>
+                    <td>{{$item->pessoa->nome}}</td>
 
                 </tr>
             @empty
