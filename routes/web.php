@@ -13,15 +13,15 @@ use Barryvdh\DomPDF\Facade\Pdf;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/imprimir-receituario/{id}', function ($id) {
+Route::get('/imprimir-pdf/{id}', function ($id) {
     $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');
     return $pdf->stream();
-})->name('imprimir-receituario');  //->middleware('auth')
+})->name('imprimir-pdf');  //->middleware('auth')
 
-Route::get('/imprimir-pdf', function () {
-    $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');
-    return $pdf->stream();
-})->name('imprimir-pdf');
+// Route::get('/imprimir-pdf', function () {
+//     $pdf = Pdf::loadView('admin.sesau.juridico.sindicancia.pdf.invoice');
+//     return $pdf->stream();
+// })->name('imprimir-pdf');
 
 
 Route::get('/', function () {

@@ -25,6 +25,7 @@ class JuridicoPdfComponent extends Component
             $id = decrypt($slug1);
             $data = now();
             $this->sindicancia = Sindicancia::where('id', $id)->with('oitivas')->first();
+            $this->sindicancia = Sindicancia::where('id', $id)->with('sindicancia_membros')->first();
         }
 
     }

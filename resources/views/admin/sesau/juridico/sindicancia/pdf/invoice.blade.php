@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Jurídico</title>
 <style>
+@page {
+margin: 5.0mm;
+}
+body {
+font-size: 8px;
+font-family: Arial, sans-serif;
+}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -21,8 +30,6 @@ tr:nth-child(even) {
 @livewireStyles
 </head>
 <body>
-
-<h2>HTML Table</h2>
 
     <livewire:admin.sesau.juridico.juridico-pdf-component />
 

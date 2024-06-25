@@ -59,5 +59,8 @@ class Sindicancia extends Model
     public function oitivas() {
         return $this->hasMany(Oitiva::class);
     }
+    public function sindicancia_membros() {
+        return $this->hasMany(Oitiva::class);
+    }
 
 }
