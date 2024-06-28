@@ -1,5 +1,5 @@
-<div>   
-    
+<div>
+
     <div class="col-2" wire:loading style="background-color: yellow">
         Processando dados ....
     </div>
@@ -9,11 +9,11 @@
             <div>
                 <livewire:admin.crudtab.crud-form-component key="{{Str::random(5)}}" modelName="{{$modelName}}" formType="{{$formType}}" modal="{{$modal}}" title="{{$title}}" model="{{$model}}" form="{{$form}}" modelId="{{ isset($modelId) ? $modelId : 0 }}"/>
             </div>
-        </div>   
+        </div>
     @endif
 
-    @if($openTable) 
-        @if(!$openForm) 
+    @if($openTable)
+        @if(!$openForm)
             <div class="card p-4 mb-4 bg-secondary-subtle border-light-subtle shadow text-center">
                 @include('livewire.admin.crudtab.table.message')
                 <div>

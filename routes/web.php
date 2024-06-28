@@ -52,3 +52,7 @@ Route::get('/voluntario', function () {
 Route::get('/juridico', function () {
     return view('admin.sesau.juridico.juridicos.index');
 });
+
+Route::get('/eleicao', function () {
+    return view('admin.sesau.eleicoes.eleicoes.index');
+});

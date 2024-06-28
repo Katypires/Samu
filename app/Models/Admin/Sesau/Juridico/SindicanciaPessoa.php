@@ -15,7 +15,7 @@ class SindicanciaPessoa extends Model
     public $rules = [
         'data.sindicancia_id' => 'required',
         'data.pessoa_id' => 'required',
-        
+
     ];
 
     protected $casts = [
@@ -25,8 +25,6 @@ class SindicanciaPessoa extends Model
     public static function columns()
     {
         return [
-            // Column::make('ID')->searchable()->sortable(),
-            // Column::make('sindicancia','sindicancia_id')->searchable()->sortable(),
             Column::make('N° de Processo','sindicancia.numero_processo')->searchable()->sortable(),
             Column::make('Nome','pessoa.nome')->searchable()->sortable(),
             //Column::make('Ações')->view('livewire.admin.crud.table.actions'),
@@ -38,11 +36,11 @@ class SindicanciaPessoa extends Model
     {
         return $this->belongsTo(Sindicancia::class, 'sindicancia_id', 'id');
     }
-    
+
     public function pessoa()
     {
         return $this->belongsTo(Pessoa::class, 'pessoa_id', 'id');
     }
-    
+
 
 }

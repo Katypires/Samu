@@ -31,7 +31,9 @@
                     <td>{{$item->relatorio}}</td>
                 </tr>
             @empty
-                não existe oitiva
+            <tr>
+                <td style="text-align: center;" colspan="4">Não existe oitiva</td>
+            </tr>
             @endforelse
 
         </br>
@@ -55,7 +57,9 @@
 
                 </tr>
             @empty
-                não existe oitiva
+            <tr>
+                <td style="text-align: center;" colspan="3">Não existe membro</td>
+            </tr>
             @endforelse
         </br>
     </br>
@@ -71,10 +75,13 @@
             @forelse ( $sindicancia->sindicancia_pessoas as $item )
                 <tr>
                     <td>{{$item->pessoa->nome}}</td>
+                    <td>{{$item->pessoa->cpf}}</td>
 
                 </tr>
             @empty
-                não existe oitiva
+            <tr>
+                <td style="text-align: center;" colspan="1">Não existe pessoa</td>
+            </tr>
             @endforelse
 
 
@@ -101,7 +108,9 @@
                 <td>{{$item->numero_resolucao}}</td>
             </tr>
         @empty
-
+        <tr>
+            <td style="text-align: center;" colspan="3">Não existe sindicância</td>
+        </tr>
         @endforelse
 
 

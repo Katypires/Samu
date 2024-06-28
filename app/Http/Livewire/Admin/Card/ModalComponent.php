@@ -13,7 +13,8 @@ class ModalComponent extends Component
     public function render()
     {
         // $qrcode = QrCode::size(300)->format('png')->generate('https://www.google.com.br/')->toHtml();
-        return view('livewire.admin.card.modal-component');  //,compact('qrcode')
+        // return view('livewire.admin.card.modal-component',compact('qrcode'));
+        return view('livewire.admin.card.modal-component');
     }
 
 }

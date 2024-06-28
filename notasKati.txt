@@ -73,6 +73,10 @@ php artisan make:livewire Admin/Sesau/Juridico/PessoaComponent
 php artisan make:livewire Admin/Sesau/Juridico/MembroComponent
 ***********
 
+php artisan make:livewire Admin/Sesau/Eleicao/EleicaoComponent
+
+
+
 28-05-24= Criação de componente Select
 php artisan make:livewire Admin/Sesau/Juridico/SelectComponent
 

@@ -20,6 +20,6 @@ class CardComponent extends Component
 
     public function render()
     {
-        return view('livewire.admin.sesau.semraiva.card-component');
+        return view('livewire.admin.card.card-component');
     }
 }

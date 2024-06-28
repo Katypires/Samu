@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap-switch-button@1.1.0/css/bootstrap-switch-button.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta3/dist/css/bootstrap-select.min.css">
 
-    
+
 
         <!-- Font Awesome CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -30,24 +30,24 @@
     }
 
     .icon {
-      color: #f2cfcc;
+      color: #f5f3f3;
       font-size: 2rem;
       line-height: 1;
       margin-bottom: 10px;
     }
 
     .card-title {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: bold;
-      margin-bottom: 5px;
-      color: #f2cfcc;
+      margin-bottom: 15px;
+      color: #f3efef;
     }
 
     .btn-custom {
-      background-color: #f2cfcc;
-      color: #721111;
+      background-color: #c2bfbf;
+      color: #030303;
       border: none;
-      padding: 2px 10px;
+      padding: 5px 30px;
       border-radius: 5px;
       transition: background-color 0.3s ease;
       font-weight: bold;
@@ -55,7 +55,7 @@
     }
 
     .btn-custom:hover {
-      background-color: #b65c52;
+      background-color: #0a090950;
     }
     </style>
     <style>
