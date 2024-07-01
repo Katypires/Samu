@@ -34,7 +34,103 @@
 
             <div class="card p-4 mb-4 bg-light-subtle border-light-subtle shadow">
                 <livewire:admin.crud.crud-component key="{{Str::random(5)}}" formType="form" modal="Sindicancia" title="Sindicância" model="App\Models\Admin\Sesau\Juridico\Sindicancia" form="admin.sesau.juridico.sindicancia.form_sindicancia" />
+                <div id="consulta"></div>
             </div>
+
+
     </div>
+{{--
+    @if(!empty($situacoes))
+    @foreach($situacoes['categories'] as $key => $category)
+        {{ $category }}: {{ $situacoes['series'][$key] }}<br>
+    @endforeach
+@else
+    <p>Sem dados para exibir.</p>
+@endif --}}
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<div>
+<script>
+
+
+    var options = {
+          series: [{
+          name: 'Net Profit',
+        //   data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+          data: @json($situacoes['series'])
+        },
+        ],
+          chart: {
+          type: 'bar',
+          height: 350
+        },
+        title: {
+            text: 'RESULTADO DAS APURAÇÕES Total: 7',
+        },
+        plotOptions: {
+          bar: {
+            horizontal: false,
+            columnWidth: '55%',
+            endingShape: 'rounded'
+          },
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          show: true,
+          width: 2,
+          colors: ['transparent']
+        },
+        xaxis: {
+        //   categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+          categories: @json($situacoes['categories'])
+        },
+        yaxis: {
+          title: {
+            text: '(thousands)'
+          }
+        },
+        fill: {
+          opacity: 1
+        },
+        tooltip: {
+          y: {
+            formatter: function (val) {
+              return val + " thousands"
+            }
+          }
+        }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#consulta"), options);
+        chart.render();
+
+
+
+
+
+
+//     var options = {
+//   chart: {
+//     type: 'line'
+//     },
+//     series: [{
+//         name: 'sales',
+//         // data: [30,40,35,50,49,60,70,91,125]
+//         data: @json($situacoes['series'])
+//     }],
+//     xaxis: {
+//         // categories: [1991,1992,1993,1994,1995,1996,1997, 1998,1999]
+//         categories: @json($situacoes['categories'])
+//     }
+//     }
+
+//     var chart = new ApexCharts(document.querySelector("#consulta"), options);
+
+//     chart.render();
+</script>
+</div>
+
 @endsection
 
